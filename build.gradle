@@ -25,8 +25,6 @@ java.toolchain.languageVersion = JavaLanguageVersion.of(17)
 minecraft {
     mappings channel: 'official', version: minecraft_version
 
-    accessTransformer = file('src/main/resources/META-INF/accesstransformer.cfg')
-
     runs {
         client {
             workingDirectory project.file('run')
@@ -67,7 +65,7 @@ minecraft {
 
             property 'forge.logging.console.level', 'debug'
 
-            args '--mod', 'thermalconstruct', '--all', '--output', file('src/generated/resources/'), '--existing', file('src/main/resources/')
+            args '--mod', 'thermalconstruct', '--all', '--output', file('src/generated/resources/'), '--existing', file('src/main/resources/'), '--existing-mod', 'tconstruct'
 
             mods {
                 thermalconstruct {
@@ -103,6 +101,10 @@ repositories {
         content {
             includeGroup "curse.maven"
         }
+    }
+    maven {
+        name = 'NeoForged'
+        url = 'https://maven.neoforged.net/releases'
     }
 }
 
