@@ -1,0 +1,34 @@
+modLoader="javafml"
+loaderVersion="[36,)"
+license="MIT License"
+issueTrackerURL="https://github.com/Mrthomas20121/ThermalConstruct/issues"
+
+[[mods]]
+modId="thermalconstruct"
+version="1.20.1-0.0.3"
+displayName="Thermal Construct"
+displayURL="https://www.curseforge.com/minecraft/mc-mods/thermalconstruct"
+#logoFile="tinkers_reforged_logo.png"
+authors="Mrthomas20121"
+description='''
+Add Thermal Compat to Tinkers
+'''
+
+[[dependencies.thermalconstruct]]
+	modId = "forge"
+	mandatory = true
+	versionRange = "[47.2.6,)"
+	ordering = "NONE"
+	side = "BOTH"
+[[dependencies.thermalconstruct]]
+	modId = "tconstruct"
+	mandatory = true
+	versionRange = "[0,)"
+	ordering = "AFTER"
+	side = "BOTH"
+[[dependencies.thermalconstruct]]
+	modId = "thermal_expansion"
+	mandatory = true
+	versionRange = "[0,)"
+	ordering = "NONE"
+	side = "BOTH"
