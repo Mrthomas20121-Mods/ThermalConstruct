@@ -23,12 +23,18 @@ Add Thermal Compat to Tinkers
 [[dependencies.thermalconstruct]]
 	modId = "tconstruct"
 	mandatory = true
-	versionRange = "[0,)"
+	versionRange = "[3.9.2.37,)"
 	ordering = "AFTER"
 	side = "BOTH"
 [[dependencies.thermalconstruct]]
 	modId = "thermal_expansion"
 	mandatory = true
-	versionRange = "[0,)"
+	versionRange = "[11.0.0,)"
+	ordering = "NONE"
+	side = "BOTH"
+[[dependencies.thermalconstruct]]
+	modId = "thermal_integration"
+	mandatory = true
+	versionRange = "[11.0.1,)"
 	ordering = "NONE"
 	side = "BOTH"
