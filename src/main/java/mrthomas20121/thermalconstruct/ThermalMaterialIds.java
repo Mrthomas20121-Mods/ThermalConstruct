@@ -4,6 +4,9 @@ import slimeknights.tconstruct.library.materials.definition.MaterialId;
 
 public class ThermalMaterialIds {
 
+    public static MaterialId BLIZZ = create("blizz");
+    public static MaterialId BLITZ = create("blitz");
+    public static MaterialId BASALZ = create("basalz");
     public static MaterialId SIGNALUM = create("signalum");
     public static MaterialId LUMIUM = create("lumium");
     public static MaterialId ENDERIUM = create("enderium");

@@ -1,0 +1,9 @@
+{
+  "type": "tconstruct:material",
+  "ingredient": {
+    "item": "thermal:blitz_powder"
+  },
+  "material": "thermalconstruct:blitz",
+  "needed": 2,
+  "value": 1
+}

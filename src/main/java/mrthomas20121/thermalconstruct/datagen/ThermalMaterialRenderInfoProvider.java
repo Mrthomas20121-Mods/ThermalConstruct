@@ -19,6 +19,9 @@ public class ThermalMaterialRenderInfoProvider extends AbstractMaterialRenderInf
         buildRenderInfo(ThermalMaterialIds.ENDERIUM).color(0x4BCFCD).fallbacks("elemental");
         buildRenderInfo(ThermalMaterialIds.LUMIUM).color(0xFFF1AA).fallbacks("elemental");
         buildRenderInfo(ThermalMaterialIds.SIGNALUM).color(0xFF9543).fallbacks("elemental");
+        buildRenderInfo(ThermalMaterialIds.BASALZ).color(0x32353A).fallbacks("elemental");
+        buildRenderInfo(ThermalMaterialIds.BLITZ).color(0xDEF7FA).fallbacks("elemental");
+        buildRenderInfo(ThermalMaterialIds.BLIZZ).color(0x37B7FE).fallbacks("elemental");
     }
 
     @Override

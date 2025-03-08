@@ -16,6 +16,9 @@ public class ThermalMaterialDataProvider extends AbstractMaterialDataProvider {
         addMaterial(ThermalMaterialIds.ENDERIUM, 4, ORDER_END, false);
         addMaterial(ThermalMaterialIds.LUMIUM, 3, ORDER_NETHER, false);
         addMaterial(ThermalMaterialIds.SIGNALUM, 3, ORDER_HARVEST, false);
+        addMaterial(ThermalMaterialIds.BASALZ, 2, ORDER_BINDING, true);
+        addMaterial(ThermalMaterialIds.BLITZ, 2, ORDER_BINDING, true);
+        addMaterial(ThermalMaterialIds.BLIZZ, 2, ORDER_BINDING, true);
     }
 
     @Override

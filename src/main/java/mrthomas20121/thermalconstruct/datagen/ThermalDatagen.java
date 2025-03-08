@@ -18,14 +18,18 @@ public class ThermalDatagen {
         ThermalMaterialSpriteProvider materialSpriteProvider = new ThermalMaterialSpriteProvider();
         ThermalMaterialDataProvider materialDataProvider = new ThermalMaterialDataProvider(packOutput);
 
-        generator.addProvider(event.includeServer(), new ThermalRecipeProvider(packOutput));
-        generator.addProvider(event.includeServer(), materialDataProvider);
-        generator.addProvider(event.includeServer(), new ThermalMaterialTraitProvider(packOutput, materialDataProvider));
-        generator.addProvider(event.includeServer(), new ThermalMaterialStatsProvider(packOutput, materialDataProvider));
+        boolean server = event.includeServer();
+        generator.addProvider(server, new ThermalRecipeProvider(packOutput));
+        generator.addProvider(server, materialDataProvider);
+        generator.addProvider(server, new ThermalMaterialTraitProvider(packOutput, materialDataProvider));
+        generator.addProvider(server, new ThermalMaterialStatsProvider(packOutput, materialDataProvider));
+        generator.addProvider(server, new ThermalModifierProvider(packOutput));
 
-        generator.addProvider(event.includeClient(), new MaterialPartTextureGenerator(packOutput, existingFileHelper, partSpriteProvider, materialSpriteProvider));
-        generator.addProvider(event.includeClient(), new ThermalMaterialRenderInfoProvider(packOutput, materialSpriteProvider, existingFileHelper));
-        generator.addProvider(event.includeClient(), new ThermalLangProvider(packOutput));
-
+        boolean client = event.includeClient();
+        generator.addProvider(client, new ThermalColorProvider(packOutput));
+        generator.addProvider(client, new MaterialPartTextureGenerator(packOutput, existingFileHelper, partSpriteProvider, materialSpriteProvider));
+        generator.addProvider(client, new ThermalMaterialRenderInfoProvider(packOutput, materialSpriteProvider, existingFileHelper));
+        generator.addProvider(client, new ThermalLangProvider(packOutput));
+        generator.addProvider(client, new ThermalFluidTextureProvider(packOutput));
     }
 }

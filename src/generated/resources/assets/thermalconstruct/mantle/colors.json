@@ -1,0 +1,10 @@
+{
+  "material.thermalconstruct": {},
+  "modifier.thermalconstruct": {
+    "endsplosion": "#4BCFCD",
+    "fluorescence": "#FFF1AA",
+    "integral": "#F31700",
+    "prickly_glow": "#FFF1AA",
+    "redstone_fluxed": "#95CFE6"
+  }
+}

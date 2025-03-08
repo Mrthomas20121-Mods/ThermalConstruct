@@ -1,0 +1,16 @@
+{
+  "level_display": "tconstruct:single_level",
+  "modules": [
+    {
+      "type": "tconstruct:trait",
+      "fixed_level": true,
+      "level": 1,
+      "name": "tconstruct:energy_handler"
+    },
+    {
+      "type": "tconstruct:durability_color",
+      "color": "F31700"
+    }
+  ],
+  "tooltip_display": "always"
+}

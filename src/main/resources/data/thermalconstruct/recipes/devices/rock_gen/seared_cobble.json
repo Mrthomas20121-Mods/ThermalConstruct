@@ -1,6 +1,6 @@
 {
   "type": "thermal:rock_gen",
-  "adjacent": "minecraft:clay",
+  "adjacent": "tconstruct:molten_clay_fluid",
   "result": {
     "item": "tconstruct:seared_cobble"
   }

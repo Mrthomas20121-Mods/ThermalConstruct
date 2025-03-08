@@ -1,0 +1,5 @@
+{
+  "color": "FFFFFFFF",
+  "flowing": "thermalconstruct:fluid/molten/basalz_blood/flowing",
+  "still": "thermalconstruct:fluid/molten/basalz_blood/still"
+}

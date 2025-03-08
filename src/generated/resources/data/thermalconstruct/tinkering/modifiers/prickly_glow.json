@@ -1,0 +1,23 @@
+{
+  "level_display": "tconstruct:default",
+  "modules": [
+    {
+      "type": "tconstruct:trait",
+      "fixed_level": true,
+      "level": 1,
+      "name": "tconstruct:thorns"
+    },
+    {
+      "type": "tconstruct:mob_effect",
+      "effect": "minecraft:glowing",
+      "level": {
+        "flat": 1.0
+      },
+      "time": {
+        "flat": 100.0,
+        "per_level": 20.0
+      }
+    }
+  ],
+  "tooltip_display": "always"
+}

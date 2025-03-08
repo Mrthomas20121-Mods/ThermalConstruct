@@ -1,0 +1,32 @@
+package mrthomas20121.thermalconstruct.datagen;
+
+import mrthomas20121.thermalconstruct.ThermalConstruct;
+import mrthomas20121.thermalconstruct.init.ThermalConstructFluids;
+import net.minecraft.data.PackOutput;
+import slimeknights.mantle.fluid.texture.AbstractFluidTextureProvider;
+import slimeknights.mantle.fluid.texture.FluidTexture;
+import slimeknights.mantle.registration.object.FluidObject;
+
+public class ThermalFluidTextureProvider extends AbstractFluidTextureProvider {
+    public ThermalFluidTextureProvider(PackOutput packOutput) {
+        super(packOutput, ThermalConstruct.MOD_ID);
+    }
+
+    @Override
+    public void addTextures() {
+        named(ThermalConstructFluids.basalz_blood, "molten/basalz_blood");
+        named(ThermalConstructFluids.blitz_blood, "molten/blitz_blood");
+        named(ThermalConstructFluids.blizz_blood, "molten/blizz_blood");
+
+    }
+
+    @Override
+    public String getName() {
+        return "Thermal Fluid Texture Provider";
+    }
+
+    /** Creates a texture using the given fixed name in the fluid folder */
+    private FluidTexture.Builder named(FluidObject<?> fluid, String name) {
+        return texture(fluid).textures(ThermalConstruct.getResource("fluid/"+name+"/"), false, false);
+    }
+}

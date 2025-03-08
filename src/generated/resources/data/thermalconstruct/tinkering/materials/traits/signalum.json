@@ -2,7 +2,15 @@
   "default": [
     {
       "level": 1,
-      "name": "tconstruct:pierce"
+      "name": "thermalconstruct:wanderer"
     }
-  ]
+  ],
+  "perStat": {
+    "tconstruct:armor": [
+      {
+        "level": 1,
+        "name": "thermalconstruct:wanderer"
+      }
+    ]
+  }
 }

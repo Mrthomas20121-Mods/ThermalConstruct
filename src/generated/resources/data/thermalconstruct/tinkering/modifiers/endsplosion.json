@@ -1,0 +1,13 @@
+{
+  "level_display": "tconstruct:default",
+  "modules": [
+    {
+      "type": "tconstruct:conditional_melee_damage",
+      "attacker": "thermalconstruct:is_in_end",
+      "each_level": 1.3,
+      "percent": true,
+      "target": "thermalconstruct:is_in_end"
+    }
+  ],
+  "tooltip_display": "always"
+}

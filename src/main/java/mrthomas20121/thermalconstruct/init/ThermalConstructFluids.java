@@ -1,0 +1,34 @@
+package mrthomas20121.thermalconstruct.init;
+
+import mrthomas20121.thermalconstruct.ThermalConstruct;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.world.level.material.MapColor;
+import net.minecraft.world.level.pathfinder.BlockPathTypes;
+import net.minecraftforge.common.SoundActions;
+import net.minecraftforge.fluids.FluidType;
+import net.minecraftforge.fluids.ForgeFlowingFluid;
+import slimeknights.mantle.registration.deferred.FluidDeferredRegister;
+import slimeknights.mantle.registration.object.FlowingFluidObject;
+
+import static slimeknights.tconstruct.fluids.block.BurningLiquidBlock.createBurning;
+
+public class ThermalConstructFluids {
+    
+    public static FluidDeferredRegister FLUIDS = new FluidDeferredRegister(ThermalConstruct.MOD_ID);
+
+    public static final FlowingFluidObject<ForgeFlowingFluid> basalz_blood   = FLUIDS.register("basalz_blood").type(hot("basalz_blood").temperature(1200).lightLevel(15).density(3500)).block(createBurning(MapColor.COLOR_GRAY, 15, 15, 5f)).bucket().flowing();
+    public static final FlowingFluidObject<ForgeFlowingFluid> blitz_blood   = FLUIDS.register("blitz_blood").type(hot("blitz_blood").temperature(1200).lightLevel(15).density(3500)).block(createBurning(MapColor.QUARTZ, 15, 15, 5f)).bucket().flowing();
+    public static final FlowingFluidObject<ForgeFlowingFluid> blizz_blood   = FLUIDS.register("blizz_blood").type(hot("blizz_blood").temperature(1200).lightLevel(15).density(3500)).block(createBurning(MapColor.COLOR_LIGHT_BLUE, 15, 15, 5f)).bucket().flowing();
+
+    /** Creates a builder for a hot with sounds and description */
+    private static FluidType.Properties hot(String name) {
+        return FluidType.Properties.create().density(2000).viscosity(10000).temperature(1000)
+                .descriptionId(ThermalConstruct.makeDescriptionId("fluid", name))
+                .sound(SoundActions.BUCKET_FILL, SoundEvents.BUCKET_FILL_LAVA)
+                .sound(SoundActions.BUCKET_EMPTY, SoundEvents.BUCKET_EMPTY_LAVA)
+                // from forge lava type
+                .motionScale(0.0023333333333333335D)
+                .canSwim(false).canDrown(false)
+                .pathType(BlockPathTypes.LAVA).adjacentPathType(null);
+    }
+}

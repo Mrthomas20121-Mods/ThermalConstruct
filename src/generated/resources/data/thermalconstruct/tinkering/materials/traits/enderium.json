@@ -2,7 +2,15 @@
   "default": [
     {
       "level": 1,
-      "name": "tconstruct:pierce"
+      "name": "thermalconstruct:endsplosion"
     }
-  ]
+  ],
+  "perStat": {
+    "tconstruct:armor": [
+      {
+        "level": 1,
+        "name": "thermalconstruct:spectral"
+      }
+    ]
+  }
 }

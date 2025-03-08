@@ -1,7 +1,7 @@
 {
   "type": "thermal:rock_gen",
   "adjacent": "minecraft:basalt",
-  "below": "minecraft:magma_block",
+  "below": "tconstruct:magma_fluid",
   "result": {
     "item": "tconstruct:scorched_stone"
   }

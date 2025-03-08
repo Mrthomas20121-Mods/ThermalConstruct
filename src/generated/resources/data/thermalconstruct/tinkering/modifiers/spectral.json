@@ -1,0 +1,16 @@
+{
+  "level_display": "tconstruct:default",
+  "modules": [
+    {
+      "type": "tconstruct:trait",
+      "fixed_level": true,
+      "level": 1,
+      "name": "thermalconstruct:shulking"
+    },
+    {
+      "type": "tconstruct:effect_immunity",
+      "effect": "minecraft:levitation"
+    }
+  ],
+  "tooltip_display": "always"
+}
