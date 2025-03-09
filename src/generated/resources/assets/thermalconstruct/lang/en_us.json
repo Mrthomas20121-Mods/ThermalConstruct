@@ -23,12 +23,15 @@
   "modifier.thermalconstruct.fluorescence": "Fluorescence",
   "modifier.thermalconstruct.fluorescence.description": "Target is glowing when hit.",
   "modifier.thermalconstruct.fluorescence.flavor": "Glow in the dark",
+  "modifier.thermalconstruct.freezing_protection": "Freezing Protection",
+  "modifier.thermalconstruct.freezing_protection.description": "Protect against freezing damage types.",
+  "modifier.thermalconstruct.freezing_protection.flavor": "It's cold down there",
   "modifier.thermalconstruct.integral": "Integral",
   "modifier.thermalconstruct.integral.description": "Boost your tool/armor/bow stats.",
   "modifier.thermalconstruct.integral.flavor": "Dad's favorite math stuff",
-  "modifier.thermalconstruct.kinetic_velocity": "Kinetic Velocity",
-  "modifier.thermalconstruct.kinetic_velocity.description": "Get a movement speed boost when you take damage.",
-  "modifier.thermalconstruct.kinetic_velocity.flavor": "GOTTA GO FAST",
+  "modifier.thermalconstruct.pathfinder": "Pathfinder",
+  "modifier.thermalconstruct.pathfinder.description": "Boost Stats in Coniferous biomes.",
+  "modifier.thermalconstruct.pathfinder.flavor": "Shaped like a cone",
   "modifier.thermalconstruct.prickly_glow": "Prickly Glow",
   "modifier.thermalconstruct.prickly_glow.description": "Attacker is glowing and take damage when hit.",
   "modifier.thermalconstruct.prickly_glow.flavor": "Holy Light!",
@@ -46,8 +49,5 @@
   "modifier.thermalconstruct.spectral.flavor": "Chorus Fruit taste so good",
   "modifier.thermalconstruct.sundered": "Sundered",
   "modifier.thermalconstruct.sundered.description": "Apply the sundered effect.",
-  "modifier.thermalconstruct.sundered.flavor": "*split the red sea in half*",
-  "modifier.thermalconstruct.wanderer": "Wanderer",
-  "modifier.thermalconstruct.wanderer.description": "Get different bonus effect depending on which biomes you are in.\nforest => higher accuracy and draw speed.\njungle => higher mining speed and durability.\nbadlands => higher attack damage and attack speed.\n",
-  "modifier.thermalconstruct.wanderer.flavor": "I'm walking like an egyptian"
+  "modifier.thermalconstruct.sundered.flavor": "*split the red sea in half*"
 }

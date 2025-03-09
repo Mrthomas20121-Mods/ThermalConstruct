@@ -70,13 +70,13 @@ public class ThermalModifierProvider extends AbstractModifierProvider {
                         .eachLevel(1.3f)
                 );
 
-        buildModifier(ThermalModifierIds.WANDERER)
-                .addModule(ConditionalStatModule.stat(ToolStats.ACCURACY).holder(ThermalLivingEntityPredicate.IS_FOREST).eachLevel(0.2f))
-                .addModule(ConditionalStatModule.stat(ToolStats.DRAW_SPEED).holder(ThermalLivingEntityPredicate.IS_FOREST).eachLevel(0.2f))
-                .addModule(ConditionalStatModule.stat(ToolStats.MINING_SPEED).holder(ThermalLivingEntityPredicate.IS_JUNGLE).eachLevel(1f))
-                .addModule(ConditionalStatModule.stat(ToolStats.DURABILITY).holder(ThermalLivingEntityPredicate.IS_JUNGLE).percent().eachLevel(1.2f))
-                .addModule(ConditionalStatModule.stat(ToolStats.ATTACK_DAMAGE).holder(ThermalLivingEntityPredicate.IS_BADLANDS).eachLevel(1f))
-                .addModule(ConditionalStatModule.stat(ToolStats.ATTACK_SPEED).holder(ThermalLivingEntityPredicate.IS_BADLANDS).eachLevel(0.5f));
+        buildModifier(ThermalModifierIds.PATHFINDER)
+                .addModule(ConditionalStatModule.stat(ToolStats.ACCURACY).holder(ThermalLivingEntityPredicate.IS_CONIFEROUS).eachLevel(0.2f))
+                .addModule(ConditionalStatModule.stat(ToolStats.DRAW_SPEED).holder(ThermalLivingEntityPredicate.IS_CONIFEROUS).eachLevel(0.2f))
+                .addModule(ConditionalStatModule.stat(ToolStats.MINING_SPEED).holder(ThermalLivingEntityPredicate.IS_CONIFEROUS).eachLevel(1f))
+                .addModule(ConditionalStatModule.stat(ToolStats.DURABILITY).holder(ThermalLivingEntityPredicate.IS_CONIFEROUS).percent().eachLevel(1.2f))
+                .addModule(ConditionalStatModule.stat(ToolStats.ATTACK_DAMAGE).holder(ThermalLivingEntityPredicate.IS_CONIFEROUS).eachLevel(1f))
+                .addModule(ConditionalStatModule.stat(ToolStats.ATTACK_SPEED).holder(ThermalLivingEntityPredicate.IS_CONIFEROUS).eachLevel(0.5f));
 
         buildModifier(ThermalModifierIds.FLUORESCENCE)
                 .addModule(MobEffectModule.builder(MobEffects.GLOWING).time(RandomLevelingValue.perLevel(100, 20)).build());

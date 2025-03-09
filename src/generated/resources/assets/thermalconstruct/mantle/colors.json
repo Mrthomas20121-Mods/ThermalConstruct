@@ -11,11 +11,11 @@
     "fluorescence": "#FFF1AA",
     "freezing_protection": "#37B7FE",
     "integral": "#F31700",
+    "pathfinder": "#FF9543",
     "prickly_glow": "#FFF1AA",
     "redstone_fluxed": "#95CFE6",
     "shocked": "#37B7FE",
     "spectral": "#4BCFCD",
-    "sundered": "#32353A",
-    "wanderer": "#FF9543"
+    "sundered": "#32353A"
   }
 }

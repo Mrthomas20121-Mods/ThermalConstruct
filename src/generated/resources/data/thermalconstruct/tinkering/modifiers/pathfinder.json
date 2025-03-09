@@ -4,42 +4,42 @@
     {
       "type": "tconstruct:conditional_stat",
       "each_level": 0.2,
-      "entity": "thermalconstruct:is_forest",
+      "entity": "thermalconstruct:is_coniferous",
       "percent": false,
       "stat": "tconstruct:accuracy"
     },
     {
       "type": "tconstruct:conditional_stat",
       "each_level": 0.2,
-      "entity": "thermalconstruct:is_forest",
+      "entity": "thermalconstruct:is_coniferous",
       "percent": false,
       "stat": "tconstruct:draw_speed"
     },
     {
       "type": "tconstruct:conditional_stat",
       "each_level": 1.0,
-      "entity": "thermalconstruct:is_jungle",
+      "entity": "thermalconstruct:is_coniferous",
       "percent": false,
       "stat": "tconstruct:mining_speed"
     },
     {
       "type": "tconstruct:conditional_stat",
       "each_level": 1.2,
-      "entity": "thermalconstruct:is_jungle",
+      "entity": "thermalconstruct:is_coniferous",
       "percent": true,
       "stat": "tconstruct:durability"
     },
     {
       "type": "tconstruct:conditional_stat",
       "each_level": 1.0,
-      "entity": "thermalconstruct:is_badlands",
+      "entity": "thermalconstruct:is_coniferous",
       "percent": false,
       "stat": "tconstruct:attack_damage"
     },
     {
       "type": "tconstruct:conditional_stat",
       "each_level": 0.5,
-      "entity": "thermalconstruct:is_badlands",
+      "entity": "thermalconstruct:is_coniferous",
       "percent": false,
       "stat": "tconstruct:attack_speed"
     }

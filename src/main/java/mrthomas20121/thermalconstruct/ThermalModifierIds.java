@@ -5,12 +5,11 @@ import slimeknights.tconstruct.library.modifiers.ModifierId;
 public class ThermalModifierIds {
 
     // traits
-    public static ModifierId WANDERER = create("wanderer");
+    public static ModifierId PATHFINDER = create("pathfinder");
     public static ModifierId FLUORESCENCE = create("fluorescence");
     public static ModifierId PRICKLY_GLOW = create("prickly_glow");
     public static ModifierId ENDSPLOSION = create("endsplosion");
     public static ModifierId SPECTRAL = create("spectral");
-
     public static ModifierId CHILLED = create("chilled");
     public static ModifierId SHOCKED = create("shocked");
     public static ModifierId SUNDERED = create("sundered");

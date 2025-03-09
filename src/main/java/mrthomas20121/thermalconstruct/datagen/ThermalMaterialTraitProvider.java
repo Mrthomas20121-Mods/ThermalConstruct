@@ -17,7 +17,7 @@ public class ThermalMaterialTraitProvider extends AbstractMaterialTraitDataProvi
     protected void addMaterialTraits() {
         addDefaultTraits(ThermalMaterialIds.ENDERIUM, ThermalModifierIds.ENDSPLOSION);
         addDefaultTraits(ThermalMaterialIds.LUMIUM, ThermalModifierIds.FLUORESCENCE);
-        addDefaultTraits(ThermalMaterialIds.SIGNALUM, ThermalModifierIds.WANDERER);
+        addDefaultTraits(ThermalMaterialIds.SIGNALUM, ThermalModifierIds.PATHFINDER);
         addTraits(ThermalMaterialIds.ENDERIUM, MaterialRegistry.ARMOR, ThermalModifierIds.SPECTRAL);
         addTraits(ThermalMaterialIds.LUMIUM, MaterialRegistry.ARMOR, ThermalModifierIds.PRICKLY_GLOW);
         addTraits(ThermalMaterialIds.BLIZZ, MaterialRegistry.ARMOR, ThermalModifierIds.FREEZING_PROTECTION);

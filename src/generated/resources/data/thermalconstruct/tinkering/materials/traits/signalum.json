@@ -2,7 +2,7 @@
   "default": [
     {
       "level": 1,
-      "name": "thermalconstruct:wanderer"
+      "name": "thermalconstruct:pathfinder"
     }
   ]
 }

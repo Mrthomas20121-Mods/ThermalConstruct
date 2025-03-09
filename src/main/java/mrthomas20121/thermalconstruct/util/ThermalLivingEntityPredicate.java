@@ -2,14 +2,12 @@ package mrthomas20121.thermalconstruct.util;
 
 import net.minecraft.tags.BiomeTags;
 import net.minecraft.world.level.dimension.BuiltinDimensionTypes;
+import net.minecraftforge.common.Tags;
 import slimeknights.mantle.data.predicate.entity.LivingEntityPredicate;
 
 public interface ThermalLivingEntityPredicate {
 
-    LivingEntityPredicate IS_TAIGA = LivingEntityPredicate.simple(entity -> entity.level().getBiome(entity.getOnPos()).is(BiomeTags.IS_TAIGA));
-    LivingEntityPredicate IS_BADLANDS = LivingEntityPredicate.simple(entity -> entity.level().getBiome(entity.getOnPos()).is(BiomeTags.IS_BADLANDS));
-    LivingEntityPredicate IS_FOREST = LivingEntityPredicate.simple(entity -> entity.level().getBiome(entity.getOnPos()).is(BiomeTags.IS_FOREST));
-    LivingEntityPredicate IS_JUNGLE = LivingEntityPredicate.simple(entity -> entity.level().getBiome(entity.getOnPos()).is(BiomeTags.IS_JUNGLE));
+    LivingEntityPredicate IS_CONIFEROUS = LivingEntityPredicate.simple(entity -> entity.level().getBiome(entity.getOnPos()).is(Tags.Biomes.IS_CONIFEROUS));
 
     // check if the entity is in the end
     LivingEntityPredicate IS_IN_END = LivingEntityPredicate.simple(entity -> entity.level().dimensionTypeId().equals(BuiltinDimensionTypes.END));

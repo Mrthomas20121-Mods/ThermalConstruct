@@ -51,18 +51,13 @@ public class ThermalLangProvider extends LanguageProvider {
         addModifierFlavor(ThermalModifierIds.PRICKLY_GLOW, "Holy Light!");
         addModifierDesc(ThermalModifierIds.PRICKLY_GLOW, "Attacker is glowing and take damage when hit.");
 
-        addModifier(ThermalModifierIds.WANDERER, "Wanderer");
-        addModifierFlavor(ThermalModifierIds.WANDERER, "I'm walking like an egyptian");
-        addModifierDesc(ThermalModifierIds.WANDERER, """
-                Get different bonus effect depending on which biomes you are in.
-                forest => higher accuracy and draw speed.
-                jungle => higher mining speed and durability.
-                badlands => higher attack damage and attack speed.
-                """);
+        addModifier(ThermalModifierIds.PATHFINDER, "Pathfinder");
+        addModifierFlavor(ThermalModifierIds.PATHFINDER, "Shaped like a cone");
+        addModifierDesc(ThermalModifierIds.PATHFINDER, "Boost Stats in Coniferous biomes.");
 
-        addModifier(ThermalConstructModifiers.KINETIC_VELOCITY.getId(), "Kinetic Velocity");
-        addModifierFlavor(ThermalConstructModifiers.KINETIC_VELOCITY.getId(), "GOTTA GO FAST");
-        addModifierDesc(ThermalConstructModifiers.KINETIC_VELOCITY.getId(), "Get a movement speed boost when you take damage.");
+        addModifier(ThermalModifierIds.FREEZING_PROTECTION, "Freezing Protection");
+        addModifierFlavor(ThermalModifierIds.FREEZING_PROTECTION, "It's cold down there");
+        addModifierDesc(ThermalModifierIds.FREEZING_PROTECTION, "Protect against freezing damage types.");
 
         addModifier(ThermalConstructModifiers.SHULKING.getId(), "Shulking");
         addModifierFlavor(ThermalConstructModifiers.SHULKING.getId(), "I feel like an enderman now");
