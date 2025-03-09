@@ -4,5 +4,13 @@
       "level": 1,
       "name": "thermalconstruct:chilled"
     }
-  ]
+  ],
+  "perStat": {
+    "tconstruct:armor": [
+      {
+        "level": 1,
+        "name": "thermalconstruct:freezing_protection"
+      }
+    ]
+  }
 }

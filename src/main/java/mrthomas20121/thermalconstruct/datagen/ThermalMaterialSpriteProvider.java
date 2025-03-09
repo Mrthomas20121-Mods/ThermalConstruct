@@ -21,17 +21,17 @@ public class ThermalMaterialSpriteProvider extends AbstractMaterialSpriteProvide
     protected void addAllMaterials() {
 
         buildMaterial(ThermalMaterialIds.BASALZ)
-                .meleeHarvest().armor()
+                .meleeHarvest().armor().shieldCore()
                 .fallbacks("elemental").ranged()
-                .colorMapper(GreyToColorMapping.builderFromBlack().addARGB(63, 0xFF10121A).addARGB(102, 0xFF1C1E24).addARGB(140, 0xFF262835).addARGB(178, 0xFF1D7E8C).addARGB(216, 0xFF32353A).addARGB(255, 0xFF42474C).build());
+                .colorMapper(GreyToColorMapping.builderFromBlack().addARGB(63, 0xFF10121A).addARGB(102, 0xFF10121A).addARGB(140, 0xFF262835).addARGB(178, 0xFF352E31).addARGB(216, 0xFF32353A).addARGB(255, 0xFF42474C).build());
 
         buildMaterial(ThermalMaterialIds.BLITZ)
-                .meleeHarvest().armor()
+                .meleeHarvest().armor().shieldCore()
                 .fallbacks("elemental").ranged()
                 .colorMapper(GreyToColorMapping.builderFromBlack().addARGB(63, 0xFF99C7D7).addARGB(102, 0xFFB4DCE8).addARGB(140, 0xFFC3E3EE).addARGB(178, 0xFFD0EDF4).addARGB(216, 0xFFDEF7FA).addARGB(255, 0xFFECFEFC).build());
 
         buildMaterial(ThermalMaterialIds.BLIZZ)
-                .meleeHarvest().armor()
+                .meleeHarvest().armor().shieldCore()
                 .fallbacks("elemental").ranged()
                 .colorMapper(GreyToColorMapping.builderFromBlack().addARGB(63, 0xFF0D6FD9).addARGB(102, 0xFF1D7CF1).addARGB(140, 0xFF25A1F8).addARGB(178, 0xFF37B7FE).addARGB(216, 0xFF53D8FF).addARGB(255, 0xFFE3F6F3).build());
 

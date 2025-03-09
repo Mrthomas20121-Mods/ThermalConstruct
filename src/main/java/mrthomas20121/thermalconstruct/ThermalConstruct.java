@@ -2,7 +2,8 @@ package mrthomas20121.thermalconstruct;
 
 import mrthomas20121.thermalconstruct.datagen.ThermalDatagen;
 import mrthomas20121.thermalconstruct.init.ThermalConstructFluids;
-import mrthomas20121.thermalconstruct.init.ThermalModifiers;
+import mrthomas20121.thermalconstruct.init.ThermalConstructItems;
+import mrthomas20121.thermalconstruct.init.ThermalConstructModifiers;
 import mrthomas20121.thermalconstruct.util.ThermalLivingEntityPredicate;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
@@ -30,8 +31,9 @@ public class ThermalConstruct {
 	public ThermalConstruct() {
 		IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
 
+		ThermalConstructItems.ITEMS.register(bus);
 		ThermalConstructFluids.FLUIDS.register(bus);
-		ThermalModifiers.MODIFIERS.register(bus);
+		ThermalConstructModifiers.MODIFIERS.register(bus);
 
 		bus.addListener(EventPriority.NORMAL, false, GatherDataEvent.class, ThermalDatagen::init);
 		bus.addListener(EventPriority.NORMAL, false, RegisterEvent.class, this::register);

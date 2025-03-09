@@ -2,14 +2,17 @@ package mrthomas20121.thermalconstruct.datagen;
 
 import cofh.core.init.CoreMobEffects;
 import mrthomas20121.thermalconstruct.ThermalModifierIds;
-import mrthomas20121.thermalconstruct.init.ThermalModifiers;
+import mrthomas20121.thermalconstruct.init.ThermalConstructModifiers;
 import mrthomas20121.thermalconstruct.util.ThermalLivingEntityPredicate;
 import net.minecraft.data.PackOutput;
+import net.minecraft.tags.DamageTypeTags;
 import net.minecraft.world.effect.MobEffects;
+import slimeknights.mantle.data.predicate.damage.DamageSourcePredicate;
 import slimeknights.tconstruct.library.data.tinkering.AbstractModifierProvider;
 import slimeknights.tconstruct.library.json.RandomLevelingValue;
 import slimeknights.tconstruct.library.modifiers.impl.BasicModifier;
 import slimeknights.tconstruct.library.modifiers.modules.armor.EffectImmunityModule;
+import slimeknights.tconstruct.library.modifiers.modules.armor.ProtectionModule;
 import slimeknights.tconstruct.library.modifiers.modules.behavior.ConditionalStatModule;
 import slimeknights.tconstruct.library.modifiers.modules.build.ModifierTraitModule;
 import slimeknights.tconstruct.library.modifiers.modules.build.StatBoostModule;
@@ -24,7 +27,7 @@ import slimeknights.tconstruct.tools.TinkerModifiers;
 public class ThermalModifierProvider extends AbstractModifierProvider {
 
     public static ModifierTraitModule THORNS = new ModifierTraitModule(TinkerModifiers.thorns.getId(), 1, true);
-    public static ModifierTraitModule SHULKING = new ModifierTraitModule(ThermalModifiers.SHULKING.getId(), 1, true);
+    public static ModifierTraitModule SHULKING = new ModifierTraitModule(ThermalConstructModifiers.SHULKING.getId(), 1, true);
 
     public ThermalModifierProvider(PackOutput packOutput) {
         super(packOutput);
@@ -32,6 +35,15 @@ public class ThermalModifierProvider extends AbstractModifierProvider {
 
     @Override
     protected void addModifiers() {
+
+        // basalz bone
+        //buildModifier(ThermalModifierIds.HARDROCK)
+        //        .addModule(ConditionalMiningSpeedModule.builder().blocks(BlockPredicate.tag(Tags.Blocks.OBSIDIAN)).eachLevel(1.1f));
+
+        // blizz armor
+        buildModifier(ThermalModifierIds.FREEZING_PROTECTION)
+                .addModule(ProtectionModule.builder().source(DamageSourcePredicate.tag(DamageTypeTags.IS_FREEZING)).eachLevel(2f));
+
 
         buildModifier(ThermalModifierIds.INTEGRAL)
                 .tooltipDisplay(BasicModifier.TooltipDisplay.TINKER_STATION)

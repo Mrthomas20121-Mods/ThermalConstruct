@@ -1,0 +1,14 @@
+{
+  "level_display": "tconstruct:default",
+  "modules": [
+    {
+      "type": "tconstruct:protection",
+      "damage_source": {
+        "type": "mantle:tag",
+        "tag": "minecraft:is_freezing"
+      },
+      "each_level": 2.0
+    }
+  ],
+  "tooltip_display": "always"
+}

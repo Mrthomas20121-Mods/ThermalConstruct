@@ -3,9 +3,12 @@ package mrthomas20121.thermalconstruct.datagen;
 import mrthomas20121.thermalconstruct.ThermalConstruct;
 import mrthomas20121.thermalconstruct.ThermalMaterialIds;
 import mrthomas20121.thermalconstruct.ThermalModifierIds;
-import mrthomas20121.thermalconstruct.init.ThermalModifiers;
+import mrthomas20121.thermalconstruct.init.ThermalConstructFluids;
+import mrthomas20121.thermalconstruct.init.ThermalConstructModifiers;
 import net.minecraft.data.PackOutput;
 import net.minecraftforge.common.data.LanguageProvider;
+import net.minecraftforge.fluids.ForgeFlowingFluid;
+import slimeknights.mantle.registration.object.FluidObject;
 import slimeknights.tconstruct.library.materials.definition.MaterialId;
 import slimeknights.tconstruct.library.modifiers.ModifierId;
 
@@ -17,6 +20,10 @@ public class ThermalLangProvider extends LanguageProvider {
 
     @Override
     protected void addTranslations() {
+
+        fluid(ThermalConstructFluids.basalz_blood, "Basalz Blood");
+        fluid(ThermalConstructFluids.blitz_blood, "Blitz Blood");
+        fluid(ThermalConstructFluids.blizz_blood, "Blizz Blood");
 
         addMaterial(ThermalMaterialIds.ENDERIUM, "Enderium");
         addMaterialFlavor(ThermalMaterialIds.ENDERIUM, "Resonate at any frequency.");
@@ -53,13 +60,13 @@ public class ThermalLangProvider extends LanguageProvider {
                 badlands => higher attack damage and attack speed.
                 """);
 
-        addModifier(ThermalModifiers.KINETIC_VELOCITY.getId(), "Kinetic Velocity");
-        addModifierFlavor(ThermalModifiers.KINETIC_VELOCITY.getId(), "GOTTA GO FAST");
-        addModifierDesc(ThermalModifiers.KINETIC_VELOCITY.getId(), "Get a movement speed boost when you take damage.");
+        addModifier(ThermalConstructModifiers.KINETIC_VELOCITY.getId(), "Kinetic Velocity");
+        addModifierFlavor(ThermalConstructModifiers.KINETIC_VELOCITY.getId(), "GOTTA GO FAST");
+        addModifierDesc(ThermalConstructModifiers.KINETIC_VELOCITY.getId(), "Get a movement speed boost when you take damage.");
 
-        addModifier(ThermalModifiers.SHULKING.getId(), "Shulking");
-        addModifierFlavor(ThermalModifiers.SHULKING.getId(), "I feel like an enderman now");
-        addModifierDesc(ThermalModifiers.SHULKING.getId(), "Teleport when you take damage.");
+        addModifier(ThermalConstructModifiers.SHULKING.getId(), "Shulking");
+        addModifierFlavor(ThermalConstructModifiers.SHULKING.getId(), "I feel like an enderman now");
+        addModifierDesc(ThermalConstructModifiers.SHULKING.getId(), "Teleport when you take damage.");
 
         addModifier(ThermalModifierIds.CHILLED, "Chilled");
         addModifierFlavor(ThermalModifierIds.CHILLED, "Netflix and Chill");
@@ -80,6 +87,11 @@ public class ThermalLangProvider extends LanguageProvider {
         addModifier(ThermalModifierIds.REDSTONE_FLUXED, "Redstone Fluxed");
         addModifierFlavor(ThermalModifierIds.REDSTONE_FLUXED, "Powered by RF");
         addModifierDesc(ThermalModifierIds.REDSTONE_FLUXED, "Add an energy bar to your tool.");
+    }
+
+    public void fluid(FluidObject<ForgeFlowingFluid> fluid, String name) {
+        add("fluid."+ThermalConstruct.MOD_ID+"." + fluid.getId().getPath(), name);
+        add(fluid.asItem(), name + " Bucket");
     }
 
     public void addModifier(ModifierId material, String s) {

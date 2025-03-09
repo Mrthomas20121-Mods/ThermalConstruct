@@ -17,6 +17,7 @@
       "tconstruct:plating_shield",
       "tconstruct:maille",
       "tconstruct:armor_maille",
+      "tconstruct:shield_core",
       "tconstruct:limb",
       "tconstruct:grip"
     ],
@@ -34,7 +35,7 @@
             "grey": 63
           },
           {
-            "color": "FF1C1E24",
+            "color": "FF10121A",
             "grey": 102
           },
           {
@@ -42,7 +43,7 @@
             "grey": 140
           },
           {
-            "color": "FF1D7E8C",
+            "color": "FF352E31",
             "grey": 178
           },
           {

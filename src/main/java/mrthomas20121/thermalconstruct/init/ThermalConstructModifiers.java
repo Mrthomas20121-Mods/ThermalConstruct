@@ -5,9 +5,8 @@ import mrthomas20121.thermalconstruct.modifiers.KineticVelocityModifier;
 import mrthomas20121.thermalconstruct.modifiers.ShulkingModifier;
 import slimeknights.tconstruct.library.modifiers.util.ModifierDeferredRegister;
 import slimeknights.tconstruct.library.modifiers.util.StaticModifier;
-import slimeknights.tconstruct.tools.modifiers.EnergyHandlerModifier;
 
-public class ThermalModifiers {
+public class ThermalConstructModifiers {
 
     public static ModifierDeferredRegister MODIFIERS = ModifierDeferredRegister.create(ThermalConstruct.MOD_ID);
 

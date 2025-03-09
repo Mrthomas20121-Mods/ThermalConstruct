@@ -1,0 +1,12 @@
+{
+  "type": "tconstruct:melting",
+  "ingredient": {
+    "item": "thermal:blitz_rod"
+  },
+  "result": {
+    "amount": 100,
+    "fluid": "thermalconstruct:blitz_blood"
+  },
+  "temperature": 900,
+  "time": 633
+}

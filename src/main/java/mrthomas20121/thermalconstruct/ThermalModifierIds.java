@@ -14,6 +14,7 @@ public class ThermalModifierIds {
     public static ModifierId CHILLED = create("chilled");
     public static ModifierId SHOCKED = create("shocked");
     public static ModifierId SUNDERED = create("sundered");
+    public static ModifierId FREEZING_PROTECTION = create("freezing_protection");
 
     // modifiers
     public static ModifierId REDSTONE_FLUXED = create("redstone_fluxed");

@@ -6,8 +6,6 @@ import net.minecraft.data.PackOutput;
 import slimeknights.tconstruct.library.data.material.AbstractMaterialDataProvider;
 import slimeknights.tconstruct.library.data.material.AbstractMaterialTraitDataProvider;
 import slimeknights.tconstruct.library.materials.MaterialRegistry;
-import slimeknights.tconstruct.library.materials.stats.MaterialStatsId;
-import slimeknights.tconstruct.tools.data.ModifierIds;
 
 public class ThermalMaterialTraitProvider extends AbstractMaterialTraitDataProvider {
 
@@ -22,7 +20,7 @@ public class ThermalMaterialTraitProvider extends AbstractMaterialTraitDataProvi
         addDefaultTraits(ThermalMaterialIds.SIGNALUM, ThermalModifierIds.WANDERER);
         addTraits(ThermalMaterialIds.ENDERIUM, MaterialRegistry.ARMOR, ThermalModifierIds.SPECTRAL);
         addTraits(ThermalMaterialIds.LUMIUM, MaterialRegistry.ARMOR, ThermalModifierIds.PRICKLY_GLOW);
-        addTraits(ThermalMaterialIds.SIGNALUM, MaterialRegistry.ARMOR, ThermalModifierIds.WANDERER);
+        addTraits(ThermalMaterialIds.BLIZZ, MaterialRegistry.ARMOR, ThermalModifierIds.FREEZING_PROTECTION);
 
         addDefaultTraits(ThermalMaterialIds.BASALZ, ThermalModifierIds.SUNDERED);
         addDefaultTraits(ThermalMaterialIds.BLITZ, ThermalModifierIds.SHOCKED);

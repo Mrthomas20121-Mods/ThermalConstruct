@@ -62,14 +62,21 @@ public class ThermalMaterialStatsProvider extends AbstractMaterialStatsDataProvi
         addMaterialStats(ThermalMaterialIds.BLITZ, StatlessMaterialStats.SHIELD_CORE);
         addMaterialStats(ThermalMaterialIds.BLIZZ, StatlessMaterialStats.SHIELD_CORE);
 
-        addArmorShieldStats(ThermalMaterialIds.SIGNALUM,
+        addArmorShieldStats(ThermalMaterialIds.BLIZZ,
                 PlatingMaterialStats
                         .builder()
-                        .durabilityFactor(30)
-                        .armor(2, 5, 7, 2)
-                        .toughness(2).
-                        knockbackResistance(0.07f),
+                        .durabilityFactor(10)
+                        .armor(1, 3, 4, 1),
                 StatlessMaterialStats.MAILLE);
+
+//        addArmorShieldStats(ThermalMaterialIds.SIGNALUM,
+//                PlatingMaterialStats
+//                        .builder()
+//                        .durabilityFactor(30)
+//                        .armor(2, 5, 7, 2)
+//                        .toughness(2).
+//                        knockbackResistance(0.07f),
+//                StatlessMaterialStats.MAILLE);
 
         addArmorShieldStats(ThermalMaterialIds.LUMIUM,
                 PlatingMaterialStats

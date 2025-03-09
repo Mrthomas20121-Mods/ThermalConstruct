@@ -1,0 +1,11 @@
+{
+  "type": "tconstruct:entity_melting",
+  "damage": 2,
+  "entity": {
+    "type": "thermal:blitz"
+  },
+  "result": {
+    "amount": 20,
+    "fluid": "thermalconstruct:blitz_blood"
+  }
+}

@@ -1,10 +1,21 @@
 {
-  "material.thermalconstruct": {},
+  "material.thermalconstruct": {
+    "basalz": "#32353A",
+    "blitz": "#DEF7FA",
+    "blizz": "#37B7FE",
+    "enderium": "#4BCFCD",
+    "lumium": "#FF9543"
+  },
   "modifier.thermalconstruct": {
     "endsplosion": "#4BCFCD",
     "fluorescence": "#FFF1AA",
+    "freezing_protection": "#37B7FE",
     "integral": "#F31700",
     "prickly_glow": "#FFF1AA",
-    "redstone_fluxed": "#95CFE6"
+    "redstone_fluxed": "#95CFE6",
+    "shocked": "#37B7FE",
+    "spectral": "#4BCFCD",
+    "sundered": "#32353A",
+    "wanderer": "#FF9543"
   }
 }

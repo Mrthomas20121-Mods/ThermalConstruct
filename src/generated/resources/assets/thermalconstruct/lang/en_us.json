@@ -1,4 +1,10 @@
 {
+  "fluid.thermalconstruct.basalz_blood": "Basalz Blood",
+  "fluid.thermalconstruct.blitz_blood": "Blitz Blood",
+  "fluid.thermalconstruct.blizz_blood": "Blizz Blood",
+  "item.thermalconstruct.basalz_blood_bucket": "Basalz Blood Bucket",
+  "item.thermalconstruct.blitz_blood_bucket": "Blitz Blood Bucket",
+  "item.thermalconstruct.blizz_blood_bucket": "Blizz Blood Bucket",
   "material.thermalconstruct.basalz": "Basalz",
   "material.thermalconstruct.blitz": "Blitz",
   "material.thermalconstruct.blizz": "Blizz",

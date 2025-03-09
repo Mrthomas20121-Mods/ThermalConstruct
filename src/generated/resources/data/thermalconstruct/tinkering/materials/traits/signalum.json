@@ -4,13 +4,5 @@
       "level": 1,
       "name": "thermalconstruct:wanderer"
     }
-  ],
-  "perStat": {
-    "tconstruct:armor": [
-      {
-        "level": 1,
-        "name": "thermalconstruct:wanderer"
-      }
-    ]
-  }
+  ]
 }
