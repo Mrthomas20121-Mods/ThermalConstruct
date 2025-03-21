@@ -120,7 +120,7 @@ dependencies {
     implementation fg.deobf("com.teamcofh:thermal_integration:${minecraft_version}-${thermal_integration_version}")
 
     // thermal extra
-    implementation fg.deobf("curse.maven:thermal_extra-573674:6120939")
+    implementation fg.deobf("curse.maven:thermal_extra-573674:6287356")
 
     implementation fg.deobf("slimeknights.tconstruct:TConstruct:${minecraft_version}-${tcon_version}")
     implementation fg.deobf("slimeknights.mantle:Mantle:${minecraft_version}-${mantle_version}")
