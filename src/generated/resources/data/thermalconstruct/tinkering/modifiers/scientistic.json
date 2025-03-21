@@ -1,0 +1,20 @@
+{
+  "level_display": "tconstruct:default",
+  "modules": [
+    {
+      "type": "tconstruct:conditional_stat",
+      "each_level": 2.0,
+      "entity": "thermalconstruct:has_potion_effect",
+      "percent": false,
+      "stat": "tconstruct:mining_speed"
+    },
+    {
+      "type": "tconstruct:conditional_stat",
+      "each_level": 0.2,
+      "entity": "thermalconstruct:has_potion_effect",
+      "percent": false,
+      "stat": "tconstruct:draw_speed"
+    }
+  ],
+  "tooltip_display": "always"
+}

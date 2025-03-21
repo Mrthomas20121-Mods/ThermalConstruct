@@ -3,8 +3,8 @@ package mrthomas20121.thermalconstruct.datagen;
 import cofh.lib.init.data.RecipeProviderCoFH;
 import cofh.thermal.core.ThermalCore;
 import cofh.thermal.core.init.registries.TCoreEntities;
-import cofh.thermal.core.init.registries.TCoreItems;
 import cofh.thermal.innovation.init.registries.TInoIDs;
+import mrthomas20121.thermal_extra.init.ThermalExtraFluids;
 import mrthomas20121.thermal_extra.init.ThermalExtraItems;
 import mrthomas20121.thermalconstruct.ThermalConstruct;
 import mrthomas20121.thermalconstruct.ThermalMaterialIds;
@@ -13,19 +13,18 @@ import mrthomas20121.thermalconstruct.init.ThermalConstructFluids;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.world.level.material.Fluid;
 import net.minecraftforge.common.crafting.conditions.ModLoadedCondition;
 import net.minecraftforge.common.crafting.conditions.NotCondition;
 import net.minecraftforge.fluids.FluidType;
 import slimeknights.mantle.recipe.data.ICommonRecipeHelper;
+import slimeknights.mantle.recipe.data.ItemNameIngredient;
 import slimeknights.mantle.recipe.helper.FluidOutput;
 import slimeknights.mantle.recipe.ingredient.EntityIngredient;
 import slimeknights.tconstruct.common.TinkerTags;
 import slimeknights.tconstruct.fluids.TinkerFluids;
-import slimeknights.tconstruct.library.data.recipe.IMaterialRecipeHelper;
-import slimeknights.tconstruct.library.data.recipe.ISmelteryRecipeHelper;
-import slimeknights.tconstruct.library.data.recipe.IToolRecipeHelper;
+import slimeknights.tconstruct.library.data.recipe.*;
 import slimeknights.tconstruct.library.recipe.FluidValues;
 import slimeknights.tconstruct.library.recipe.entitymelting.EntityMeltingRecipeBuilder;
 import slimeknights.tconstruct.library.recipe.melting.MeltingRecipeBuilder;
@@ -48,6 +47,7 @@ public class ThermalRecipeProvider extends RecipeProviderCoFH implements IMateri
         String materialFolder = "materials/";
 
         String castFolder = "casting/";
+        String smelteryFolder = "smeltery/";
 
         // modifier folders
         String upgradeFolder = "tools/modifiers/upgrade/";
@@ -60,6 +60,12 @@ public class ThermalRecipeProvider extends RecipeProviderCoFH implements IMateri
         String compatFolder = "tools/modifiers/compat/";
         String compatSalvage = "tools/modifiers/salvage/compat/";
         String worktableFolder = "tools/modifiers/worktable/";
+
+        extraCompat(smelteryFolder, consumer);
+
+        thermalCast(consumer, smelteryFolder, new ResourceLocation("thermal:chiller_rod_cast"), FluidValues.INGOT*4);
+        thermalCast(consumer, smelteryFolder, new ResourceLocation("thermal:chiller_ball_cast"), FluidValues.INGOT*4);
+        thermalCast(consumer, smelteryFolder, new ResourceLocation("thermal:chiller_ingot_cast"), FluidValues.INGOT*4);
 
         metalMaterialRecipe(consumer, ThermalMaterialIds.ENDERIUM, materialFolder, "enderium", false);
         metalMaterialRecipe(consumer, ThermalMaterialIds.LUMIUM, materialFolder, "lumium", false);
@@ -87,32 +93,67 @@ public class ThermalRecipeProvider extends RecipeProviderCoFH implements IMateri
                 .melting(EntityIngredient.of(TCoreEntities.BLIZZ.get()), ThermalConstructFluids.blizz_blood.result(FluidType.BUCKET_VOLUME / 50), 2)
                 .save(consumer, location("smeltery/entity_melting/blizz"));
 
-        materialMeltingCasting(consumer, ThermalMaterialIds.ENDERIUM, TinkerFluids.moltenEnderium, "smeltery/");
-        materialMeltingCasting(consumer, ThermalMaterialIds.LUMIUM, TinkerFluids.moltenLumium, "smeltery/");
-        materialMeltingCasting(consumer, ThermalMaterialIds.SIGNALUM, TinkerFluids.moltenSignalum, "smeltery/");
-        materialMeltingCasting(consumer, ThermalMaterialIds.BASALZ, ThermalConstructFluids.basalz_blood, "smeltery/");
-        materialMeltingCasting(consumer, ThermalMaterialIds.BLITZ, ThermalConstructFluids.blitz_blood, "smeltery/");
-        materialMeltingCasting(consumer, ThermalMaterialIds.BLIZZ, ThermalConstructFluids.blizz_blood, "smeltery/");
+        materialMeltingCasting(consumer, ThermalMaterialIds.ENDERIUM, TinkerFluids.moltenEnderium, smelteryFolder);
+        materialMeltingCasting(consumer, ThermalMaterialIds.LUMIUM, TinkerFluids.moltenLumium, smelteryFolder);
+        materialMeltingCasting(consumer, ThermalMaterialIds.SIGNALUM, TinkerFluids.moltenSignalum, smelteryFolder);
+        materialMeltingCasting(consumer, ThermalMaterialIds.BASALZ, ThermalConstructFluids.basalz_blood, smelteryFolder);
+        materialMeltingCasting(consumer, ThermalMaterialIds.BLITZ, ThermalConstructFluids.blitz_blood, smelteryFolder);
+        materialMeltingCasting(consumer, ThermalMaterialIds.BLIZZ, ThermalConstructFluids.blizz_blood, smelteryFolder);
 
-//        ModifierRecipeBuilder.modifier(ThermalModifierIds.REDSTONE_FLUXED)
-//                .setTools(TinkerTags.Items.DURABILITY)
-//                .addInput(ThermalCore.ITEMS.get(TInoIDs.ID_FLUX_CAPACITOR))
-//                .setMaxLevel(1)
-//                .setSlots(SlotType.ABILITY, 1)
-//                .saveSalvage(consumer, prefix(ThermalModifierIds.REDSTONE_FLUXED, upgradeSalvage))
-//                .save(consumer, prefix(ThermalModifierIds.REDSTONE_FLUXED, upgradeFolder));
+        ModifierRecipeBuilder.modifier(ThermalModifierIds.FLUXED)
+                .setTools(TinkerTags.Items.DURABILITY)
+                .addInput(ThermalCore.ITEMS.get(TInoIDs.ID_FLUX_CAPACITOR))
+                .setMaxLevel(1)
+                .setSlots(SlotType.UPGRADE, 1)
+                .saveSalvage(consumer, prefix(ThermalModifierIds.FLUXED, upgradeSalvage))
+                .save(consumer, prefix(ThermalModifierIds.FLUXED, upgradeFolder));
 
         ModifierRecipeBuilder.modifier(ThermalModifierIds.INTEGRAL)
                 .setTools(TinkerTags.Items.BONUS_SLOTS)
                 .addInput(ThermalCore.ITEMS.get("upgrade_augment_3"))
                 .setMaxLevel(1)
-                .save(new ConditionalRecipeConsumer(consumer).addCondition(new NotCondition(new ModLoadedCondition("thermal_extra"))), prefix(ThermalModifierIds.INTEGRAL, upgradeFolder));
+                .save(withCondition(consumer, new NotCondition(new ModLoadedCondition("thermal_extra"))), prefix(ThermalModifierIds.INTEGRAL, upgradeFolder));
 
         ModifierRecipeBuilder.modifier(ThermalModifierIds.INTEGRAL)
                 .setTools(TinkerTags.Items.BONUS_SLOTS)
                 .addInput(ThermalExtraItems.ABYSSAL_INTEGRAL_COMPONENT.get())
                 .setMaxLevel(1)
-                .save(new ConditionalRecipeConsumer(consumer).addCondition(new ModLoadedCondition("thermal_extra")), prefix(merge(ThermalModifierIds.INTEGRAL, "_extra"), upgradeFolder));
+                .save(withCondition(consumer, new ModLoadedCondition("thermal_extra")), prefix(merge(ThermalModifierIds.INTEGRAL, "_extra"), upgradeFolder));
+    }
+    
+    public void extraCompat(String smelteryFolder, Consumer<FinishedRecipe> consumer) {
+        baseMetalMelting(consumer, smelteryFolder, "soul_infused");
+        baseMetalMelting(consumer, smelteryFolder, "twinite");
+        baseMetalMelting(consumer, smelteryFolder, "shellite");
+        baseMetalMelting(consumer, smelteryFolder, "dragonsteel");
+        baseMetalMelting(consumer, smelteryFolder, "abyssal");
+
+        thermalCast(withCondition(consumer, new ModLoadedCondition("thermal_extra")), smelteryFolder, new ResourceLocation("thermal_extra:chiller_plate_cast"), FluidValues.INGOT*5);
+    }
+
+    protected void thermalCast(Consumer<FinishedRecipe> consumer, String folder, ResourceLocation castName, int output) {
+        MeltingRecipeBuilder.melting(ItemNameIngredient.from(castName),
+                FluidOutput.fromFluid(TinkerFluids.moltenBronze.get(), output),
+                TinkerFluids.moltenBronze.getType().getTemperature(), 15)
+                .save(consumer, new ResourceLocation(ThermalConstruct.MOD_ID, folder+castName.getPath()));
+    }
+
+    protected SmelteryRecipeBuilder smelteryBuilder(Consumer<FinishedRecipe> consumer, String folder, Fluid fluid, String materialName) {
+        return SmelteryRecipeBuilder.fluid(consumer, location(materialName), fluid).meltingFolder(folder);
+    }
+
+    protected void baseMetalMelting(Consumer<FinishedRecipe> consumer, String folder, String materialName) {
+        Fluid fluid = ThermalExtraFluids.FLUIDS.get(materialName);
+
+        baseMetalMelting(consumer, fluid, materialName, false, folder, true);
+    }
+
+    private void baseMetalMelting(Consumer<FinishedRecipe> consumer, Fluid fluid, String name, boolean hasOre, String folder, boolean isOptional, IByproduct... byproducts) {
+        SmelteryRecipeBuilder builder = SmelteryRecipeBuilder.fluid(consumer, location(name), fluid).meltingFolder(folder).optional(isOptional);
+        if (hasOre) {
+            builder.ore(byproducts);
+        }
+        builder.metal().dust().plate();
     }
 
     public ResourceLocation merge(ResourceLocation loc, String toAdd) {

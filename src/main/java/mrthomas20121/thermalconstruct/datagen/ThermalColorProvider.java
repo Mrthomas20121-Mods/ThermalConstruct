@@ -22,10 +22,10 @@ public class ThermalColorProvider extends MantleColorGenerator {
 
         addMaterialAndModifiers(ThermalMaterialIds.ENDERIUM, "#4BCFCD", ThermalModifierIds.ENDSPLOSION, ThermalModifierIds.SPECTRAL);
         addMaterialAndModifiers(ThermalMaterialIds.LUMIUM, "#FFF1AA", ThermalModifierIds.FLUORESCENCE, ThermalModifierIds.PRICKLY_GLOW);
-        addMaterialAndModifiers(ThermalMaterialIds.LUMIUM, "#FF9543", ThermalModifierIds.PATHFINDER);
+        addMaterialAndModifiers(ThermalMaterialIds.LUMIUM, "#FF9543", ThermalModifierIds.SCIENTISTIC);
 
         addModifier(ThermalModifierIds.INTEGRAL, "#F31700");
-        addModifier(ThermalModifierIds.REDSTONE_FLUXED, "#95CFE6");
+        addModifier(ThermalModifierIds.FLUXED, "#95CFE6");
     }
 
     private void addMaterialAndModifiers(MaterialId mat, String color, ModifierId... modifiers) {

@@ -32,6 +32,7 @@ public class ThermalConstruct {
 		IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
 
 		ThermalConstructItems.ITEMS.register(bus);
+		ThermalConstructItems.CREATIVE_TABS.register(bus);
 		ThermalConstructFluids.FLUIDS.register(bus);
 		ThermalConstructModifiers.MODIFIERS.register(bus);
 
@@ -41,7 +42,7 @@ public class ThermalConstruct {
 
 	private void register(RegisterEvent event) {
 		if(event.getRegistryKey() == Registries.RECIPE_SERIALIZER) {
-			LivingEntityPredicate.LOADER.register(new ResourceLocation("thermalconstruct:is_coniferous"), ThermalLivingEntityPredicate.IS_CONIFEROUS.getLoader());
+			LivingEntityPredicate.LOADER.register(new ResourceLocation("thermalconstruct:has_potion_effect"), ThermalLivingEntityPredicate.HAS_POTION_EFFECT.getLoader());
 			LivingEntityPredicate.LOADER.register(new ResourceLocation("thermalconstruct:is_in_end"), ThermalLivingEntityPredicate.IS_IN_END.getLoader());
 			LivingEntityPredicate.LOADER.register(new ResourceLocation("thermalconstruct:is_in_nether"), ThermalLivingEntityPredicate.IS_IN_NETHER.getLoader());
 		}

@@ -5,11 +5,13 @@
       "type": "tconstruct:trait",
       "fixed_level": true,
       "level": 1,
-      "name": "tconstruct:energy_handler"
+      "name": "thermalconstruct:rf_modifier"
     },
     {
-      "type": "tconstruct:durability_color",
-      "color": "F31700"
+      "type": "tconstruct:trait",
+      "fixed_level": true,
+      "level": 1,
+      "name": "tconstruct:energy_handler"
     }
   ],
   "tooltip_display": "always"

@@ -4,6 +4,7 @@ import mrthomas20121.thermalconstruct.ThermalConstruct;
 import mrthomas20121.thermalconstruct.ThermalMaterialIds;
 import mrthomas20121.thermalconstruct.ThermalModifierIds;
 import mrthomas20121.thermalconstruct.init.ThermalConstructFluids;
+import mrthomas20121.thermalconstruct.init.ThermalConstructItems;
 import mrthomas20121.thermalconstruct.init.ThermalConstructModifiers;
 import net.minecraft.data.PackOutput;
 import net.minecraftforge.common.data.LanguageProvider;
@@ -21,12 +22,19 @@ public class ThermalLangProvider extends LanguageProvider {
     @Override
     protected void addTranslations() {
 
+        for(ThermalConstructItems.ThermalCast cast: ThermalConstructItems.ThermalCast.VALUES) {
+            add(ThermalConstructItems.CASTS.get(cast), cast.getTranslatedName());
+        }
+
         fluid(ThermalConstructFluids.basalz_blood, "Basalz Blood");
         fluid(ThermalConstructFluids.blitz_blood, "Blitz Blood");
         fluid(ThermalConstructFluids.blizz_blood, "Blizz Blood");
 
+        add("itemGroup.thermal_construct", "Thermal Construct tab");
+
         addMaterial(ThermalMaterialIds.ENDERIUM, "Enderium");
         addMaterialFlavor(ThermalMaterialIds.ENDERIUM, "Resonate at any frequency.");
+
         addMaterial(ThermalMaterialIds.LUMIUM, "Lumium");
         addMaterialFlavor(ThermalMaterialIds.LUMIUM, "A Brick of solid sunshine.");
         addMaterial(ThermalMaterialIds.SIGNALUM, "Signalum");
@@ -51,9 +59,9 @@ public class ThermalLangProvider extends LanguageProvider {
         addModifierFlavor(ThermalModifierIds.PRICKLY_GLOW, "Holy Light!");
         addModifierDesc(ThermalModifierIds.PRICKLY_GLOW, "Attacker is glowing and take damage when hit.");
 
-        addModifier(ThermalModifierIds.PATHFINDER, "Pathfinder");
-        addModifierFlavor(ThermalModifierIds.PATHFINDER, "Shaped like a cone");
-        addModifierDesc(ThermalModifierIds.PATHFINDER, "Boost Stats in Coniferous biomes.");
+        addModifier(ThermalModifierIds.SCIENTISTIC, "Scientistic");
+        addModifierFlavor(ThermalModifierIds.SCIENTISTIC, "You know, i'm something of a scientist myself");
+        addModifierDesc(ThermalModifierIds.SCIENTISTIC, "Boost Mining/Draw Speed if you have a potion effect.");
 
         addModifier(ThermalModifierIds.FREEZING_PROTECTION, "Freezing Protection");
         addModifierFlavor(ThermalModifierIds.FREEZING_PROTECTION, "It's cold down there");
@@ -79,9 +87,13 @@ public class ThermalLangProvider extends LanguageProvider {
         addModifierFlavor(ThermalModifierIds.INTEGRAL, "Dad's favorite math stuff");
         addModifierDesc(ThermalModifierIds.INTEGRAL, "Boost your tool/armor/bow stats.");
 
-        addModifier(ThermalModifierIds.REDSTONE_FLUXED, "Redstone Fluxed");
-        addModifierFlavor(ThermalModifierIds.REDSTONE_FLUXED, "Powered by RF");
-        addModifierDesc(ThermalModifierIds.REDSTONE_FLUXED, "Add an energy bar to your tool.");
+        addModifier(ThermalModifierIds.FLUXED, "Fluxed");
+        addModifierFlavor(ThermalModifierIds.FLUXED, "Powered by RF");
+        addModifierDesc(ThermalModifierIds.FLUXED, "Add an energy bar to your tool.");
+
+        addModifier(ThermalConstructModifiers.REDSTONE_FLUX_MODIFIER.getId(), "Redstone Flux");
+        addModifierFlavor(ThermalConstructModifiers.REDSTONE_FLUX_MODIFIER.getId(), "Powered by RF");
+        addModifierDesc(ThermalConstructModifiers.REDSTONE_FLUX_MODIFIER.getId(), "Allow your tools to accept RF.");
     }
 
     public void fluid(FluidObject<ForgeFlowingFluid> fluid, String name) {

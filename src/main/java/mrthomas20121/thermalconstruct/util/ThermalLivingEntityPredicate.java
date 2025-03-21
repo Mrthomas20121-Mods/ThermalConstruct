@@ -7,7 +7,8 @@ import slimeknights.mantle.data.predicate.entity.LivingEntityPredicate;
 
 public interface ThermalLivingEntityPredicate {
 
-    LivingEntityPredicate IS_CONIFEROUS = LivingEntityPredicate.simple(entity -> entity.level().getBiome(entity.getOnPos()).is(Tags.Biomes.IS_CONIFEROUS));
+    // around 8 is when deepslate start to spawn
+    LivingEntityPredicate HAS_POTION_EFFECT = LivingEntityPredicate.simple(entity -> !entity.getActiveEffects().isEmpty());
 
     // check if the entity is in the end
     LivingEntityPredicate IS_IN_END = LivingEntityPredicate.simple(entity -> entity.level().dimensionTypeId().equals(BuiltinDimensionTypes.END));

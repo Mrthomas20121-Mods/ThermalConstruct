@@ -1,0 +1,18 @@
+{
+  "type": "tconstruct:melting",
+  "conditions": [
+    {
+      "type": "mantle:tag_filled",
+      "tag": "forge:ingots/abyssal"
+    }
+  ],
+  "ingredient": {
+    "tag": "forge:ingots/abyssal"
+  },
+  "result": {
+    "amount": 90,
+    "fluid": "thermal_extra:abyssal"
+  },
+  "temperature": 1200,
+  "time": 72
+}

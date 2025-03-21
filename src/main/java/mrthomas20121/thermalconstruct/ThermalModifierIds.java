@@ -5,7 +5,7 @@ import slimeknights.tconstruct.library.modifiers.ModifierId;
 public class ThermalModifierIds {
 
     // traits
-    public static ModifierId PATHFINDER = create("pathfinder");
+    public static ModifierId SCIENTISTIC = create("scientistic");
     public static ModifierId FLUORESCENCE = create("fluorescence");
     public static ModifierId PRICKLY_GLOW = create("prickly_glow");
     public static ModifierId ENDSPLOSION = create("endsplosion");
@@ -16,7 +16,7 @@ public class ThermalModifierIds {
     public static ModifierId FREEZING_PROTECTION = create("freezing_protection");
 
     // modifiers
-    public static ModifierId REDSTONE_FLUXED = create("redstone_fluxed");
+    public static ModifierId FLUXED = create("fluxed");
 
     public static ModifierId INTEGRAL = create("integral");
 

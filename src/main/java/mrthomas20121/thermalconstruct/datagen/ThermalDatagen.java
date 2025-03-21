@@ -34,6 +34,7 @@ public class ThermalDatagen {
         generator.addProvider(server, new ThermalModifierProvider(packOutput));
 
         boolean client = event.includeClient();
+        generator.addProvider(client, new ThermalItemModelProvider(packOutput, existingFileHelper));
         generator.addProvider(client, new ThermalColorProvider(packOutput));
         generator.addProvider(client, new MaterialPartTextureGenerator(packOutput, existingFileHelper, partSpriteProvider, materialSpriteProvider));
         generator.addProvider(client, new ThermalMaterialRenderInfoProvider(packOutput, materialSpriteProvider, existingFileHelper));

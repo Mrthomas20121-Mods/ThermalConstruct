@@ -18,7 +18,6 @@ import slimeknights.tconstruct.library.modifiers.modules.build.ModifierTraitModu
 import slimeknights.tconstruct.library.modifiers.modules.build.StatBoostModule;
 import slimeknights.tconstruct.library.modifiers.modules.combat.ConditionalMeleeDamageModule;
 import slimeknights.tconstruct.library.modifiers.modules.combat.MobEffectModule;
-import slimeknights.tconstruct.library.modifiers.modules.display.DurabilityBarColorModule;
 import slimeknights.tconstruct.library.modifiers.util.ModifierLevelDisplay;
 import slimeknights.tconstruct.library.tools.capability.ToolEnergyCapability;
 import slimeknights.tconstruct.library.tools.stat.ToolStats;
@@ -28,6 +27,7 @@ public class ThermalModifierProvider extends AbstractModifierProvider {
 
     public static ModifierTraitModule THORNS = new ModifierTraitModule(TinkerModifiers.thorns.getId(), 1, true);
     public static ModifierTraitModule SHULKING = new ModifierTraitModule(ThermalConstructModifiers.SHULKING.getId(), 1, true);
+    public static ModifierTraitModule REDSTONE_FLUX = new ModifierTraitModule(ThermalConstructModifiers.REDSTONE_FLUX_MODIFIER.getId(), 1, true);
 
     public ThermalModifierProvider(PackOutput packOutput) {
         super(packOutput);
@@ -54,11 +54,11 @@ public class ThermalModifierProvider extends AbstractModifierProvider {
                 .addModule(StatBoostModule.multiplyBase(ToolStats.ARMOR).eachLevel(1.2f))
                 .addModule(StatBoostModule.multiplyBase(ToolStats.DURABILITY).eachLevel(1.2f));
 
-        buildModifier(ThermalModifierIds.REDSTONE_FLUXED)
+        buildModifier(ThermalModifierIds.FLUXED)
                 .tooltipDisplay(BasicModifier.TooltipDisplay.ALWAYS)
                 .levelDisplay(ModifierLevelDisplay.SINGLE_LEVEL)
-                .addModule(ToolEnergyCapability.ENERGY_HANDLER)
-                .addModule(new DurabilityBarColorModule(0xF31700));
+                .addModule(REDSTONE_FLUX)
+                .addModule(ToolEnergyCapability.ENERGY_HANDLER);
 
         buildModifier(ThermalModifierIds.ENDSPLOSION)
                 .addModule(ConditionalMeleeDamageModule
@@ -70,13 +70,9 @@ public class ThermalModifierProvider extends AbstractModifierProvider {
                         .eachLevel(1.3f)
                 );
 
-        buildModifier(ThermalModifierIds.PATHFINDER)
-                .addModule(ConditionalStatModule.stat(ToolStats.ACCURACY).holder(ThermalLivingEntityPredicate.IS_CONIFEROUS).eachLevel(0.2f))
-                .addModule(ConditionalStatModule.stat(ToolStats.DRAW_SPEED).holder(ThermalLivingEntityPredicate.IS_CONIFEROUS).eachLevel(0.2f))
-                .addModule(ConditionalStatModule.stat(ToolStats.MINING_SPEED).holder(ThermalLivingEntityPredicate.IS_CONIFEROUS).eachLevel(1f))
-                .addModule(ConditionalStatModule.stat(ToolStats.DURABILITY).holder(ThermalLivingEntityPredicate.IS_CONIFEROUS).percent().eachLevel(1.2f))
-                .addModule(ConditionalStatModule.stat(ToolStats.ATTACK_DAMAGE).holder(ThermalLivingEntityPredicate.IS_CONIFEROUS).eachLevel(1f))
-                .addModule(ConditionalStatModule.stat(ToolStats.ATTACK_SPEED).holder(ThermalLivingEntityPredicate.IS_CONIFEROUS).eachLevel(0.5f));
+        buildModifier(ThermalModifierIds.SCIENTISTIC)
+                .addModule(ConditionalStatModule.stat(ToolStats.MINING_SPEED).holder(ThermalLivingEntityPredicate.HAS_POTION_EFFECT).eachLevel(2f))
+                .addModule(ConditionalStatModule.stat(ToolStats.DRAW_SPEED).holder(ThermalLivingEntityPredicate.HAS_POTION_EFFECT).eachLevel(0.2f));
 
         buildModifier(ThermalModifierIds.FLUORESCENCE)
                 .addModule(MobEffectModule.builder(MobEffects.GLOWING).time(RandomLevelingValue.perLevel(100, 20)).build());
