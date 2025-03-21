@@ -10,13 +10,16 @@ import slimeknights.tconstruct.library.tools.nbt.IToolContext;
 import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 import slimeknights.tconstruct.library.tools.stat.ModifierStatsBuilder;
 
+import static slimeknights.tconstruct.library.tools.capability.ToolEnergyCapability.ENERGY_HANDLER;
 import static slimeknights.tconstruct.library.tools.capability.ToolEnergyCapability.MAX_STAT;
 
 public class RedstoneFluxModifier extends DurabilityShieldModifier implements ToolStatsModifierHook {
 
     @Override
     protected void registerHooks(ModuleHookMap.Builder hookBuilder) {
+        super.registerHooks(hookBuilder);
         hookBuilder.addHook(this, ModifierHooks.TOOL_STATS);
+        hookBuilder.addModule(ENERGY_HANDLER);
     }
 
     @Override

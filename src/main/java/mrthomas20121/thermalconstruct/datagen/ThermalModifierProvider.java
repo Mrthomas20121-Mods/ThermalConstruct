@@ -57,8 +57,7 @@ public class ThermalModifierProvider extends AbstractModifierProvider {
         buildModifier(ThermalModifierIds.FLUXED)
                 .tooltipDisplay(BasicModifier.TooltipDisplay.ALWAYS)
                 .levelDisplay(ModifierLevelDisplay.SINGLE_LEVEL)
-                .addModule(REDSTONE_FLUX)
-                .addModule(ToolEnergyCapability.ENERGY_HANDLER);
+                .addModule(REDSTONE_FLUX);
 
         buildModifier(ThermalModifierIds.ENDSPLOSION)
                 .addModule(ConditionalMeleeDamageModule

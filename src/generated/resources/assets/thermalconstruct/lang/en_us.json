@@ -59,7 +59,7 @@
   "modifier.thermalconstruct.prickly_glow": "Prickly Glow",
   "modifier.thermalconstruct.prickly_glow.description": "Attacker is glowing and take damage when hit.",
   "modifier.thermalconstruct.prickly_glow.flavor": "Holy Light!",
-  "modifier.thermalconstruct.rf_modifier": "Redstone Flux",
+  "modifier.thermalconstruct.rf_modifier": "RF",
   "modifier.thermalconstruct.rf_modifier.description": "Allow your tools to accept RF.",
   "modifier.thermalconstruct.rf_modifier.flavor": "Powered by RF",
   "modifier.thermalconstruct.scientistic": "Scientistic",

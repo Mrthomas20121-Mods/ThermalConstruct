@@ -6,12 +6,6 @@
       "fixed_level": true,
       "level": 1,
       "name": "thermalconstruct:rf_modifier"
-    },
-    {
-      "type": "tconstruct:trait",
-      "fixed_level": true,
-      "level": 1,
-      "name": "tconstruct:energy_handler"
     }
   ],
   "tooltip_display": "always"

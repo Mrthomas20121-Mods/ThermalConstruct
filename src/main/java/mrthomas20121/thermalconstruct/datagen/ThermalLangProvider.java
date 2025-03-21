@@ -91,7 +91,7 @@ public class ThermalLangProvider extends LanguageProvider {
         addModifierFlavor(ThermalModifierIds.FLUXED, "Powered by RF");
         addModifierDesc(ThermalModifierIds.FLUXED, "Add an energy bar to your tool.");
 
-        addModifier(ThermalConstructModifiers.REDSTONE_FLUX_MODIFIER.getId(), "Redstone Flux");
+        addModifier(ThermalConstructModifiers.REDSTONE_FLUX_MODIFIER.getId(), "RF");
         addModifierFlavor(ThermalConstructModifiers.REDSTONE_FLUX_MODIFIER.getId(), "Powered by RF");
         addModifierDesc(ThermalConstructModifiers.REDSTONE_FLUX_MODIFIER.getId(), "Allow your tools to accept RF.");
     }
