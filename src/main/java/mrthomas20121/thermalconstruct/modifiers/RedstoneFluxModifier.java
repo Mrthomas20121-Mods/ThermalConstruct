@@ -6,6 +6,7 @@ import slimeknights.tconstruct.library.modifiers.ModifierHooks;
 import slimeknights.tconstruct.library.modifiers.hook.build.ToolStatsModifierHook;
 import slimeknights.tconstruct.library.modifiers.impl.DurabilityShieldModifier;
 import slimeknights.tconstruct.library.module.ModuleHookMap;
+import slimeknights.tconstruct.library.tools.capability.ToolEnergyCapability;
 import slimeknights.tconstruct.library.tools.nbt.IToolContext;
 import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 import slimeknights.tconstruct.library.tools.stat.ModifierStatsBuilder;
@@ -36,6 +37,16 @@ public class RedstoneFluxModifier extends DurabilityShieldModifier implements To
     @Override
     public Boolean showDurabilityBar(IToolStackView tool, ModifierEntry modifier) {
         return getShield(tool) < getShieldCapacity(tool, modifier) ? true : null;
+    }
+
+    @Override
+    public int getShield(IToolStackView tool) {
+        return ToolEnergyCapability.getEnergy(tool);
+    }
+
+    @Override
+    public void setShield(IToolStackView tool, ModifierEntry modifier, int amount) {
+        ToolEnergyCapability.setEnergy(tool, amount);
     }
 
     @Override
