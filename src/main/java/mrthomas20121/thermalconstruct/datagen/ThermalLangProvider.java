@@ -1,8 +1,8 @@
 package mrthomas20121.thermalconstruct.datagen;
 
 import mrthomas20121.thermalconstruct.ThermalConstruct;
-import mrthomas20121.thermalconstruct.ThermalMaterialIds;
-import mrthomas20121.thermalconstruct.ThermalModifierIds;
+import mrthomas20121.thermalconstruct.ThermalConstructMaterialIds;
+import mrthomas20121.thermalconstruct.ThermalConstructModifierIds;
 import mrthomas20121.thermalconstruct.init.ThermalConstructFluids;
 import mrthomas20121.thermalconstruct.init.ThermalConstructItems;
 import mrthomas20121.thermalconstruct.init.ThermalConstructModifiers;
@@ -32,68 +32,92 @@ public class ThermalLangProvider extends LanguageProvider {
 
         add("itemGroup.thermal_construct", "Thermal Construct tab");
 
-        addMaterial(ThermalMaterialIds.ENDERIUM, "Enderium");
-        addMaterialFlavor(ThermalMaterialIds.ENDERIUM, "Resonate at any frequency.");
+        addMaterial(ThermalConstructMaterialIds.ENDERIUM, "Enderium");
+        addMaterialFlavor(ThermalConstructMaterialIds.ENDERIUM, "Resonate at any frequency.");
 
-        addMaterial(ThermalMaterialIds.LUMIUM, "Lumium");
-        addMaterialFlavor(ThermalMaterialIds.LUMIUM, "A Brick of solid sunshine.");
-        addMaterial(ThermalMaterialIds.SIGNALUM, "Signalum");
-        addMaterialFlavor(ThermalMaterialIds.SIGNALUM, "Conduct better than silver.");
-        addMaterial(ThermalMaterialIds.BASALZ, "Basalz");
-        addMaterial(ThermalMaterialIds.BLITZ, "Blitz");
-        addMaterial(ThermalMaterialIds.BLIZZ, "Blizz");
+        addMaterial(ThermalConstructMaterialIds.LUMIUM, "Lumium");
+        addMaterialFlavor(ThermalConstructMaterialIds.LUMIUM, "A Brick of solid sunshine.");
+        addMaterial(ThermalConstructMaterialIds.SIGNALUM, "Signalum");
+        addMaterialFlavor(ThermalConstructMaterialIds.SIGNALUM, "Conduct better than silver.");
+        addMaterial(ThermalConstructMaterialIds.BASALZ, "Basalz");
+        addMaterial(ThermalConstructMaterialIds.BLITZ, "Blitz");
+        addMaterial(ThermalConstructMaterialIds.BLIZZ, "Blizz");
 
-        addModifier(ThermalModifierIds.ENDSPLOSION, "End'splosion");
-        addModifierFlavor(ThermalModifierIds.ENDSPLOSION, "Explosion of Flavors");
-        addModifierDesc(ThermalModifierIds.ENDSPLOSION, "Deal more damage to mobs in the end.");
+        addModifier(ThermalConstructModifierIds.BUSHWHACK, "Bushwhack");
+        addModifierFlavor(ThermalConstructModifierIds.BUSHWHACK, "Revenge is a dish best served cold.");
+        addModifierDesc(ThermalConstructModifierIds.BUSHWHACK, "Deal more damage to mobs in the end.");
 
-        addModifier(ThermalModifierIds.SPECTRAL, "Spectral");
-        addModifierFlavor(ThermalModifierIds.SPECTRAL, "Chorus Fruit taste so good");
-        addModifierDesc(ThermalModifierIds.SPECTRAL, "Immune to levitation but you teleport when you take damage.");
+        addModifier(ThermalConstructModifierIds.SPECTRAL, "Spectral");
+        addModifierFlavor(ThermalConstructModifierIds.SPECTRAL, "Chorus Fruit taste so good");
+        addModifierDesc(ThermalConstructModifierIds.SPECTRAL, "Immune to levitation but you teleport when you take damage.");
 
-        addModifier(ThermalModifierIds.FLUORESCENCE, "Fluorescence");
-        addModifierFlavor(ThermalModifierIds.FLUORESCENCE, "Glow in the dark");
-        addModifierDesc(ThermalModifierIds.FLUORESCENCE, "Target is glowing when hit.");
+        addModifier(ThermalConstructModifierIds.FLUORESCENCE, "Fluorescence");
+        addModifierFlavor(ThermalConstructModifierIds.FLUORESCENCE, "Glow in the dark");
+        addModifierDesc(ThermalConstructModifierIds.FLUORESCENCE, "Target is glowing when hit.");
 
-        addModifier(ThermalModifierIds.PRICKLY_GLOW, "Prickly Glow");
-        addModifierFlavor(ThermalModifierIds.PRICKLY_GLOW, "Holy Light!");
-        addModifierDesc(ThermalModifierIds.PRICKLY_GLOW, "Attacker is glowing and take damage when hit.");
+        addModifier(ThermalConstructModifierIds.PRICKLY_GLOW, "Prickly Glow");
+        addModifierFlavor(ThermalConstructModifierIds.PRICKLY_GLOW, "Holy Light!");
+        addModifierDesc(ThermalConstructModifierIds.PRICKLY_GLOW, "Attacker is glowing and take damage when hit.");
 
-        addModifier(ThermalModifierIds.SCIENTISTIC, "Scientistic");
-        addModifierFlavor(ThermalModifierIds.SCIENTISTIC, "You know, i'm something of a scientist myself");
-        addModifierDesc(ThermalModifierIds.SCIENTISTIC, "Boost Mining/Draw Speed if you have a potion effect.");
+        addModifier(ThermalConstructModifierIds.ACCUSTOMED, "Accustomed");
+        addModifierFlavor(ThermalConstructModifierIds.ACCUSTOMED, "Taste the wind");
+        addModifierDesc(ThermalConstructModifierIds.ACCUSTOMED, "Boost Mining/Draw Speed if you have a potion effect.");
 
-        addModifier(ThermalModifierIds.FREEZING_PROTECTION, "Freezing Protection");
-        addModifierFlavor(ThermalModifierIds.FREEZING_PROTECTION, "It's cold down there");
-        addModifierDesc(ThermalModifierIds.FREEZING_PROTECTION, "Protect against freezing damage types.");
+        addModifier(ThermalConstructModifierIds.FREEZING_PROTECTION, "Freezing Protection");
+        addModifierFlavor(ThermalConstructModifierIds.FREEZING_PROTECTION, "It's cold down there");
+        addModifierDesc(ThermalConstructModifierIds.FREEZING_PROTECTION, "Protect against freezing damage types.");
 
-        addModifier(ThermalConstructModifiers.SHULKING.getId(), "Shulking");
-        addModifierFlavor(ThermalConstructModifiers.SHULKING.getId(), "I feel like an enderman now");
-        addModifierDesc(ThermalConstructModifiers.SHULKING.getId(), "Teleport when you take damage.");
+        addModifier(ThermalConstructModifiers.CALLBACK.getId(), "Callback");
+        addModifierFlavor(ThermalConstructModifiers.CALLBACK.getId(), "I feel like an enderman now");
+        addModifierDesc(ThermalConstructModifiers.CALLBACK.getId(), "Teleport when you take damage from entities.");
 
-        addModifier(ThermalModifierIds.CHILLED, "Chilled");
-        addModifierFlavor(ThermalModifierIds.CHILLED, "Netflix and Chill");
-        addModifierDesc(ThermalModifierIds.CHILLED, "Apply the chilled effect.");
+        addModifier(ThermalConstructModifierIds.SUBTERRANEAN, "Subterranean");
+        addModifierFlavor(ThermalConstructModifierIds.SUBTERRANEAN, "Deep inside");
+        addModifierDesc(ThermalConstructModifierIds.SUBTERRANEAN, "Increases damage underwater.");
 
-        addModifier(ThermalModifierIds.SHOCKED, "Shocked");
-        addModifierFlavor(ThermalModifierIds.SHOCKED, "*Shocked Pikachu face*");
-        addModifierDesc(ThermalModifierIds.SHOCKED, "Apply the Shocked effect.");
+        addModifier(ThermalConstructModifiers.BLISTERING.getId(), "Blistering");
+        addModifierFlavor(ThermalConstructModifiers.BLISTERING.getId(), "Like a dragon");
+        addModifierDesc(ThermalConstructModifiers.BLISTERING.getId(), "Your arrow spawn an area of effect when hit like a dragon with it's fireball.");
 
-        addModifier(ThermalModifierIds.SUNDERED, "Sundered");
-        addModifierFlavor(ThermalModifierIds.SUNDERED, "*split the red sea in half*");
-        addModifierDesc(ThermalModifierIds.SUNDERED, "Apply the sundered effect.");
+        addModifier(ThermalConstructModifierIds.ENERGIZED, "Energized");
+        addModifierFlavor(ThermalConstructModifierIds.ENERGIZED, "Full of energy");
+        addModifierDesc(ThermalConstructModifierIds.ENERGIZED, "Charge RF/FE items in your inventory when you take damage.");
 
-        addModifier(ThermalModifierIds.INTEGRAL, "Integral");
-        addModifierFlavor(ThermalModifierIds.INTEGRAL, "Dad's favorite math stuff");
-        addModifierDesc(ThermalModifierIds.INTEGRAL, "Boost your tool/armor/bow stats.");
+        addModifier(ThermalConstructModifierIds.SIPHONING, "Siphoning");
+        addModifierFlavor(ThermalConstructModifierIds.SIPHONING, "Where did my money go?");
+        addModifierDesc(ThermalConstructModifierIds.SIPHONING, "Lose damage, mining speed and durability but gain 1 ability and 1 upgrade per part.");
 
-        addModifier(ThermalModifierIds.FLUXED, "Fluxed");
-        addModifierFlavor(ThermalModifierIds.FLUXED, "Powered by RF");
-        addModifierDesc(ThermalModifierIds.FLUXED, "Add an energy bar to your tool.");
+        addModifier(ThermalConstructModifierIds.RESONANCE, "Resonance");
+        addModifierFlavor(ThermalConstructModifierIds.RESONANCE, "Quiet please!");
+        addModifierDesc(ThermalConstructModifierIds.RESONANCE, "Take less damage from the warden.");
 
-        addModifier(ThermalConstructModifiers.REDSTONE_FLUX_MODIFIER.getId(), "RF");
-        addModifierFlavor(ThermalConstructModifiers.REDSTONE_FLUX_MODIFIER.getId(), "Powered by RF");
-        addModifierDesc(ThermalConstructModifiers.REDSTONE_FLUX_MODIFIER.getId(), "Allow your tools to accept RF.");
+        addModifier(ThermalConstructModifierIds.GHOSTLY, "Ghostly");
+        addModifierFlavor(ThermalConstructModifierIds.GHOSTLY, "The Good, The Bad, The Ghostly");
+        addModifierDesc(ThermalConstructModifierIds.GHOSTLY, "Increases the duration of good and bad effects.");
+
+        addModifier(ThermalConstructModifierIds.TOUGH_SHELL, "Tough Shell");
+        addModifierFlavor(ThermalConstructModifierIds.TOUGH_SHELL, "Bullet resistant!");
+        addModifierDesc(ThermalConstructModifierIds.TOUGH_SHELL, "Increases armor toughness.");
+
+        addModifier(ThermalConstructModifierIds.CHILLED, "Chilled");
+        addModifierFlavor(ThermalConstructModifierIds.CHILLED, "Netflix and Chilled");
+        addModifierDesc(ThermalConstructModifierIds.CHILLED, "Apply the chilled effect.");
+
+        addModifier(ThermalConstructModifierIds.SHOCKED, "Shocked");
+        addModifierFlavor(ThermalConstructModifierIds.SHOCKED, "You need Shock therapy in your life");
+        addModifierDesc(ThermalConstructModifierIds.SHOCKED, "Apply the Shocked effect.");
+
+        addModifier(ThermalConstructModifierIds.SUNDERED, "Sundered");
+        addModifierFlavor(ThermalConstructModifierIds.SUNDERED, "*split the red sea in half*");
+        addModifierDesc(ThermalConstructModifierIds.SUNDERED, "Apply the sundered effect.");
+
+        addModifier(ThermalConstructModifierIds.INTEGRAL, "Integral");
+        addModifierFlavor(ThermalConstructModifierIds.INTEGRAL, "Dad's favorite math stuff");
+        addModifierDesc(ThermalConstructModifierIds.INTEGRAL, "Boost your tool/armor/bow stats.");
+
+        addModifier(ThermalConstructModifiers.POWER_SHIELD.getId(), "Power Shield");
+        addModifierFlavor(ThermalConstructModifiers.POWER_SHIELD.getId(), "Powered by RF");
+        addModifierDesc(ThermalConstructModifiers.POWER_SHIELD.getId(), "Tool consumes RF instead of durability, until it runs out!.");
     }
 
     public void fluid(FluidObject<ForgeFlowingFluid> fluid, String name) {

@@ -1,8 +1,9 @@
 package mrthomas20121.thermalconstruct.datagen;
 
 import mrthomas20121.thermalconstruct.ThermalConstruct;
-import mrthomas20121.thermalconstruct.ThermalMaterialIds;
-import mrthomas20121.thermalconstruct.ThermalModifierIds;
+import mrthomas20121.thermalconstruct.ThermalConstructMaterialIds;
+import mrthomas20121.thermalconstruct.ThermalConstructModifierIds;
+import mrthomas20121.thermalconstruct.init.ThermalConstructModifiers;
 import net.minecraft.data.PackOutput;
 import slimeknights.tconstruct.library.materials.definition.MaterialId;
 import slimeknights.tconstruct.library.modifiers.ModifierId;
@@ -16,16 +17,19 @@ public class ThermalColorProvider extends MantleColorGenerator {
     @Override
     void addColors() {
 
-        addMaterialAndModifiers(ThermalMaterialIds.BASALZ, "#32353A", ThermalModifierIds.SUNDERED);
-        addMaterialAndModifiers(ThermalMaterialIds.BLITZ, "#DEF7FA", ThermalModifierIds.SHOCKED);
-        addMaterialAndModifiers(ThermalMaterialIds.BLIZZ, "#37B7FE", ThermalModifierIds.SHOCKED, ThermalModifierIds.FREEZING_PROTECTION);
+        addMaterialAndModifiers(ThermalConstructMaterialIds.BASALZ, "#32353A", ThermalConstructModifierIds.SUNDERED);
+        addMaterialAndModifiers(ThermalConstructMaterialIds.BLITZ, "#DEF7FA", ThermalConstructModifierIds.SHOCKED);
+        addMaterialAndModifiers(ThermalConstructMaterialIds.BLIZZ, "#37B7FE", ThermalConstructModifierIds.SHOCKED, ThermalConstructModifierIds.FREEZING_PROTECTION);
 
-        addMaterialAndModifiers(ThermalMaterialIds.ENDERIUM, "#4BCFCD", ThermalModifierIds.ENDSPLOSION, ThermalModifierIds.SPECTRAL);
-        addMaterialAndModifiers(ThermalMaterialIds.LUMIUM, "#FFF1AA", ThermalModifierIds.FLUORESCENCE, ThermalModifierIds.PRICKLY_GLOW);
-        addMaterialAndModifiers(ThermalMaterialIds.LUMIUM, "#FF9543", ThermalModifierIds.SCIENTISTIC);
+        addMaterialAndModifiers(ThermalConstructMaterialIds.ENDERIUM, "#4BCFCD", ThermalConstructModifierIds.BUSHWHACK, ThermalConstructModifierIds.SPECTRAL);
+        addMaterialAndModifiers(ThermalConstructMaterialIds.LUMIUM, "#FFF1AA", ThermalConstructModifierIds.FLUORESCENCE, ThermalConstructModifierIds.PRICKLY_GLOW);
+        addMaterialAndModifiers(ThermalConstructMaterialIds.SIGNALUM, "#FF9543", ThermalConstructModifiers.POWER_SHIELD.getId());
+        addMaterialAndModifiers(ThermalConstructMaterialIds.TWINITE, "#FFD1E5", ThermalConstructModifiers.POWER_ATTACK.getId());
+        addMaterialAndModifiers(ThermalConstructMaterialIds.DRAGONSTEEL, "#729EDB", ThermalConstructModifierIds.ENERGIZED, ThermalConstructModifiers.BLISTERING.getId());
+        addMaterialAndModifiers(ThermalConstructMaterialIds.ABYSSAL, "#8DB37C", ThermalConstructModifierIds.RESONANCE, ThermalConstructModifierIds.SUBTERRANEAN);
+        addMaterialAndModifiers(ThermalConstructMaterialIds.SOUL_INFUSED, "#8DB37C", ThermalConstructModifierIds.RESONANCE, ThermalConstructModifierIds.SUBTERRANEAN);
 
-        addModifier(ThermalModifierIds.INTEGRAL, "#F31700");
-        addModifier(ThermalModifierIds.FLUXED, "#95CFE6");
+        addModifier(ThermalConstructModifierIds.INTEGRAL, "#F31700");
     }
 
     private void addMaterialAndModifiers(MaterialId mat, String color, ModifierId... modifiers) {

@@ -1,8 +1,7 @@
 package mrthomas20121.thermalconstruct.util;
 
-import net.minecraft.tags.BiomeTags;
+import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.level.dimension.BuiltinDimensionTypes;
-import net.minecraftforge.common.Tags;
 import slimeknights.mantle.data.predicate.entity.LivingEntityPredicate;
 
 public interface ThermalLivingEntityPredicate {
@@ -15,4 +14,6 @@ public interface ThermalLivingEntityPredicate {
 
     // check if entity is in the nether
     LivingEntityPredicate IS_IN_NETHER = LivingEntityPredicate.simple(entity -> entity.level().dimensionTypeId().equals(BuiltinDimensionTypes.NETHER));
+
+    LivingEntityPredicate IS_WARDEN = LivingEntityPredicate.simple(entity -> entity.getType().equals(EntityType.WARDEN));
 }

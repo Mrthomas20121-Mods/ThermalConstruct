@@ -45,6 +45,7 @@ public class ThermalConstruct {
 			LivingEntityPredicate.LOADER.register(new ResourceLocation("thermalconstruct:has_potion_effect"), ThermalLivingEntityPredicate.HAS_POTION_EFFECT.getLoader());
 			LivingEntityPredicate.LOADER.register(new ResourceLocation("thermalconstruct:is_in_end"), ThermalLivingEntityPredicate.IS_IN_END.getLoader());
 			LivingEntityPredicate.LOADER.register(new ResourceLocation("thermalconstruct:is_in_nether"), ThermalLivingEntityPredicate.IS_IN_NETHER.getLoader());
+			LivingEntityPredicate.LOADER.register(new ResourceLocation("thermalconstruct:is_warden"), ThermalLivingEntityPredicate.IS_WARDEN.getLoader());
 		}
 	}
 }

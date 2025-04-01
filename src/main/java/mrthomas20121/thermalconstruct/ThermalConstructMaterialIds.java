@@ -2,7 +2,7 @@ package mrthomas20121.thermalconstruct;
 
 import slimeknights.tconstruct.library.materials.definition.MaterialId;
 
-public class ThermalMaterialIds {
+public class ThermalConstructMaterialIds {
 
     public static MaterialId BLIZZ = create("blizz");
     public static MaterialId BLITZ = create("blitz");

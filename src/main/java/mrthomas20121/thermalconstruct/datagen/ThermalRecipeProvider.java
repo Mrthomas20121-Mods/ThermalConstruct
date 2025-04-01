@@ -3,17 +3,19 @@ package mrthomas20121.thermalconstruct.datagen;
 import cofh.lib.init.data.RecipeProviderCoFH;
 import cofh.thermal.core.ThermalCore;
 import cofh.thermal.core.init.registries.TCoreEntities;
-import cofh.thermal.innovation.init.registries.TInoIDs;
 import mrthomas20121.thermal_extra.init.ThermalExtraFluids;
 import mrthomas20121.thermal_extra.init.ThermalExtraItems;
 import mrthomas20121.thermalconstruct.ThermalConstruct;
-import mrthomas20121.thermalconstruct.ThermalMaterialIds;
-import mrthomas20121.thermalconstruct.ThermalModifierIds;
+import mrthomas20121.thermalconstruct.ThermalConstructMaterialIds;
+import mrthomas20121.thermalconstruct.ThermalConstructModifierIds;
 import mrthomas20121.thermalconstruct.init.ThermalConstructFluids;
+import mrthomas20121.thermalconstruct.init.ThermalConstructItems;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.material.Fluid;
 import net.minecraftforge.common.crafting.conditions.ModLoadedCondition;
 import net.minecraftforge.common.crafting.conditions.NotCondition;
@@ -26,10 +28,10 @@ import slimeknights.tconstruct.common.TinkerTags;
 import slimeknights.tconstruct.fluids.TinkerFluids;
 import slimeknights.tconstruct.library.data.recipe.*;
 import slimeknights.tconstruct.library.recipe.FluidValues;
+import slimeknights.tconstruct.library.recipe.casting.ItemCastingRecipeBuilder;
 import slimeknights.tconstruct.library.recipe.entitymelting.EntityMeltingRecipeBuilder;
 import slimeknights.tconstruct.library.recipe.melting.MeltingRecipeBuilder;
 import slimeknights.tconstruct.library.recipe.modifiers.adding.ModifierRecipeBuilder;
-import slimeknights.tconstruct.library.tools.SlotType;
 import slimeknights.tconstruct.smeltery.TinkerSmeltery;
 
 import java.util.function.Consumer;
@@ -67,15 +69,21 @@ public class ThermalRecipeProvider extends RecipeProviderCoFH implements IMateri
         thermalCast(consumer, smelteryFolder, new ResourceLocation("thermal:chiller_ball_cast"), FluidValues.INGOT*4);
         thermalCast(consumer, smelteryFolder, new ResourceLocation("thermal:chiller_ingot_cast"), FluidValues.INGOT*4);
 
-        metalMaterialRecipe(consumer, ThermalMaterialIds.ENDERIUM, materialFolder, "enderium", false);
-        metalMaterialRecipe(consumer, ThermalMaterialIds.LUMIUM, materialFolder, "lumium", false);
-        metalMaterialRecipe(consumer, ThermalMaterialIds.SIGNALUM, materialFolder, "signalum", false);
-        materialRecipe(consumer, ThermalMaterialIds.BASALZ, Ingredient.of(ThermalCore.ITEMS.get("basalz_rod")), 1, 1, materialFolder+"basalz/rod");
-        materialRecipe(consumer, ThermalMaterialIds.BASALZ, Ingredient.of(ThermalCore.ITEMS.get("basalz_powder")), 1, 2, materialFolder+"basalz/powder");
-        materialRecipe(consumer, ThermalMaterialIds.BLITZ, Ingredient.of(ThermalCore.ITEMS.get("blitz_rod")), 1, 1, materialFolder+"blitz/rod");
-        materialRecipe(consumer, ThermalMaterialIds.BLITZ, Ingredient.of(ThermalCore.ITEMS.get("blitz_powder")), 1, 2, materialFolder+"blitz/powder");
-        materialRecipe(consumer, ThermalMaterialIds.BLIZZ, Ingredient.of(ThermalCore.ITEMS.get("blizz_rod")), 1, 1, materialFolder+"blizz/rod");
-        materialRecipe(consumer, ThermalMaterialIds.BLIZZ, Ingredient.of(ThermalCore.ITEMS.get("blizz_powder")), 1, 2, materialFolder+"blizz/powder");
+        for(ThermalConstructItems.ThermalCast thermalCast: ThermalConstructItems.ThermalCast.VALUES) {
+            Item cast = ThermalConstructItems.CASTS.get(thermalCast);
+
+            castRecipe(consumer, cast, thermalCast.getIngredient().get(), castFolder, thermalCast.getName());
+        }
+
+        metalMaterialRecipe(consumer, ThermalConstructMaterialIds.ENDERIUM, materialFolder, "enderium", false);
+        metalMaterialRecipe(consumer, ThermalConstructMaterialIds.LUMIUM, materialFolder, "lumium", false);
+        metalMaterialRecipe(consumer, ThermalConstructMaterialIds.SIGNALUM, materialFolder, "signalum", false);
+        materialRecipe(consumer, ThermalConstructMaterialIds.BASALZ, Ingredient.of(ThermalCore.ITEMS.get("basalz_rod")), 1, 1, materialFolder+"basalz/rod");
+        materialRecipe(consumer, ThermalConstructMaterialIds.BASALZ, Ingredient.of(ThermalCore.ITEMS.get("basalz_powder")), 1, 2, materialFolder+"basalz/powder");
+        materialRecipe(consumer, ThermalConstructMaterialIds.BLITZ, Ingredient.of(ThermalCore.ITEMS.get("blitz_rod")), 1, 1, materialFolder+"blitz/rod");
+        materialRecipe(consumer, ThermalConstructMaterialIds.BLITZ, Ingredient.of(ThermalCore.ITEMS.get("blitz_powder")), 1, 2, materialFolder+"blitz/powder");
+        materialRecipe(consumer, ThermalConstructMaterialIds.BLIZZ, Ingredient.of(ThermalCore.ITEMS.get("blizz_rod")), 1, 1, materialFolder+"blizz/rod");
+        materialRecipe(consumer, ThermalConstructMaterialIds.BLIZZ, Ingredient.of(ThermalCore.ITEMS.get("blizz_powder")), 1, 2, materialFolder+"blizz/powder");
 
         MeltingRecipeBuilder.melting(Ingredient.of(ThermalCore.ITEMS.get("basalz_rod")), ThermalConstructFluids.basalz_blood, 100, 10).save(consumer, location("smeltery/basalz_rod"));
         MeltingRecipeBuilder.melting(Ingredient.of(ThermalCore.ITEMS.get("blitz_rod")), ThermalConstructFluids.blitz_blood, 100, 10).save(consumer, location("smeltery/blitz_rod"));
@@ -93,32 +101,24 @@ public class ThermalRecipeProvider extends RecipeProviderCoFH implements IMateri
                 .melting(EntityIngredient.of(TCoreEntities.BLIZZ.get()), ThermalConstructFluids.blizz_blood.result(FluidType.BUCKET_VOLUME / 50), 2)
                 .save(consumer, location("smeltery/entity_melting/blizz"));
 
-        materialMeltingCasting(consumer, ThermalMaterialIds.ENDERIUM, TinkerFluids.moltenEnderium, smelteryFolder);
-        materialMeltingCasting(consumer, ThermalMaterialIds.LUMIUM, TinkerFluids.moltenLumium, smelteryFolder);
-        materialMeltingCasting(consumer, ThermalMaterialIds.SIGNALUM, TinkerFluids.moltenSignalum, smelteryFolder);
-        materialMeltingCasting(consumer, ThermalMaterialIds.BASALZ, ThermalConstructFluids.basalz_blood, smelteryFolder);
-        materialMeltingCasting(consumer, ThermalMaterialIds.BLITZ, ThermalConstructFluids.blitz_blood, smelteryFolder);
-        materialMeltingCasting(consumer, ThermalMaterialIds.BLIZZ, ThermalConstructFluids.blizz_blood, smelteryFolder);
+        materialMeltingCasting(consumer, ThermalConstructMaterialIds.ENDERIUM, TinkerFluids.moltenEnderium, smelteryFolder);
+        materialMeltingCasting(consumer, ThermalConstructMaterialIds.LUMIUM, TinkerFluids.moltenLumium, smelteryFolder);
+        materialMeltingCasting(consumer, ThermalConstructMaterialIds.SIGNALUM, TinkerFluids.moltenSignalum, smelteryFolder);
+        materialMeltingCasting(consumer, ThermalConstructMaterialIds.BASALZ, ThermalConstructFluids.basalz_blood, smelteryFolder);
+        materialMeltingCasting(consumer, ThermalConstructMaterialIds.BLITZ, ThermalConstructFluids.blitz_blood, smelteryFolder);
+        materialMeltingCasting(consumer, ThermalConstructMaterialIds.BLIZZ, ThermalConstructFluids.blizz_blood, smelteryFolder);
 
-        ModifierRecipeBuilder.modifier(ThermalModifierIds.FLUXED)
-                .setTools(TinkerTags.Items.DURABILITY)
-                .addInput(ThermalCore.ITEMS.get(TInoIDs.ID_FLUX_CAPACITOR))
-                .setMaxLevel(1)
-                .setSlots(SlotType.UPGRADE, 1)
-                .saveSalvage(consumer, prefix(ThermalModifierIds.FLUXED, upgradeSalvage))
-                .save(consumer, prefix(ThermalModifierIds.FLUXED, upgradeFolder));
-
-        ModifierRecipeBuilder.modifier(ThermalModifierIds.INTEGRAL)
+        ModifierRecipeBuilder.modifier(ThermalConstructModifierIds.INTEGRAL)
                 .setTools(TinkerTags.Items.BONUS_SLOTS)
                 .addInput(ThermalCore.ITEMS.get("upgrade_augment_3"))
                 .setMaxLevel(1)
-                .save(withCondition(consumer, new NotCondition(new ModLoadedCondition("thermal_extra"))), prefix(ThermalModifierIds.INTEGRAL, upgradeFolder));
+                .save(withCondition(consumer, new NotCondition(new ModLoadedCondition("thermal_extra"))), prefix(ThermalConstructModifierIds.INTEGRAL, upgradeFolder));
 
-        ModifierRecipeBuilder.modifier(ThermalModifierIds.INTEGRAL)
+        ModifierRecipeBuilder.modifier(ThermalConstructModifierIds.INTEGRAL)
                 .setTools(TinkerTags.Items.BONUS_SLOTS)
                 .addInput(ThermalExtraItems.ABYSSAL_INTEGRAL_COMPONENT.get())
                 .setMaxLevel(1)
-                .save(withCondition(consumer, new ModLoadedCondition("thermal_extra")), prefix(merge(ThermalModifierIds.INTEGRAL, "_extra"), upgradeFolder));
+                .save(withCondition(consumer, new ModLoadedCondition("thermal_extra")), prefix(merge(ThermalConstructModifierIds.INTEGRAL, "_extra"), upgradeFolder));
     }
     
     public void extraCompat(String smelteryFolder, Consumer<FinishedRecipe> consumer) {
@@ -158,6 +158,14 @@ public class ThermalRecipeProvider extends RecipeProviderCoFH implements IMateri
 
     public ResourceLocation merge(ResourceLocation loc, String toAdd) {
         return new ResourceLocation(loc.getNamespace(), loc.getPath()+toAdd);
+    }
+
+    public void castRecipe(Consumer<FinishedRecipe> consumer,  ItemLike cast, Ingredient input, String folder, String name) {
+        ItemCastingRecipeBuilder.tableRecipe(cast)
+                .setFluidAndTime(TinkerFluids.moltenBronze, FluidValues.INGOT*4)
+                .setCast(input, true)
+                .setSwitchSlots()
+                .save(consumer, location(folder + "gold/" + name));
     }
 
     @Override

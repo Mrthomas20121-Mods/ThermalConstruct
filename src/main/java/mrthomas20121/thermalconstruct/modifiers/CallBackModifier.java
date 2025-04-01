@@ -4,12 +4,12 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
+import net.minecraft.tags.DamageTypeTags;
 import net.minecraft.util.Mth;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.animal.Fox;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.gameevent.GameEvent;
@@ -22,7 +22,7 @@ import slimeknights.tconstruct.library.module.ModuleHookMap;
 import slimeknights.tconstruct.library.tools.context.EquipmentContext;
 import slimeknights.tconstruct.library.tools.nbt.IToolStackView;
 
-public class ShulkingModifier extends Modifier implements OnAttackedModifierHook {
+public class CallBackModifier extends Modifier implements OnAttackedModifierHook {
 
     @Override
     protected void registerHooks(ModuleHookMap.Builder hookBuilder) {
@@ -36,7 +36,7 @@ public class ShulkingModifier extends Modifier implements OnAttackedModifierHook
         LivingEntity player = context.getEntity();
         Level level = context.getLevel();
 
-        if (attacker != null && isDirectDamage) {
+        if (attacker != null && isDirectDamage && !source.is(DamageTypeTags.IS_FALL)) {
             if (!level.isClientSide) {
                 double d0 = player.getX();
                 double d1 = player.getY();

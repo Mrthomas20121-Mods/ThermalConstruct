@@ -11,14 +11,20 @@ import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraftforge.common.Tags;
 import net.minecraftforge.registries.RegistryObject;
 import org.jetbrains.annotations.Nullable;
 import slimeknights.mantle.registration.deferred.ItemDeferredRegister;
 import slimeknights.mantle.registration.deferred.SynchronizedDeferredRegister;
 import slimeknights.mantle.registration.object.EnumObject;
+import slimeknights.mantle.registration.object.ItemObject;
 import slimeknights.tconstruct.TConstruct;
 import slimeknights.tconstruct.fluids.TinkerFluids;
+import slimeknights.tconstruct.library.recipe.ingredient.MaterialIngredient;
+import slimeknights.tconstruct.library.tools.part.IMaterialItem;
 import slimeknights.tconstruct.library.tools.part.PartCastItem;
+import slimeknights.tconstruct.library.tools.part.ToolPartItem;
 import slimeknights.tconstruct.smeltery.TinkerSmeltery;
 import slimeknights.tconstruct.tools.TinkerToolParts;
 
@@ -39,32 +45,30 @@ public class ThermalConstructItems {
                     .withTabsBefore(TinkerFluids.tabFluids.getId())
                     .build());
 
-    private static final Item.Properties PROPS = new Item.Properties();
-
     public enum ThermalCast {
-        GEM,
-        GEAR,
-        COIN,
-        WIRE,
-        PICK_HEAD(() -> new PartCastItem(PROPS, TinkerToolParts.pickHead), "Pick Head"),
-        SMALL_AXE_HEAD(() -> new PartCastItem(PROPS, TinkerToolParts.smallAxeHead), "Small Axe Head"),
-        SMALL_BLADE(() -> new PartCastItem(PROPS, TinkerToolParts.smallBlade), "Small Blade"),
-        ADZE_HEAD(() -> new PartCastItem(PROPS, TinkerToolParts.adzeHead), "Adze Head"),
-        HAMMER_HEAD(() -> new PartCastItem(PROPS, TinkerToolParts.hammerHead), "Hammer Head"),
-        BROAD_BLADE(() -> new PartCastItem(PROPS, TinkerToolParts.broadBlade), "Broad Blade"),
-        BROAD_AXE_HEAD(() -> new PartCastItem(PROPS, TinkerToolParts.broadAxeHead), "Broad Axe Head"),
-        LARGE_PLATE(() -> new PartCastItem(PROPS, TinkerToolParts.largePlate), "Large Plate"),
-        TOOL_BINDING(() -> new PartCastItem(PROPS, TinkerToolParts.toolBinding), "Tool Binding"),
-        TOUGH_BINDING(() -> new PartCastItem(PROPS, TinkerToolParts.toughBinding), "Tough Binding"),
-        TOOL_HANDLE(() -> new PartCastItem(PROPS, TinkerToolParts.toolHandle), "Tool Handle"),
-        TOUGH_HANDLE(() -> new PartCastItem(PROPS, TinkerToolParts.toughHandle), "Tough Handle"),
-        BOW_LIMB(() -> new PartCastItem(PROPS, TinkerToolParts.bowLimb), "Bow Limb"),
-        BOW_GRIP(() -> new PartCastItem(PROPS, TinkerToolParts.bowGrip), "Bow Grip"),
-        HELMET_PLATING(() -> new PartCastItem(PROPS, () -> TinkerToolParts.plating.get(ArmorItem.Type.HELMET)), "Helmet Plating"),
-        CHESTPLATE_PLATING(() -> new PartCastItem(PROPS, () -> TinkerToolParts.plating.get(ArmorItem.Type.CHESTPLATE)), "Chestplate Plating"),
-        LEGGINGS_PLATING(() -> new PartCastItem(PROPS, () -> TinkerToolParts.plating.get(ArmorItem.Type.LEGGINGS)), "Leggings Plating"),
-        BOOTS_PLATING(() -> new PartCastItem(PROPS, () -> TinkerToolParts.plating.get(ArmorItem.Type.BOOTS)), "Boots Plating"),
-        MAILLE(() -> new PartCastItem(PROPS, TinkerToolParts.maille), "Maille");
+        GEM(Tags.Items.GEMS),
+        GEAR(ThermalConstructTags.GEARS),
+        COIN(ThermalConstructTags.COINS),
+        WIRE(ThermalConstructTags.WIRES),
+        PICK_HEAD(TinkerToolParts.pickHead, "Pick Head"),
+        SMALL_AXE_HEAD(TinkerToolParts.smallAxeHead, "Small Axe Head"),
+        SMALL_BLADE(TinkerToolParts.smallBlade, "Small Blade"),
+        ADZE_HEAD(TinkerToolParts.adzeHead, "Adze Head"),
+        HAMMER_HEAD(TinkerToolParts.hammerHead, "Hammer Head"),
+        BROAD_BLADE(TinkerToolParts.broadBlade, "Broad Blade"),
+        BROAD_AXE_HEAD(TinkerToolParts.broadAxeHead, "Broad Axe Head"),
+        LARGE_PLATE(TinkerToolParts.largePlate, "Large Plate"),
+        TOOL_BINDING(TinkerToolParts.toolBinding, "Tool Binding"),
+        TOUGH_BINDING(TinkerToolParts.toughBinding, "Tough Binding"),
+        TOOL_HANDLE(TinkerToolParts.toolHandle, "Tool Handle"),
+        TOUGH_HANDLE(TinkerToolParts.toughHandle, "Tough Handle"),
+        BOW_LIMB(TinkerToolParts.bowLimb, "Bow Limb"),
+        BOW_GRIP(TinkerToolParts.bowGrip, "Bow Grip"),
+        HELMET_PLATING(() -> TinkerToolParts.plating.get(ArmorItem.Type.HELMET), "Helmet Plating"),
+        CHESTPLATE_PLATING(() -> TinkerToolParts.plating.get(ArmorItem.Type.CHESTPLATE), "Chestplate Plating"),
+        LEGGINGS_PLATING(() -> TinkerToolParts.plating.get(ArmorItem.Type.LEGGINGS), "Leggings Plating"),
+        BOOTS_PLATING(() -> TinkerToolParts.plating.get(ArmorItem.Type.BOOTS), "Boots Plating"),
+        MAILLE(TinkerToolParts.maille, "Maille");
 
         // array of ThermalCast[] to avoid calling values(); every times
         public static final ThermalCast[] VALUES = ThermalCast.values();
@@ -74,15 +78,21 @@ public class ThermalConstructItems {
         private final String translated_name;
         private final TagKey<Item> tag;
         private final Supplier<Item> itemSupplier;
+        private final Supplier<Ingredient> ingredient;
 
-        ThermalCast() {
-            this(() -> new Item(new Item.Properties()), null);
+        ThermalCast(TagKey<Item> tag) {
+            this(() -> new Item(new Item.Properties()), () -> Ingredient.of(tag), null);
         }
 
-        ThermalCast(Supplier<Item> createItem, @Nullable String translated_name) {
+        ThermalCast(Supplier<ToolPartItem> item, String translated_name) {
+            this(() -> new PartCastItem(new Item.Properties(), item), () -> MaterialIngredient.of(item.get()), translated_name);
+        }
+
+        ThermalCast(Supplier<Item> createItem, Supplier<Ingredient> ingredient, @Nullable String translated_name) {
             this.itemSupplier = createItem;
             this.tag = ItemTags.create(TConstruct.getResource("casts/multi_use/" + this.cast_name));
             this.translated_name = translated_name == null ? this.cast_name: translated_name;
+            this.ingredient = ingredient;
         }
 
         public String getName() {
@@ -99,6 +109,10 @@ public class ThermalConstructItems {
 
         public TagKey<Item> getTag() {
             return tag;
+        }
+
+        public Supplier<Ingredient> getIngredient() {
+            return ingredient;
         }
     }
 

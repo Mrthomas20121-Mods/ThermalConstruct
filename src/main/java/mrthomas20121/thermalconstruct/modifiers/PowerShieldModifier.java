@@ -14,7 +14,7 @@ import slimeknights.tconstruct.library.tools.stat.ModifierStatsBuilder;
 import static slimeknights.tconstruct.library.tools.capability.ToolEnergyCapability.ENERGY_HANDLER;
 import static slimeknights.tconstruct.library.tools.capability.ToolEnergyCapability.MAX_STAT;
 
-public class RedstoneFluxModifier extends DurabilityShieldModifier implements ToolStatsModifierHook {
+public class PowerShieldModifier extends DurabilityShieldModifier implements ToolStatsModifierHook {
 
     @Override
     protected void registerHooks(ModuleHookMap.Builder hookBuilder) {
@@ -25,7 +25,7 @@ public class RedstoneFluxModifier extends DurabilityShieldModifier implements To
 
     @Override
     public void addToolStats(IToolContext context, ModifierEntry modifier, ModifierStatsBuilder builder) {
-        MAX_STAT.add(builder, 100000);
+        MAX_STAT.add(builder, 5000*modifier.getEffectiveLevel());
     }
 
     @Override
