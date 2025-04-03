@@ -1,0 +1,21 @@
+{
+  "type": "tconstruct:casting_table",
+  "cast": {
+    "tag": "tconstruct:casts/single_use/nugget"
+  },
+  "cast_consumed": true,
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "thermal_extra"
+    }
+  ],
+  "cooling_time": 24,
+  "fluid": {
+    "amount": 10,
+    "tag": "thermalconstruct:molten_dragonsteel"
+  },
+  "result": {
+    "tag": "forge:nuggets/dragonsteel"
+  }
+}

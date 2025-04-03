@@ -1,0 +1,23 @@
+{
+  "type": "tconstruct:material",
+  "conditions": [
+    {
+      "type": "mantle:tag_filled",
+      "tag": "forge:storage_blocks/shellite"
+    },
+    {
+      "type": "forge:mod_loaded",
+      "modid": "thermal_extra"
+    }
+  ],
+  "ingredient": {
+    "tag": "forge:storage_blocks/shellite"
+  },
+  "leftover": {
+    "count": 1,
+    "tag": "forge:ingots/shellite"
+  },
+  "material": "thermalconstruct:shellite",
+  "needed": 1,
+  "value": 9
+}

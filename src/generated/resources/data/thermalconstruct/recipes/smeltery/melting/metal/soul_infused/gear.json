@@ -1,0 +1,22 @@
+{
+  "type": "tconstruct:melting",
+  "conditions": [
+    {
+      "type": "mantle:tag_filled",
+      "tag": "forge:gears/soul_infused"
+    },
+    {
+      "type": "forge:mod_loaded",
+      "modid": "thermal_extra"
+    }
+  ],
+  "ingredient": {
+    "tag": "forge:gears/soul_infused"
+  },
+  "result": {
+    "amount": 360,
+    "fluid": "thermalconstruct:molten_soul_infused"
+  },
+  "temperature": 900,
+  "time": 127
+}

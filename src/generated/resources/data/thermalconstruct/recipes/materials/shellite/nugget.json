@@ -1,0 +1,19 @@
+{
+  "type": "tconstruct:material",
+  "conditions": [
+    {
+      "type": "mantle:tag_filled",
+      "tag": "forge:nuggets/shellite"
+    },
+    {
+      "type": "forge:mod_loaded",
+      "modid": "thermal_extra"
+    }
+  ],
+  "ingredient": {
+    "tag": "forge:nuggets/shellite"
+  },
+  "material": "thermalconstruct:shellite",
+  "needed": 9,
+  "value": 1
+}

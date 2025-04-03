@@ -1,0 +1,19 @@
+{
+  "type": "tconstruct:material",
+  "conditions": [
+    {
+      "type": "mantle:tag_filled",
+      "tag": "forge:ingots/abyssal"
+    },
+    {
+      "type": "forge:mod_loaded",
+      "modid": "thermal_extra"
+    }
+  ],
+  "ingredient": {
+    "tag": "forge:ingots/abyssal"
+  },
+  "material": "thermalconstruct:abyssal",
+  "needed": 1,
+  "value": 1
+}

@@ -16,9 +16,15 @@ public class ThermalConstructFluids {
     
     public static FluidDeferredRegister FLUIDS = new FluidDeferredRegister(ThermalConstruct.MOD_ID);
 
-    public static final FlowingFluidObject<ForgeFlowingFluid> basalz_blood   = FLUIDS.register("basalz_blood").type(hot("basalz_blood").temperature(1200).lightLevel(15).density(3500)).block(createBurning(MapColor.COLOR_GRAY, 15, 15, 5f)).bucket().flowing();
-    public static final FlowingFluidObject<ForgeFlowingFluid> blitz_blood   = FLUIDS.register("blitz_blood").type(hot("blitz_blood").temperature(1200).lightLevel(15).density(3500)).block(createBurning(MapColor.QUARTZ, 15, 15, 5f)).bucket().flowing();
-    public static final FlowingFluidObject<ForgeFlowingFluid> blizz_blood   = FLUIDS.register("blizz_blood").type(hot("blizz_blood").temperature(1200).lightLevel(15).density(3500)).block(createBurning(MapColor.COLOR_LIGHT_BLUE, 15, 15, 5f)).bucket().flowing();
+    public static final FlowingFluidObject<ForgeFlowingFluid> basalzBlood = FLUIDS.register("basalz_blood").type(hot("basalz_blood").temperature(1200).lightLevel(15).density(3500)).block(createBurning(MapColor.COLOR_GRAY, 15, 15, 5f)).bucket().flowing();
+    public static final FlowingFluidObject<ForgeFlowingFluid> blitzBlood = FLUIDS.register("blitz_blood").type(hot("blitz_blood").temperature(1200).lightLevel(15).density(3500)).block(createBurning(MapColor.QUARTZ, 15, 15, 5f)).bucket().flowing();
+    public static final FlowingFluidObject<ForgeFlowingFluid> blizzBlood = FLUIDS.register("blizz_blood").type(hot("blizz_blood").temperature(1200).lightLevel(15).density(3500)).block(createBurning(MapColor.COLOR_LIGHT_BLUE, 15, 15, 5f)).bucket().flowing();
+
+    public static final FlowingFluidObject<ForgeFlowingFluid> moltenSoulInfused = FLUIDS.register("molten_soul_infused").type(hot("molten_soul_infused").temperature(1200).lightLevel(15)).block(createBurning(MapColor.COLOR_ORANGE, 15, 15, 2f)).bucket().flowing();
+    public static final FlowingFluidObject<ForgeFlowingFluid> moltenTwinite = FLUIDS.register("molten_twinite").type(hot("molten_twinite").temperature(1200).lightLevel(15)).block(createBurning(MapColor.COLOR_PINK, 15, 15, 2f)).bucket().flowing();
+    public static final FlowingFluidObject<ForgeFlowingFluid> moltenShellite = FLUIDS.register("molten_shellite").type(hot("molten_shellite").temperature(1500).lightLevel(15)).block(createBurning(MapColor.COLOR_PURPLE, 15, 15, 3f)).bucket().flowing();
+    public static final FlowingFluidObject<ForgeFlowingFluid> moltenDragonsteel = FLUIDS.register("molten_dragonsteel").type(hot("molten_dragonsteel").temperature(1500).lightLevel(15)).block(createBurning(MapColor.COLOR_BLUE, 15, 15, 4f)).bucket().flowing();
+    public static final FlowingFluidObject<ForgeFlowingFluid> moltenAbyssal = FLUIDS.register("molten_abyssal").type(hot("molten_abyssal").temperature(1500).lightLevel(15)).block(createBurning(MapColor.COLOR_GREEN, 15, 15, 4f)).bucket().flowing();
 
     /** Creates a builder for a hot with sounds and description */
     private static FluidType.Properties hot(String name) {

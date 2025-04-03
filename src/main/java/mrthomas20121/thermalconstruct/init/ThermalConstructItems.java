@@ -46,10 +46,10 @@ public class ThermalConstructItems {
                     .build());
 
     public enum ThermalCast {
-        GEM(Tags.Items.GEMS),
-        GEAR(ThermalConstructTags.GEARS),
-        COIN(ThermalConstructTags.COINS),
-        WIRE(ThermalConstructTags.WIRES),
+        GEM(Tags.Items.GEMS, "Gem"),
+        GEAR(ThermalConstructTags.GEARS, "Gear"),
+        COIN(ThermalConstructTags.COINS, "Coin"),
+        WIRE(ThermalConstructTags.WIRES, "Wire"),
         PICK_HEAD(TinkerToolParts.pickHead, "Pick Head"),
         SMALL_AXE_HEAD(TinkerToolParts.smallAxeHead, "Small Axe Head"),
         SMALL_BLADE(TinkerToolParts.smallBlade, "Small Blade"),
@@ -84,6 +84,10 @@ public class ThermalConstructItems {
             this(() -> new Item(new Item.Properties()), () -> Ingredient.of(tag), null);
         }
 
+        ThermalCast(TagKey<Item> tag, String translated_name) {
+            this(() -> new Item(new Item.Properties()), () -> Ingredient.of(tag), translated_name);
+        }
+
         ThermalCast(Supplier<ToolPartItem> item, String translated_name) {
             this(() -> new PartCastItem(new Item.Properties(), item), () -> MaterialIngredient.of(item.get()), translated_name);
         }
@@ -116,11 +120,18 @@ public class ThermalConstructItems {
         }
     }
 
-    private static ResourceLocation modLoc(String name) {
-        return new ResourceLocation(ThermalConstruct.MOD_ID, name);
-    }
-
     private static void addTabItems(CreativeModeTab.ItemDisplayParameters itemDisplayParameters, CreativeModeTab.Output output) {
+
+        output.accept(ThermalConstructFluids.basalzBlood.asItem());
+        output.accept(ThermalConstructFluids.blitzBlood.asItem());
+        output.accept(ThermalConstructFluids.blizzBlood.asItem());
+
+        output.accept(ThermalConstructFluids.moltenSoulInfused.asItem());
+        output.accept(ThermalConstructFluids.moltenShellite.asItem());
+        output.accept(ThermalConstructFluids.moltenTwinite.asItem());
+        output.accept(ThermalConstructFluids.moltenDragonsteel.asItem());
+        output.accept(ThermalConstructFluids.moltenAbyssal.asItem());
+
         output.accept(ThermalCore.ITEMS.get("chiller_ingot_cast"));
         output.accept(ThermalCore.ITEMS.get("chiller_ball_cast"));
         output.accept(ThermalCore.ITEMS.get("chiller_rod_cast"));

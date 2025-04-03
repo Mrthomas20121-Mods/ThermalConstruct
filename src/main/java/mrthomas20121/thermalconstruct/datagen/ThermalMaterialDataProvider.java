@@ -6,7 +6,6 @@ import slimeknights.tconstruct.library.data.material.AbstractMaterialDataProvide
 
 public class ThermalMaterialDataProvider extends AbstractMaterialDataProvider {
 
-
     public ThermalMaterialDataProvider(PackOutput packOutput) {
         super(packOutput);
     }
@@ -16,6 +15,11 @@ public class ThermalMaterialDataProvider extends AbstractMaterialDataProvider {
         addMaterial(ThermalConstructMaterialIds.ENDERIUM, 4, ORDER_END, false);
         addMaterial(ThermalConstructMaterialIds.LUMIUM, 3, ORDER_NETHER, false);
         addMaterial(ThermalConstructMaterialIds.SIGNALUM, 3, ORDER_HARVEST, false);
+        addCompatMetalMaterial(ThermalConstructMaterialIds.SOUL_INFUSED, 3, ORDER_NETHER, "soul_infused");
+        addCompatMetalMaterial(ThermalConstructMaterialIds.TWINITE, 3, ORDER_NETHER, "twinite");
+        addCompatMetalMaterial(ThermalConstructMaterialIds.SHELLITE, 3, ORDER_END, "shellite");
+        addCompatMetalMaterial(ThermalConstructMaterialIds.DRAGONSTEEL, 4, ORDER_END, "dragonsteel");
+        addCompatMetalMaterial(ThermalConstructMaterialIds.ABYSSAL, 4, ORDER_END, "abyssal");
         addMaterial(ThermalConstructMaterialIds.BASALZ, 2, ORDER_BINDING, true);
         addMaterial(ThermalConstructMaterialIds.BLITZ, 2, ORDER_BINDING, true);
         addMaterial(ThermalConstructMaterialIds.BLIZZ, 2, ORDER_BINDING, true);

@@ -1,0 +1,17 @@
+{
+  "type": "tconstruct:casting_basin",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "thermal_extra"
+    }
+  ],
+  "cooling_time": 216,
+  "fluid": {
+    "amount": 810,
+    "tag": "thermalconstruct:molten_abyssal"
+  },
+  "result": {
+    "tag": "forge:storage_blocks/abyssal"
+  }
+}

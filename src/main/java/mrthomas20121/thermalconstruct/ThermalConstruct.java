@@ -1,6 +1,6 @@
 package mrthomas20121.thermalconstruct;
 
-import mrthomas20121.thermalconstruct.datagen.ThermalDatagen;
+import mrthomas20121.thermalconstruct.datagen.ThermalConstructDatagen;
 import mrthomas20121.thermalconstruct.init.ThermalConstructFluids;
 import mrthomas20121.thermalconstruct.init.ThermalConstructItems;
 import mrthomas20121.thermalconstruct.init.ThermalConstructModifiers;
@@ -36,7 +36,7 @@ public class ThermalConstruct {
 		ThermalConstructFluids.FLUIDS.register(bus);
 		ThermalConstructModifiers.MODIFIERS.register(bus);
 
-		bus.addListener(EventPriority.NORMAL, false, GatherDataEvent.class, ThermalDatagen::init);
+		bus.addListener(EventPriority.NORMAL, false, GatherDataEvent.class, ThermalConstructDatagen::init);
 		bus.addListener(EventPriority.NORMAL, false, RegisterEvent.class, this::register);
 	}
 

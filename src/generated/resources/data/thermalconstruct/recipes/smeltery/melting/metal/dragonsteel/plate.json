@@ -1,0 +1,22 @@
+{
+  "type": "tconstruct:melting",
+  "conditions": [
+    {
+      "type": "mantle:tag_filled",
+      "tag": "forge:plates/dragonsteel"
+    },
+    {
+      "type": "forge:mod_loaded",
+      "modid": "thermal_extra"
+    }
+  ],
+  "ingredient": {
+    "tag": "forge:plates/dragonsteel"
+  },
+  "result": {
+    "amount": 90,
+    "fluid": "thermalconstruct:molten_dragonsteel"
+  },
+  "temperature": 1200,
+  "time": 72
+}

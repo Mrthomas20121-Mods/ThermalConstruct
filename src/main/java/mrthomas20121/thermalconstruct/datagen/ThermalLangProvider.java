@@ -23,22 +23,39 @@ public class ThermalLangProvider extends LanguageProvider {
     protected void addTranslations() {
 
         for(ThermalConstructItems.ThermalCast cast: ThermalConstructItems.ThermalCast.VALUES) {
-            add(ThermalConstructItems.CASTS.get(cast), cast.getTranslatedName());
+            add(ThermalConstructItems.CASTS.get(cast), cast.getTranslatedName() + " Cast");
         }
 
-        fluid(ThermalConstructFluids.basalz_blood, "Basalz Blood");
-        fluid(ThermalConstructFluids.blitz_blood, "Blitz Blood");
-        fluid(ThermalConstructFluids.blizz_blood, "Blizz Blood");
+        fluid(ThermalConstructFluids.basalzBlood, "Basalz Blood");
+        fluid(ThermalConstructFluids.blitzBlood, "Blitz Blood");
+        fluid(ThermalConstructFluids.blizzBlood, "Blizz Blood");
+
+        fluid(ThermalConstructFluids.moltenSoulInfused, "Molten Soul Infused");
+        fluid(ThermalConstructFluids.moltenTwinite, "Molten Twinite");
+        fluid(ThermalConstructFluids.moltenShellite, "Molten Shellite");
+        fluid(ThermalConstructFluids.moltenDragonsteel, "Molten Dragonsteel");
+        fluid(ThermalConstructFluids.moltenAbyssal, "Molten Abyssal");
 
         add("itemGroup.thermal_construct", "Thermal Construct tab");
 
         addMaterial(ThermalConstructMaterialIds.ENDERIUM, "Enderium");
         addMaterialFlavor(ThermalConstructMaterialIds.ENDERIUM, "Resonate at any frequency.");
-
         addMaterial(ThermalConstructMaterialIds.LUMIUM, "Lumium");
         addMaterialFlavor(ThermalConstructMaterialIds.LUMIUM, "A Brick of solid sunshine.");
         addMaterial(ThermalConstructMaterialIds.SIGNALUM, "Signalum");
         addMaterialFlavor(ThermalConstructMaterialIds.SIGNALUM, "Conduct better than silver.");
+
+        addMaterial(ThermalConstructMaterialIds.SOUL_INFUSED, "Soul Infused");
+        addMaterialFlavor(ThermalConstructMaterialIds.SOUL_INFUSED, "Trap souls better than soul sand.");
+        addMaterial(ThermalConstructMaterialIds.TWINITE, "Twinite");
+        addMaterialFlavor(ThermalConstructMaterialIds.TWINITE, "Not as hard as obsidian.");
+        addMaterial(ThermalConstructMaterialIds.SHELLITE, "Shellite");
+        addMaterialFlavor(ThermalConstructMaterialIds.SHELLITE, "Soft like a shulker shell.");
+        addMaterial(ThermalConstructMaterialIds.DRAGONSTEEL, "Dragonsteel");
+        addMaterialFlavor(ThermalConstructMaterialIds.DRAGONSTEEL, "Killed a dragon to make this.");
+        addMaterial(ThermalConstructMaterialIds.ABYSSAL, "Abyssal");
+        addMaterialFlavor(ThermalConstructMaterialIds.ABYSSAL, "there echo in there.");
+
         addMaterial(ThermalConstructMaterialIds.BASALZ, "Basalz");
         addMaterial(ThermalConstructMaterialIds.BLITZ, "Blitz");
         addMaterial(ThermalConstructMaterialIds.BLIZZ, "Blizz");

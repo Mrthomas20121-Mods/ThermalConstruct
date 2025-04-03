@@ -1,0 +1,5 @@
+{
+  "color": "FFFFFFFF",
+  "flowing": "thermalconstruct:fluid/molten/twinite/flowing",
+  "still": "thermalconstruct:fluid/molten/twinite/still"
+}

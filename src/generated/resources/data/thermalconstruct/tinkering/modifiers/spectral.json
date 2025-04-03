@@ -5,7 +5,7 @@
       "type": "tconstruct:trait",
       "fixed_level": true,
       "level": 1,
-      "name": "thermalconstruct:shulking"
+      "name": "thermalconstruct:callback"
     },
     {
       "type": "tconstruct:effect_immunity",

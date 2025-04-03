@@ -1,0 +1,25 @@
+{
+  "type": "tconstruct:casting_table",
+  "cast": {
+    "tag": "tconstruct:casts/single_use/rod"
+  },
+  "cast_consumed": true,
+  "conditions": [
+    {
+      "type": "mantle:tag_filled",
+      "tag": "forge:rods/shellite"
+    },
+    {
+      "type": "forge:mod_loaded",
+      "modid": "thermal_extra"
+    }
+  ],
+  "cooling_time": 51,
+  "fluid": {
+    "amount": 45,
+    "tag": "thermalconstruct:molten_shellite"
+  },
+  "result": {
+    "tag": "forge:rods/shellite"
+  }
+}

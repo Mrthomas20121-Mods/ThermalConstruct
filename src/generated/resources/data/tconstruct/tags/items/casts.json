@@ -1,0 +1,27 @@
+{
+  "values": [
+    "thermalconstruct:bronze_cast_gem",
+    "thermalconstruct:bronze_cast_gear",
+    "thermalconstruct:bronze_cast_coin",
+    "thermalconstruct:bronze_cast_wire",
+    "thermalconstruct:bronze_cast_pick_head",
+    "thermalconstruct:bronze_cast_small_axe_head",
+    "thermalconstruct:bronze_cast_small_blade",
+    "thermalconstruct:bronze_cast_adze_head",
+    "thermalconstruct:bronze_cast_hammer_head",
+    "thermalconstruct:bronze_cast_broad_blade",
+    "thermalconstruct:bronze_cast_broad_axe_head",
+    "thermalconstruct:bronze_cast_large_plate",
+    "thermalconstruct:bronze_cast_tool_binding",
+    "thermalconstruct:bronze_cast_tough_binding",
+    "thermalconstruct:bronze_cast_tool_handle",
+    "thermalconstruct:bronze_cast_tough_handle",
+    "thermalconstruct:bronze_cast_bow_limb",
+    "thermalconstruct:bronze_cast_bow_grip",
+    "thermalconstruct:bronze_cast_helmet_plating",
+    "thermalconstruct:bronze_cast_chestplate_plating",
+    "thermalconstruct:bronze_cast_leggings_plating",
+    "thermalconstruct:bronze_cast_boots_plating",
+    "thermalconstruct:bronze_cast_maille"
+  ]
+}

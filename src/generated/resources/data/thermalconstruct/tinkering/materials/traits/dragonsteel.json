@@ -1,0 +1,16 @@
+{
+  "perStat": {
+    "tconstruct:armor": [
+      {
+        "level": 1,
+        "name": "thermalconstruct:energized"
+      }
+    ],
+    "tconstruct:ranged": [
+      {
+        "level": 1,
+        "name": "thermalconstruct:blistering"
+      }
+    ]
+  }
+}

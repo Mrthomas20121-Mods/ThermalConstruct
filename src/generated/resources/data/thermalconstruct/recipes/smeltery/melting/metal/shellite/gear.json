@@ -1,0 +1,22 @@
+{
+  "type": "tconstruct:melting",
+  "conditions": [
+    {
+      "type": "mantle:tag_filled",
+      "tag": "forge:gears/shellite"
+    },
+    {
+      "type": "forge:mod_loaded",
+      "modid": "thermal_extra"
+    }
+  ],
+  "ingredient": {
+    "tag": "forge:gears/shellite"
+  },
+  "result": {
+    "amount": 360,
+    "fluid": "thermalconstruct:molten_shellite"
+  },
+  "temperature": 1200,
+  "time": 144
+}

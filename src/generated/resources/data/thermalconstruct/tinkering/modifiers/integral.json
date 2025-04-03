@@ -32,5 +32,5 @@
       "stat": "tconstruct:durability"
     }
   ],
-  "tooltip_display": "tinker_station"
+  "tooltip_display": "always"
 }

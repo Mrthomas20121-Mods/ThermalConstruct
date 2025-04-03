@@ -1,0 +1,22 @@
+{
+  "level_display": "tconstruct:default",
+  "modules": [
+    {
+      "type": "tconstruct:armor_stat",
+      "allow_broken": false,
+      "each_level": 0.25,
+      "held_tag": "tconstruct:modifiable/armor/held",
+      "key": "tconstruct:good_effect_duration",
+      "tooltip_style": "percent"
+    },
+    {
+      "type": "tconstruct:armor_stat",
+      "allow_broken": false,
+      "each_level": 0.25,
+      "held_tag": "tconstruct:modifiable/armor/held",
+      "key": "tconstruct:bad_effect_duration",
+      "tooltip_style": "percent"
+    }
+  ],
+  "tooltip_display": "always"
+}

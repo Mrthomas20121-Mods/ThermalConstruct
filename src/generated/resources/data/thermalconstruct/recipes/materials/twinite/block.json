@@ -1,0 +1,23 @@
+{
+  "type": "tconstruct:material",
+  "conditions": [
+    {
+      "type": "mantle:tag_filled",
+      "tag": "forge:storage_blocks/twinite"
+    },
+    {
+      "type": "forge:mod_loaded",
+      "modid": "thermal_extra"
+    }
+  ],
+  "ingredient": {
+    "tag": "forge:storage_blocks/twinite"
+  },
+  "leftover": {
+    "count": 1,
+    "tag": "forge:ingots/twinite"
+  },
+  "material": "thermalconstruct:twinite",
+  "needed": 1,
+  "value": 9
+}

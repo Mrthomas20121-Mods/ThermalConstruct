@@ -1,0 +1,15 @@
+{
+  "type": "tconstruct:casting_table",
+  "cast": {
+    "type": "tconstruct:material",
+    "item": "tconstruct:small_blade"
+  },
+  "cast_consumed": true,
+  "cooling_time": 114,
+  "fluid": {
+    "amount": 360,
+    "tag": "forge:molten_bronze"
+  },
+  "result": "thermalconstruct:bronze_cast_small_blade",
+  "switch_slots": true
+}

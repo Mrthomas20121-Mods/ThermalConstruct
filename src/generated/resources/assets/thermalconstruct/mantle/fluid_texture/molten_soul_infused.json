@@ -1,0 +1,5 @@
+{
+  "color": "FFFFFFFF",
+  "flowing": "thermalconstruct:fluid/molten/soul_infused/flowing",
+  "still": "thermalconstruct:fluid/molten/soul_infused/still"
+}

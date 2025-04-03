@@ -1,0 +1,24 @@
+{
+  "type": "tconstruct:casting_table",
+  "cast": {
+    "tag": "tconstruct:casts/multi_use/gear"
+  },
+  "conditions": [
+    {
+      "type": "mantle:tag_filled",
+      "tag": "forge:gears/dragonsteel"
+    },
+    {
+      "type": "forge:mod_loaded",
+      "modid": "thermal_extra"
+    }
+  ],
+  "cooling_time": 144,
+  "fluid": {
+    "amount": 360,
+    "tag": "thermalconstruct:molten_dragonsteel"
+  },
+  "result": {
+    "tag": "forge:gears/dragonsteel"
+  }
+}

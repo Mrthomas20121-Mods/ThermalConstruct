@@ -14,10 +14,15 @@ public class ThermalFluidTextureProvider extends AbstractFluidTextureProvider {
 
     @Override
     public void addTextures() {
-        named(ThermalConstructFluids.basalz_blood, "molten/basalz");
-        named(ThermalConstructFluids.blitz_blood, "molten/blitz");
-        named(ThermalConstructFluids.blizz_blood, "molten/blizz");
+        named(ThermalConstructFluids.basalzBlood, "molten/basalz");
+        named(ThermalConstructFluids.blitzBlood, "molten/blitz");
+        named(ThermalConstructFluids.blizzBlood, "molten/blizz");
 
+        named(ThermalConstructFluids.moltenSoulInfused, "molten/soul_infused");
+        named(ThermalConstructFluids.moltenTwinite, "molten/twinite");
+        named(ThermalConstructFluids.moltenShellite, "molten/shellite");
+        named(ThermalConstructFluids.moltenDragonsteel, "molten/dragonsteel");
+        named(ThermalConstructFluids.moltenAbyssal, "molten/abyssal");
     }
 
     @Override

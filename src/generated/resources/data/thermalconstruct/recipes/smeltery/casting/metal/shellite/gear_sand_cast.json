@@ -1,0 +1,25 @@
+{
+  "type": "tconstruct:casting_table",
+  "cast": {
+    "tag": "tconstruct:casts/single_use/gear"
+  },
+  "cast_consumed": true,
+  "conditions": [
+    {
+      "type": "mantle:tag_filled",
+      "tag": "forge:gears/shellite"
+    },
+    {
+      "type": "forge:mod_loaded",
+      "modid": "thermal_extra"
+    }
+  ],
+  "cooling_time": 144,
+  "fluid": {
+    "amount": 360,
+    "tag": "thermalconstruct:molten_shellite"
+  },
+  "result": {
+    "tag": "forge:gears/shellite"
+  }
+}

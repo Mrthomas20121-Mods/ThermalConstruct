@@ -1,0 +1,23 @@
+{
+  "type": "tconstruct:material",
+  "conditions": [
+    {
+      "type": "mantle:tag_filled",
+      "tag": "forge:storage_blocks/abyssal"
+    },
+    {
+      "type": "forge:mod_loaded",
+      "modid": "thermal_extra"
+    }
+  ],
+  "ingredient": {
+    "tag": "forge:storage_blocks/abyssal"
+  },
+  "leftover": {
+    "count": 1,
+    "tag": "forge:ingots/abyssal"
+  },
+  "material": "thermalconstruct:abyssal",
+  "needed": 1,
+  "value": 9
+}

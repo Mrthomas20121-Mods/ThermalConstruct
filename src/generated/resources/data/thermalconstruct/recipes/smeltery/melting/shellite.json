@@ -1,0 +1,15 @@
+{
+  "type": "tconstruct:material_melting",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "thermal_extra"
+    }
+  ],
+  "input": "thermalconstruct:shellite",
+  "result": {
+    "amount": 90,
+    "fluid": "thermalconstruct:molten_shellite"
+  },
+  "temperature": 1200
+}

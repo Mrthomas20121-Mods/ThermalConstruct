@@ -1,0 +1,15 @@
+{
+  "type": "tconstruct:material_fluid",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "thermal_extra"
+    }
+  ],
+  "fluid": {
+    "amount": 90,
+    "tag": "thermalconstruct:molten_soul_infused"
+  },
+  "output": "thermalconstruct:soul_infused",
+  "temperature": 900
+}

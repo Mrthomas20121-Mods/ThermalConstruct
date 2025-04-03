@@ -23,9 +23,15 @@ public class ThermalFluidTagProvider extends FluidTagsProvider {
 
     @Override
     protected void addTags(HolderLookup.Provider p_256366_) {
-        fluidTag(ThermalConstructFluids.basalz_blood);
-        fluidTag(ThermalConstructFluids.blitz_blood);
-        fluidTag(ThermalConstructFluids.blizz_blood);
+        fluidTag(ThermalConstructFluids.basalzBlood);
+        fluidTag(ThermalConstructFluids.blitzBlood);
+        fluidTag(ThermalConstructFluids.blizzBlood);
+
+        fluidTag(ThermalConstructFluids.moltenSoulInfused);
+        fluidTag(ThermalConstructFluids.moltenTwinite);
+        fluidTag(ThermalConstructFluids.moltenShellite);
+        fluidTag(ThermalConstructFluids.moltenDragonsteel);
+        fluidTag(ThermalConstructFluids.moltenAbyssal);
     }
 
     private void fluidTag(FluidObject<?> fluid) {

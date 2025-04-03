@@ -1,0 +1,22 @@
+{
+  "type": "tconstruct:melting",
+  "conditions": [
+    {
+      "type": "mantle:tag_filled",
+      "tag": "forge:coins/abyssal"
+    },
+    {
+      "type": "forge:mod_loaded",
+      "modid": "thermal_extra"
+    }
+  ],
+  "ingredient": {
+    "tag": "forge:coins/abyssal"
+  },
+  "result": {
+    "amount": 30,
+    "fluid": "thermalconstruct:molten_abyssal"
+  },
+  "temperature": 1200,
+  "time": 48
+}

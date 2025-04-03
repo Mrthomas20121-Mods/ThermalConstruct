@@ -1,0 +1,22 @@
+{
+  "type": "tconstruct:melting",
+  "conditions": [
+    {
+      "type": "mantle:tag_filled",
+      "tag": "forge:dusts/twinite"
+    },
+    {
+      "type": "forge:mod_loaded",
+      "modid": "thermal_extra"
+    }
+  ],
+  "ingredient": {
+    "tag": "forge:dusts/twinite"
+  },
+  "result": {
+    "amount": 90,
+    "fluid": "thermalconstruct:molten_twinite"
+  },
+  "temperature": 900,
+  "time": 47
+}

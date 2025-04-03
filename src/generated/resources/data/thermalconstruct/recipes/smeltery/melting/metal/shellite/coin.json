@@ -1,0 +1,22 @@
+{
+  "type": "tconstruct:melting",
+  "conditions": [
+    {
+      "type": "mantle:tag_filled",
+      "tag": "forge:coins/shellite"
+    },
+    {
+      "type": "forge:mod_loaded",
+      "modid": "thermal_extra"
+    }
+  ],
+  "ingredient": {
+    "tag": "forge:coins/shellite"
+  },
+  "result": {
+    "amount": 30,
+    "fluid": "thermalconstruct:molten_shellite"
+  },
+  "temperature": 1200,
+  "time": 48
+}

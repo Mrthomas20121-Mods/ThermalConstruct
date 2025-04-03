@@ -1,0 +1,5 @@
+{
+  "color": "FFFFFFFF",
+  "flowing": "thermalconstruct:fluid/molten/abyssal/flowing",
+  "still": "thermalconstruct:fluid/molten/abyssal/still"
+}
