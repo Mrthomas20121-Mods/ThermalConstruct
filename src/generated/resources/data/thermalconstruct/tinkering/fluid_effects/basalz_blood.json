@@ -1,0 +1,35 @@
+{
+  "block_effects": [
+    {
+      "type": "tconstruct:mob_effect_cloud",
+      "effects": [
+        {
+          "effect": "cofh_core:sundered",
+          "level": 2,
+          "time": 100
+        }
+      ]
+    }
+  ],
+  "entity_effects": [
+    {
+      "type": "tconstruct:damage",
+      "damage": 1.0,
+      "damage_type": {
+        "melee": "tconstruct:fluid_magic_melee",
+        "ranged": "tconstruct:fluid_magic_ranged"
+      }
+    },
+    {
+      "type": "tconstruct:mob_effect",
+      "action": "set",
+      "effect": "cofh_core:sundered",
+      "level": 2,
+      "time": 100
+    }
+  ],
+  "fluid": {
+    "amount": 100,
+    "tag": "thermalconstruct:basalz_blood"
+  }
+}
