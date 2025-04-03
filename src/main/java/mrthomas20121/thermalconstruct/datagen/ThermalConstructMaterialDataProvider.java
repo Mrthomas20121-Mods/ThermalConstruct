@@ -4,9 +4,9 @@ import mrthomas20121.thermalconstruct.ThermalConstructMaterialIds;
 import net.minecraft.data.PackOutput;
 import slimeknights.tconstruct.library.data.material.AbstractMaterialDataProvider;
 
-public class ThermalMaterialDataProvider extends AbstractMaterialDataProvider {
+public class ThermalConstructMaterialDataProvider extends AbstractMaterialDataProvider {
 
-    public ThermalMaterialDataProvider(PackOutput packOutput) {
+    public ThermalConstructMaterialDataProvider(PackOutput packOutput) {
         super(packOutput);
     }
 

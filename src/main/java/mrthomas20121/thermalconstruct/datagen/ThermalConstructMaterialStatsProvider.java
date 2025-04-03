@@ -9,9 +9,9 @@ import slimeknights.tconstruct.tools.stats.*;
 import static net.minecraft.world.item.Tiers.DIAMOND;
 import static net.minecraft.world.item.Tiers.NETHERITE;
 
-public class ThermalMaterialStatsProvider extends AbstractMaterialStatsDataProvider {
+public class ThermalConstructMaterialStatsProvider extends AbstractMaterialStatsDataProvider {
 
-    public ThermalMaterialStatsProvider(PackOutput packOutput, AbstractMaterialDataProvider materials) {
+    public ThermalConstructMaterialStatsProvider(PackOutput packOutput, AbstractMaterialDataProvider materials) {
         super(packOutput, materials);
     }
 

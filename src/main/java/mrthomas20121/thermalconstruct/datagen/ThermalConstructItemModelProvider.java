@@ -4,7 +4,6 @@ import mrthomas20121.thermalconstruct.ThermalConstruct;
 import mrthomas20121.thermalconstruct.init.ThermalConstructItems;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.level.ItemLike;
 import net.minecraftforge.client.model.generators.ItemModelBuilder;
 import net.minecraftforge.client.model.generators.ItemModelProvider;
 import net.minecraftforge.client.model.generators.ModelFile;
@@ -13,9 +12,9 @@ import net.minecraftforge.registries.ForgeRegistries;
 
 import java.util.Objects;
 
-public class ThermalItemModelProvider extends ItemModelProvider {
+public class ThermalConstructItemModelProvider extends ItemModelProvider {
 
-    public ThermalItemModelProvider(PackOutput output, ExistingFileHelper existingFileHelper) {
+    public ThermalConstructItemModelProvider(PackOutput output, ExistingFileHelper existingFileHelper) {
         super(output, ThermalConstruct.MOD_ID, existingFileHelper);
     }
 

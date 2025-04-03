@@ -40,9 +40,9 @@ import slimeknights.tconstruct.smeltery.TinkerSmeltery;
 
 import java.util.function.Consumer;
 
-public class ThermalRecipeProvider extends RecipeProviderCoFH implements IMaterialRecipeHelper, IToolRecipeHelper, ISmelteryRecipeHelper, ICommonRecipeHelper {
+public class ThermalConstructRecipeProvider extends RecipeProviderCoFH implements IMaterialRecipeHelper, IToolRecipeHelper, ISmelteryRecipeHelper, ICommonRecipeHelper {
 
-    public ThermalRecipeProvider(PackOutput output) {
+    public ThermalConstructRecipeProvider(PackOutput output) {
         super(output, ThermalConstruct.MOD_ID);
     }
 

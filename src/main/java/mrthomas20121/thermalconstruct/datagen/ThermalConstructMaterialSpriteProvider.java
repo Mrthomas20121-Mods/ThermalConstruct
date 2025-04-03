@@ -4,7 +4,7 @@ import mrthomas20121.thermalconstruct.ThermalConstructMaterialIds;
 import slimeknights.tconstruct.library.client.data.material.AbstractMaterialSpriteProvider;
 import slimeknights.tconstruct.library.client.data.spritetransformer.GreyToColorMapping;
 
-public class ThermalMaterialSpriteProvider extends AbstractMaterialSpriteProvider {
+public class ThermalConstructMaterialSpriteProvider extends AbstractMaterialSpriteProvider {
 
     @Override
     public String getName() {

@@ -11,9 +11,9 @@ import slimeknights.tconstruct.common.TinkerTags;
 
 import java.util.concurrent.CompletableFuture;
 
-public class ThermalBlockTagsProvider extends BlockTagsProvider {
+public class ThermalConstructBlockTagsProvider extends BlockTagsProvider {
 
-    public ThermalBlockTagsProvider(PackOutput output, CompletableFuture<HolderLookup.Provider> lookupProvider, @Nullable ExistingFileHelper existingFileHelper) {
+    public ThermalConstructBlockTagsProvider(PackOutput output, CompletableFuture<HolderLookup.Provider> lookupProvider, @Nullable ExistingFileHelper existingFileHelper) {
         super(output, lookupProvider, ThermalConstruct.MOD_ID, existingFileHelper);
     }
 

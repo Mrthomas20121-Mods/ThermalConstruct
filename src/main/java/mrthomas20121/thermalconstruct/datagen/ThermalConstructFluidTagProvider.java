@@ -15,9 +15,9 @@ import slimeknights.mantle.registration.object.FluidObject;
 import java.util.Objects;
 import java.util.concurrent.CompletableFuture;
 
-public class ThermalFluidTagProvider extends FluidTagsProvider {
+public class ThermalConstructFluidTagProvider extends FluidTagsProvider {
 
-    public ThermalFluidTagProvider(PackOutput packOutput, CompletableFuture<HolderLookup.Provider> completableFuture, @Nullable ExistingFileHelper existingFileHelper) {
+    public ThermalConstructFluidTagProvider(PackOutput packOutput, CompletableFuture<HolderLookup.Provider> completableFuture, @Nullable ExistingFileHelper existingFileHelper) {
         super(packOutput, completableFuture, ThermalConstruct.MOD_ID, existingFileHelper);
     }
 

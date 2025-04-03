@@ -26,12 +26,12 @@ import slimeknights.tconstruct.library.tools.capability.TinkerDataKeys;
 import slimeknights.tconstruct.library.tools.stat.ToolStats;
 import slimeknights.tconstruct.tools.TinkerModifiers;
 
-public class ThermalModifierProvider extends AbstractModifierProvider {
+public class ThermalConstructModifierProvider extends AbstractModifierProvider {
 
     public static ModifierTraitModule THORNS = new ModifierTraitModule(TinkerModifiers.thorns.getId(), 1, true);
     public static ModifierTraitModule ENDER_RETREAT = new ModifierTraitModule(ThermalConstructModifiers.CALLBACK.getId(), 1, true);
 
-    public ThermalModifierProvider(PackOutput packOutput) {
+    public ThermalConstructModifierProvider(PackOutput packOutput) {
         super(packOutput);
     }
 

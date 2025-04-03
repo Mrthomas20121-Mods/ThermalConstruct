@@ -8,9 +8,9 @@ import slimeknights.tconstruct.library.data.material.AbstractMaterialDataProvide
 import slimeknights.tconstruct.library.data.material.AbstractMaterialTraitDataProvider;
 import slimeknights.tconstruct.library.materials.MaterialRegistry;
 
-public class ThermalMaterialTraitProvider extends AbstractMaterialTraitDataProvider {
+public class ThermalConstructMaterialTraitProvider extends AbstractMaterialTraitDataProvider {
 
-    public ThermalMaterialTraitProvider(PackOutput packOutput, AbstractMaterialDataProvider materials) {
+    public ThermalConstructMaterialTraitProvider(PackOutput packOutput, AbstractMaterialDataProvider materials) {
         super(packOutput, materials);
     }
 

@@ -13,9 +13,9 @@ import slimeknights.mantle.registration.object.FluidObject;
 import slimeknights.tconstruct.library.materials.definition.MaterialId;
 import slimeknights.tconstruct.library.modifiers.ModifierId;
 
-public class ThermalLangProvider extends LanguageProvider {
+public class ThermalConstructLangProvider extends LanguageProvider {
 
-    public ThermalLangProvider(PackOutput output) {
+    public ThermalConstructLangProvider(PackOutput output) {
         super(output, ThermalConstruct.MOD_ID, "en_us");
     }
 

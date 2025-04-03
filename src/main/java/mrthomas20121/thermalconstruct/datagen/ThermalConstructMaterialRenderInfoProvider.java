@@ -7,9 +7,9 @@ import org.jetbrains.annotations.Nullable;
 import slimeknights.tconstruct.library.client.data.material.AbstractMaterialRenderInfoProvider;
 import slimeknights.tconstruct.library.client.data.material.AbstractMaterialSpriteProvider;
 
-public class ThermalMaterialRenderInfoProvider extends AbstractMaterialRenderInfoProvider {
+public class ThermalConstructMaterialRenderInfoProvider extends AbstractMaterialRenderInfoProvider {
 
-    public ThermalMaterialRenderInfoProvider(PackOutput packOutput, @Nullable AbstractMaterialSpriteProvider materialSprites, @Nullable ExistingFileHelper existingFileHelper) {
+    public ThermalConstructMaterialRenderInfoProvider(PackOutput packOutput, @Nullable AbstractMaterialSpriteProvider materialSprites, @Nullable ExistingFileHelper existingFileHelper) {
         super(packOutput, materialSprites, existingFileHelper);
     }
 

@@ -8,9 +8,9 @@ import net.minecraft.data.PackOutput;
 import slimeknights.tconstruct.library.materials.definition.MaterialId;
 import slimeknights.tconstruct.library.modifiers.ModifierId;
 
-public class ThermalColorProvider extends MantleColorGenerator {
+public class ThermalConstructColorProvider extends MantleColorGenerator {
 
-    public ThermalColorProvider(PackOutput packOutput) {
+    public ThermalConstructColorProvider(PackOutput packOutput) {
         super(packOutput, ThermalConstruct.MOD_ID);
     }
 

@@ -6,7 +6,6 @@ import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.ItemTagsProvider;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import org.jetbrains.annotations.Nullable;
@@ -14,9 +13,9 @@ import slimeknights.tconstruct.common.TinkerTags;
 
 import java.util.concurrent.CompletableFuture;
 
-public class ThermalItemTagsProvider extends ItemTagsProvider {
+public class ThermalConstructItemTagsProvider extends ItemTagsProvider {
 
-    public ThermalItemTagsProvider(PackOutput p_275204_, CompletableFuture<HolderLookup.Provider> p_275194_, CompletableFuture<TagLookup<Block>> p_275634_, @Nullable ExistingFileHelper existingFileHelper) {
+    public ThermalConstructItemTagsProvider(PackOutput p_275204_, CompletableFuture<HolderLookup.Provider> p_275194_, CompletableFuture<TagLookup<Block>> p_275634_, @Nullable ExistingFileHelper existingFileHelper) {
         super(p_275204_, p_275194_, p_275634_, ThermalConstruct.MOD_ID, existingFileHelper);
     }
 

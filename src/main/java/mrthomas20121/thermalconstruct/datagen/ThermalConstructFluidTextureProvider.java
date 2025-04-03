@@ -7,8 +7,8 @@ import slimeknights.mantle.fluid.texture.AbstractFluidTextureProvider;
 import slimeknights.mantle.fluid.texture.FluidTexture;
 import slimeknights.mantle.registration.object.FluidObject;
 
-public class ThermalFluidTextureProvider extends AbstractFluidTextureProvider {
-    public ThermalFluidTextureProvider(PackOutput packOutput) {
+public class ThermalConstructFluidTextureProvider extends AbstractFluidTextureProvider {
+    public ThermalConstructFluidTextureProvider(PackOutput packOutput) {
         super(packOutput, ThermalConstruct.MOD_ID);
     }
 
