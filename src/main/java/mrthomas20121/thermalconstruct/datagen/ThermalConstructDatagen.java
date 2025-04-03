@@ -22,27 +22,28 @@ public class ThermalConstructDatagen {
         CompletableFuture<HolderLookup.Provider> lookupProvider = event.getLookupProvider();
 
         TinkerPartSpriteProvider partSpriteProvider = new TinkerPartSpriteProvider();
-        ThermalMaterialSpriteProvider materialSpriteProvider = new ThermalMaterialSpriteProvider();
-        ThermalMaterialDataProvider materialDataProvider = new ThermalMaterialDataProvider(packOutput);
+        ThermalConstructMaterialSpriteProvider materialSpriteProvider = new ThermalConstructMaterialSpriteProvider();
+        ThermalConstructMaterialDataProvider materialDataProvider = new ThermalConstructMaterialDataProvider(packOutput);
 
         boolean server = event.includeServer();
-        ThermalBlockTagsProvider blockTagsProvider = new ThermalBlockTagsProvider(packOutput, lookupProvider, existingFileHelper);
+        ThermalConstructBlockTagsProvider blockTagsProvider = new ThermalConstructBlockTagsProvider(packOutput, lookupProvider, existingFileHelper);
         generator.addProvider(server, blockTagsProvider);
-        generator.addProvider(server, new ThermalItemTagsProvider(packOutput, lookupProvider, blockTagsProvider.contentsGetter(), existingFileHelper));
-        generator.addProvider(server, new ThermalFluidTagProvider(packOutput, lookupProvider, existingFileHelper));
-        generator.addProvider(server, new ThermalRecipeProvider(packOutput));
+        generator.addProvider(server, new ThermalConstructItemTagsProvider(packOutput, lookupProvider, blockTagsProvider.contentsGetter(), existingFileHelper));
+        generator.addProvider(server, new ThermalConstructFluidTagProvider(packOutput, lookupProvider, existingFileHelper));
+        generator.addProvider(server, new ThermalConstructRecipeProvider(packOutput));
         generator.addProvider(server, materialDataProvider);
-        generator.addProvider(server, new ThermalMaterialTraitProvider(packOutput, materialDataProvider));
-        generator.addProvider(server, new ThermalMaterialStatsProvider(packOutput, materialDataProvider));
-        generator.addProvider(server, new ThermalModifierProvider(packOutput));
+        generator.addProvider(server, new ThermalConstructMaterialTraitProvider(packOutput, materialDataProvider));
+        generator.addProvider(server, new ThermalConstructMaterialStatsProvider(packOutput, materialDataProvider));
+        generator.addProvider(server, new ThermalConstructModifierProvider(packOutput));
+        generator.addProvider(server, new ThermalConstructFluidEffectProvider(packOutput));
 
         boolean client = event.includeClient();
-        generator.addProvider(client, new ThermalItemModelProvider(packOutput, existingFileHelper));
-        generator.addProvider(client, new ThermalColorProvider(packOutput));
+        generator.addProvider(client, new ThermalConstructItemModelProvider(packOutput, existingFileHelper));
+        generator.addProvider(client, new ThermalConstructColorProvider(packOutput));
         generator.addProvider(client, new MaterialPartTextureGenerator(packOutput, existingFileHelper, partSpriteProvider, materialSpriteProvider));
-        generator.addProvider(client, new ThermalMaterialRenderInfoProvider(packOutput, materialSpriteProvider, existingFileHelper));
-        generator.addProvider(client, new ThermalLangProvider(packOutput));
-        generator.addProvider(client, new ThermalFluidTextureProvider(packOutput));
+        generator.addProvider(client, new ThermalConstructMaterialRenderInfoProvider(packOutput, materialSpriteProvider, existingFileHelper));
+        generator.addProvider(client, new ThermalConstructLangProvider(packOutput));
+        generator.addProvider(client, new ThermalConstructFluidTextureProvider(packOutput));
         generator.addProvider(client, new FluidBucketModelProvider(packOutput, ThermalConstruct.MOD_ID));
         generator.addProvider(client, new FluidBlockstateModelProvider(packOutput, ThermalConstruct.MOD_ID));
     }
