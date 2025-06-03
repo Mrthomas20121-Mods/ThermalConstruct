@@ -2,6 +2,7 @@ package mrthomas20121.thermalconstruct.init;
 
 import cofh.thermal.core.ThermalCore;
 import mrthomas20121.thermalconstruct.ThermalConstruct;
+import mrthomas20121.thermalconstruct.item.MetalItem;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
@@ -38,8 +39,16 @@ public class ThermalConstructItems {
 
     public static EnumObject<ThermalCast, Item> CASTS = ITEMS.registerEnum("bronze_cast", ThermalCast.VALUES, cast -> cast.getItemInstance().get());
 
+    public static final MetalItem COBALT = new MetalItem("cobalt", ITEMS);
+    public static final MetalItem SLIMESTEEL = new MetalItem("slimesteel", ITEMS);
+    public static final MetalItem AMETHYST_BRONZE = new MetalItem("amethyst_bronze", ITEMS);
+    public static final MetalItem CINDERSLIME = new MetalItem("cinderslime", ITEMS);
+    public static final MetalItem QUEENS_SLIME = new MetalItem("queens_slime", ITEMS);
+    public static final MetalItem MANYULLYN = new MetalItem("manyullyn", ITEMS);
+    public static final MetalItem HEPATIZON = new MetalItem("hepatizon", ITEMS);
+
     public static final RegistryObject<CreativeModeTab> tabThermalConstruct = CREATIVE_TABS.register(
-            "smeltery", () -> CreativeModeTab.builder().title(Component.translatable("itemGroup.thermal_construct"))
+            "thermal_construct_tab", () -> CreativeModeTab.builder().title(Component.translatable("itemGroup.thermal_construct"))
                     .icon(() -> new ItemStack(CASTS.get(ThermalCast.GEM)))
                     .displayItems(ThermalConstructItems::addTabItems)
                     .withTabsBefore(TinkerFluids.tabFluids.getId())
@@ -122,6 +131,7 @@ public class ThermalConstructItems {
 
     private static void addTabItems(CreativeModeTab.ItemDisplayParameters itemDisplayParameters, CreativeModeTab.Output output) {
 
+
         output.accept(ThermalConstructFluids.basalzBlood.asItem());
         output.accept(ThermalConstructFluids.blitzBlood.asItem());
         output.accept(ThermalConstructFluids.blizzBlood.asItem());
@@ -132,11 +142,26 @@ public class ThermalConstructItems {
         output.accept(ThermalConstructFluids.moltenDragonsteel.asItem());
         output.accept(ThermalConstructFluids.moltenAbyssal.asItem());
 
+        addMetalItem(AMETHYST_BRONZE, output);
+        addMetalItem(CINDERSLIME, output);
+        addMetalItem(COBALT, output);
+        addMetalItem(HEPATIZON, output);
+        addMetalItem(MANYULLYN, output);
+        addMetalItem(QUEENS_SLIME, output);
+        addMetalItem(SLIMESTEEL, output);
+
         output.accept(ThermalCore.ITEMS.get("chiller_ingot_cast"));
         output.accept(ThermalCore.ITEMS.get("chiller_ball_cast"));
         output.accept(ThermalCore.ITEMS.get("chiller_rod_cast"));
         for(ThermalConstructItems.ThermalCast cast: ThermalConstructItems.ThermalCast.VALUES) {
             output.accept(CASTS.get(cast));
         }
+    }
+
+    private static void addMetalItem(MetalItem metalItem, CreativeModeTab.Output output) {
+        output.accept(metalItem.getDust());
+        output.accept(metalItem.getGear());
+        output.accept(metalItem.getCoin());
+        output.accept(metalItem.getPlate());
     }
 }

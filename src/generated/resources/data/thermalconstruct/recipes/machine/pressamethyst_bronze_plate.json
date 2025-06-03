@@ -1,0 +1,15 @@
+{
+  "type": "thermal:press",
+  "energy": 5000,
+  "ingredients": [
+    {
+      "count": 1,
+      "tag": "forge:ingots/amethyst_bronze"
+    }
+  ],
+  "result": [
+    {
+      "item": "thermalconstruct:amethyst_bronze_plate"
+    }
+  ]
+}

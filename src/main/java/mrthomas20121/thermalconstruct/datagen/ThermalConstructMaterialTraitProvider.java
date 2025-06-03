@@ -16,15 +16,14 @@ public class ThermalConstructMaterialTraitProvider extends AbstractMaterialTrait
 
     @Override
     protected void addMaterialTraits() {
-        addDefaultTraits(ThermalConstructMaterialIds.ENDERIUM, ThermalConstructModifierIds.BUSHWHACK);
-        addDefaultTraits(ThermalConstructMaterialIds.LUMIUM, ThermalConstructModifierIds.FLUORESCENCE);
-        addDefaultTraits(ThermalConstructMaterialIds.SIGNALUM, ThermalConstructModifiers.POWER_SHIELD);
-        addDefaultTraits(ThermalConstructMaterialIds.TWINITE, ThermalConstructModifiers.POWER_ATTACK);
+        addDefaultTraits(ThermalConstructMaterialIds.ENDERIUM, ThermalConstructModifierIds.HARD_SLICE);
+        addDefaultTraits(ThermalConstructMaterialIds.LUMIUM, ThermalConstructModifierIds.LUMINESCENCE);
+        addDefaultTraits(ThermalConstructMaterialIds.SIGNALUM, ThermalConstructModifiers.FLUX_SHIELD);
+        addDefaultTraits(ThermalConstructMaterialIds.TWINITE, ThermalConstructModifiers.FLUX_CHARGE);
         addDefaultTraits(ThermalConstructMaterialIds.ABYSSAL, ThermalConstructModifierIds.SUBTERRANEAN);
         addTraits(ThermalConstructMaterialIds.DRAGONSTEEL, MaterialRegistry.RANGED, ThermalConstructModifiers.BLISTERING);
 
         addTraits(ThermalConstructMaterialIds.ENDERIUM, MaterialRegistry.ARMOR, ThermalConstructModifierIds.SPECTRAL);
-        addTraits(ThermalConstructMaterialIds.LUMIUM, MaterialRegistry.ARMOR, ThermalConstructModifierIds.PRICKLY_GLOW);
         addTraits(ThermalConstructMaterialIds.SOUL_INFUSED, MaterialRegistry.ARMOR, ThermalConstructModifierIds.GHOSTLY);
         addTraits(ThermalConstructMaterialIds.ABYSSAL, MaterialRegistry.ARMOR, ThermalConstructModifierIds.RESONANCE);
         addTraits(ThermalConstructMaterialIds.SHELLITE, MaterialRegistry.ARMOR, ThermalConstructModifierIds.TOUGH_SHELL);

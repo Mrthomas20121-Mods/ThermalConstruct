@@ -1,0 +1,38 @@
+{
+  "parent": "minecraft:item/generated",
+  "overrides": [
+    {
+      "model": "thermalconstruct:item/amethyst_bronze_coin_0",
+      "predicate": {
+        "minecraft:count": 0.0
+      }
+    },
+    {
+      "model": "thermalconstruct:item/amethyst_bronze_coin_1",
+      "predicate": {
+        "minecraft:count": 0.03125
+      }
+    },
+    {
+      "model": "thermalconstruct:item/amethyst_bronze_coin_2",
+      "predicate": {
+        "minecraft:count": 0.25
+      }
+    },
+    {
+      "model": "thermalconstruct:item/amethyst_bronze_coin_3",
+      "predicate": {
+        "minecraft:count": 0.5
+      }
+    },
+    {
+      "model": "thermalconstruct:item/amethyst_bronze_coin_4",
+      "predicate": {
+        "minecraft:count": 1.0
+      }
+    }
+  ],
+  "textures": {
+    "layer0": "thermalconstruct:item/material/amethyst_bronze_coin_0"
+  }
+}

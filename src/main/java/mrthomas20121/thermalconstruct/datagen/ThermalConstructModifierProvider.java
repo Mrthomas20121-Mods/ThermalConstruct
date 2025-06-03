@@ -7,28 +7,28 @@ import mrthomas20121.thermalconstruct.util.ThermalLivingEntityPredicate;
 import net.minecraft.data.PackOutput;
 import net.minecraft.tags.DamageTypeTags;
 import net.minecraft.world.effect.MobEffects;
+import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import slimeknights.mantle.data.predicate.damage.DamageSourcePredicate;
 import slimeknights.mantle.data.predicate.entity.LivingEntityPredicate;
 import slimeknights.tconstruct.common.TinkerTags;
 import slimeknights.tconstruct.library.data.tinkering.AbstractModifierProvider;
 import slimeknights.tconstruct.library.json.RandomLevelingValue;
+import slimeknights.tconstruct.library.json.predicate.tool.ToolStackPredicate;
 import slimeknights.tconstruct.library.modifiers.modules.armor.EffectImmunityModule;
 import slimeknights.tconstruct.library.modifiers.modules.armor.ProtectionModule;
+import slimeknights.tconstruct.library.modifiers.modules.behavior.AttributeModule;
 import slimeknights.tconstruct.library.modifiers.modules.behavior.ConditionalStatModule;
 import slimeknights.tconstruct.library.modifiers.modules.build.ModifierSlotModule;
 import slimeknights.tconstruct.library.modifiers.modules.build.ModifierTraitModule;
 import slimeknights.tconstruct.library.modifiers.modules.build.StatBoostModule;
 import slimeknights.tconstruct.library.modifiers.modules.combat.ConditionalMeleeDamageModule;
 import slimeknights.tconstruct.library.modifiers.modules.combat.MobEffectModule;
-import slimeknights.tconstruct.library.modifiers.modules.technical.ArmorStatModule;
 import slimeknights.tconstruct.library.tools.SlotType;
-import slimeknights.tconstruct.library.tools.capability.TinkerDataKeys;
 import slimeknights.tconstruct.library.tools.stat.ToolStats;
-import slimeknights.tconstruct.tools.TinkerModifiers;
+import slimeknights.tconstruct.shared.TinkerAttributes;
 
 public class ThermalConstructModifierProvider extends AbstractModifierProvider {
 
-    public static ModifierTraitModule THORNS = new ModifierTraitModule(TinkerModifiers.thorns.getId(), 1, true);
     public static ModifierTraitModule ENDER_RETREAT = new ModifierTraitModule(ThermalConstructModifiers.CALLBACK.getId(), 1, true);
 
     public ThermalConstructModifierProvider(PackOutput packOutput) {
@@ -46,8 +46,8 @@ public class ThermalConstructModifierProvider extends AbstractModifierProvider {
                 .addModule(StatBoostModule.add(ToolStats.ATTACK_DAMAGE).eachLevel(-1.5f))
                 .addModule(StatBoostModule.multiplyAll(ToolStats.DURABILITY).flat(0.8f))
                 .addModule(StatBoostModule.add(ToolStats.MINING_SPEED).eachLevel(-1.5f))
-                .addModule(new ModifierSlotModule(SlotType.ABILITY))
-                .addModule(new ModifierSlotModule(SlotType.UPGRADE));
+                .addModule(ModifierSlotModule.slot(SlotType.ABILITY).eachLevel(1))
+                .addModule(ModifierSlotModule.slot(SlotType.UPGRADE).eachLevel(1));
 
         // blizz armor
         buildModifier(ThermalConstructModifierIds.FREEZING_PROTECTION)
@@ -61,12 +61,12 @@ public class ThermalConstructModifierProvider extends AbstractModifierProvider {
                         .attacker(ThermalLivingEntityPredicate.IS_WARDEN).eachLevel(1.25f));
 
         buildModifier(ThermalConstructModifierIds.GHOSTLY)
-                .addModule(ArmorStatModule.builder(TinkerDataKeys.GOOD_EFFECT_DURATION)
-                        .heldTag(TinkerTags.Items.HELD_ARMOR)
-                        .tooltipStyle(ArmorStatModule.TooltipStyle.PERCENT).eachLevel(0.25f))
-                .addModule(ArmorStatModule.builder(TinkerDataKeys.BAD_EFFECT_DURATION)
-                        .heldTag(TinkerTags.Items.HELD_ARMOR)
-                        .tooltipStyle(ArmorStatModule.TooltipStyle.PERCENT).eachLevel(0.25f));
+                .addModule(AttributeModule.builder(TinkerAttributes.GOOD_EFFECT_DURATION, AttributeModifier.Operation.ADDITION)
+                        .tool(ToolStackPredicate.tag(TinkerTags.Items.HELD_ARMOR))
+                        .tooltipStyle(AttributeModule.TooltipStyle.PERCENT).eachLevel(0.25f))
+                .addModule(AttributeModule.builder(TinkerAttributes.BAD_EFFECT_DURATION, AttributeModifier.Operation.ADDITION)
+                        .tool(ToolStackPredicate.tag(TinkerTags.Items.HELD_ARMOR))
+                        .tooltipStyle(AttributeModule.TooltipStyle.PERCENT).eachLevel(0.25f));
 
         buildModifier(ThermalConstructModifierIds.TOUGH_SHELL)
                 .addModule(StatBoostModule.add(ToolStats.ARMOR_TOUGHNESS).eachLevel(1f));
@@ -78,7 +78,7 @@ public class ThermalConstructModifierProvider extends AbstractModifierProvider {
                 .addModule(StatBoostModule.multiplyBase(ToolStats.ARMOR).eachLevel(1.2f))
                 .addModule(StatBoostModule.multiplyBase(ToolStats.DURABILITY).eachLevel(1.2f));
 
-        buildModifier(ThermalConstructModifierIds.BUSHWHACK)
+        buildModifier(ThermalConstructModifierIds.HARD_SLICE)
                 .addModule(ConditionalMeleeDamageModule
                         .builder()
                         .attacker(ThermalLivingEntityPredicate.IS_IN_END)
@@ -92,11 +92,9 @@ public class ThermalConstructModifierProvider extends AbstractModifierProvider {
                 .addModule(ConditionalStatModule.stat(ToolStats.MINING_SPEED).holder(ThermalLivingEntityPredicate.HAS_POTION_EFFECT).eachLevel(2f))
                 .addModule(ConditionalStatModule.stat(ToolStats.DRAW_SPEED).holder(ThermalLivingEntityPredicate.HAS_POTION_EFFECT).eachLevel(0.2f));
 
-        buildModifier(ThermalConstructModifierIds.FLUORESCENCE)
+        buildModifier(ThermalConstructModifierIds.LUMINESCENCE)
                 .addModule(MobEffectModule.builder(MobEffects.GLOWING).time(RandomLevelingValue.perLevel(100, 20)).build());
-        buildModifier(ThermalConstructModifierIds.PRICKLY_GLOW)
-                .addModule(THORNS)
-                .addModule(MobEffectModule.builder(MobEffects.GLOWING).time(RandomLevelingValue.perLevel(100, 20)).build());
+
         buildModifier(ThermalConstructModifierIds.SPECTRAL)
                 .addModule(ENDER_RETREAT)
                 .addModule(new EffectImmunityModule(MobEffects.LEVITATION));

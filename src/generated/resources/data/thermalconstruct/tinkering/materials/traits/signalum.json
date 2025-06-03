@@ -2,7 +2,7 @@
   "default": [
     {
       "level": 1,
-      "name": "thermalconstruct:power_shield"
+      "name": "thermalconstruct:flux_shield"
     }
   ]
 }

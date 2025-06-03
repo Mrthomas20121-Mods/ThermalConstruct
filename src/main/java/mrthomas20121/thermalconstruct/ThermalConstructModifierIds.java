@@ -6,9 +6,8 @@ public class ThermalConstructModifierIds {
 
     // traits
     public static ModifierId ACCUSTOMED = create("accustomed");
-    public static ModifierId FLUORESCENCE = create("fluorescence");
-    public static ModifierId PRICKLY_GLOW = create("prickly_glow");
-    public static ModifierId BUSHWHACK = create("bushwhack");
+    public static ModifierId LUMINESCENCE = create("luminescence");
+    public static ModifierId HARD_SLICE = create("hard_slice");
     public static ModifierId SPECTRAL = create("spectral");
     public static ModifierId CHILLED = create("chilled");
     public static ModifierId SHOCKED = create("shocked");

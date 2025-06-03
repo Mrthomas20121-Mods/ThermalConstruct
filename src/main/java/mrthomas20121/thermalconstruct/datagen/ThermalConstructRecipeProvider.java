@@ -1,22 +1,30 @@
 package mrthomas20121.thermalconstruct.datagen;
 
 import cofh.lib.init.data.RecipeProviderCoFH;
+import cofh.lib.util.DeferredRegisterCoFH;
+import cofh.lib.util.crafting.IngredientWithCount;
 import cofh.thermal.core.ThermalCore;
 import cofh.thermal.core.init.registries.TCoreEntities;
+import mrthomas20121.thermal_extra.data.thermal_recipe.MachineRecipeBuilder;
 import mrthomas20121.thermal_extra.init.ThermalExtraItems;
 import mrthomas20121.thermalconstruct.ThermalConstruct;
 import mrthomas20121.thermalconstruct.ThermalConstructMaterialIds;
 import mrthomas20121.thermalconstruct.ThermalConstructModifierIds;
 import mrthomas20121.thermalconstruct.init.ThermalConstructFluids;
 import mrthomas20121.thermalconstruct.init.ThermalConstructItems;
+import mrthomas20121.thermalconstruct.item.MetalItem;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.FinishedRecipe;
+import net.minecraft.data.recipes.RecipeCategory;
+import net.minecraft.data.recipes.ShapedRecipeBuilder;
+import net.minecraft.data.recipes.SimpleCookingRecipeBuilder;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.material.Fluid;
+import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.crafting.conditions.ModLoadedCondition;
 import net.minecraftforge.common.crafting.conditions.NotCondition;
 import net.minecraftforge.fluids.FluidType;
@@ -25,6 +33,7 @@ import slimeknights.mantle.recipe.data.ItemNameIngredient;
 import slimeknights.mantle.recipe.helper.FluidOutput;
 import slimeknights.mantle.recipe.ingredient.EntityIngredient;
 import slimeknights.mantle.registration.object.FluidObject;
+import slimeknights.mantle.registration.object.MetalItemObject;
 import slimeknights.tconstruct.common.TinkerTags;
 import slimeknights.tconstruct.fluids.TinkerFluids;
 import slimeknights.tconstruct.library.data.recipe.IMaterialRecipeHelper;
@@ -36,6 +45,7 @@ import slimeknights.tconstruct.library.recipe.casting.ItemCastingRecipeBuilder;
 import slimeknights.tconstruct.library.recipe.entitymelting.EntityMeltingRecipeBuilder;
 import slimeknights.tconstruct.library.recipe.melting.MeltingRecipeBuilder;
 import slimeknights.tconstruct.library.recipe.modifiers.adding.ModifierRecipeBuilder;
+import slimeknights.tconstruct.shared.TinkerMaterials;
 import slimeknights.tconstruct.smeltery.TinkerSmeltery;
 
 import java.util.function.Consumer;
@@ -123,8 +133,70 @@ public class ThermalConstructRecipeProvider extends RecipeProviderCoFH implement
                 .addInput(ThermalExtraItems.ABYSSAL_INTEGRAL_COMPONENT.get())
                 .setMaxLevel(1)
                 .save(withCondition(consumer, new ModLoadedCondition("thermal_extra")), prefix(merge(ThermalConstructModifierIds.INTEGRAL, "_extra"), upgradeFolder));
+
+        machineRecipe(consumer, TinkerMaterials.amethystBronze, ThermalConstructItems.AMETHYST_BRONZE);
+        machineRecipe(consumer, TinkerMaterials.cobalt, ThermalConstructItems.COBALT);
+        machineRecipe(consumer, TinkerMaterials.cinderslime, ThermalConstructItems.CINDERSLIME);
+        machineRecipe(consumer, TinkerMaterials.hepatizon, ThermalConstructItems.HEPATIZON);
+        machineRecipe(consumer, TinkerMaterials.manyullyn, ThermalConstructItems.MANYULLYN);
+        machineRecipe(consumer, TinkerMaterials.queensSlime, ThermalConstructItems.QUEENS_SLIME);
+        machineRecipe(consumer, TinkerMaterials.slimesteel, ThermalConstructItems.SLIMESTEEL);
     }
-    
+
+    protected void smeltingRecipe(Consumer<FinishedRecipe> p_176740_, ItemLike p_176741_, ItemLike p_176742_) {
+        SimpleCookingRecipeBuilder.smelting(Ingredient.of(p_176742_), RecipeCategory.MISC, p_176741_, 0.1F, 200).unlockedBy(getHasName(p_176742_), has(p_176742_)).save(p_176740_);
+    }
+
+    public void machineRecipe(Consumer<FinishedRecipe> consumer, MetalItemObject object, MetalItem metalItem) {
+        String type = metalItem.getName();
+        Item gear = metalItem.getGear().asItem();
+        Item ingot = object.getIngot();
+        TagKey<Item> ingotTag = object.getIngotTag();
+
+        smeltingRecipe(consumer, ingot, metalItem.getDust());
+
+        MachineRecipeBuilder.pulverizer()
+                .input(ingotTag)
+                .output(metalItem.getDust())
+                .energy(5000)
+                .save(consumer, ThermalConstruct.getResource("machine/pulverizer"+type+"_dust").toString());
+
+        MachineRecipeBuilder.press()
+                .energy(3000)
+                .input(ingotTag)
+                .input(ThermalCore.ITEMS.get("press_coin_die"))
+                .output(metalItem.getCoin(), 3)
+                .save(consumer, ThermalConstruct.getResource("machine/press/"+ type +"_coin").toString());
+        MachineRecipeBuilder.press()
+                .energy(3000)
+                .input(object.getNuggetTag())
+                .input(ThermalCore.ITEMS.get("press_coin_die"))
+                .output(metalItem.getCoin(), 1)
+                .save(consumer, ThermalConstruct.getResource("machine/press/"+ type +"_nugget_to_coin").toString());
+
+        MachineRecipeBuilder.press()
+                .input(ingotTag)
+                .output(metalItem.getPlate())
+                .energy(5000)
+                .save(consumer, ThermalConstruct.getResource("machine/press"+type+"_plate").toString());
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, gear)
+                .define('#', ingotTag)
+                .define('i', Tags.Items.NUGGETS_IRON)
+                .pattern(" # ")
+                .pattern("#i#")
+                .pattern(" # ")
+                .unlockedBy("has_" + name(ingot), has(ingotTag))
+                .save(consumer, this.modid + ":parts/" + name(gear));
+
+        MachineRecipeBuilder.press()
+                .input(new IngredientWithCount(Ingredient.of(ingotTag), 4))
+                .input(Ingredient.of(ThermalCore.ITEMS.get("press_gear_die")))
+                .output(gear)
+                .save(consumer, "thermal_extra:machine/press/"+type+"_gear");
+
+    }
+
     public void extraCompat(String smelteryFolder, String materialFolder, Consumer<FinishedRecipe> consumer) {
         metal(consumer, ThermalConstructFluids.moltenSoulInfused).metal().dust().plate().gear().coin().sheetmetal().rod();
         metal(consumer, ThermalConstructFluids.moltenTwinite).metal().dust().plate().gear().coin().sheetmetal().rod();

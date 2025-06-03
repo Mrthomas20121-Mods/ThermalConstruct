@@ -2,15 +2,7 @@
   "default": [
     {
       "level": 1,
-      "name": "thermalconstruct:fluorescence"
+      "name": "thermalconstruct:luminescence"
     }
-  ],
-  "perStat": {
-    "tconstruct:armor": [
-      {
-        "level": 1,
-        "name": "thermalconstruct:prickly_glow"
-      }
-    ]
-  }
+  ]
 }

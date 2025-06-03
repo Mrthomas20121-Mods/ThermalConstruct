@@ -6,12 +6,15 @@ import mrthomas20121.thermalconstruct.ThermalConstructModifierIds;
 import mrthomas20121.thermalconstruct.init.ThermalConstructFluids;
 import mrthomas20121.thermalconstruct.init.ThermalConstructItems;
 import mrthomas20121.thermalconstruct.init.ThermalConstructModifiers;
+import mrthomas20121.thermalconstruct.item.MetalItem;
 import net.minecraft.data.PackOutput;
 import net.minecraftforge.common.data.LanguageProvider;
 import net.minecraftforge.fluids.ForgeFlowingFluid;
 import slimeknights.mantle.registration.object.FluidObject;
 import slimeknights.tconstruct.library.materials.definition.MaterialId;
 import slimeknights.tconstruct.library.modifiers.ModifierId;
+
+import java.util.Locale;
 
 public class ThermalConstructLangProvider extends LanguageProvider {
 
@@ -21,6 +24,14 @@ public class ThermalConstructLangProvider extends LanguageProvider {
 
     @Override
     protected void addTranslations() {
+
+        addMetalItem(ThermalConstructItems.AMETHYST_BRONZE);
+        addMetalItem(ThermalConstructItems.COBALT);
+        addMetalItem(ThermalConstructItems.CINDERSLIME);
+        addMetalItem(ThermalConstructItems.HEPATIZON);
+        addMetalItem(ThermalConstructItems.MANYULLYN);
+        addMetalItem(ThermalConstructItems.QUEENS_SLIME);
+        addMetalItem(ThermalConstructItems.SLIMESTEEL);
 
         for(ThermalConstructItems.ThermalCast cast: ThermalConstructItems.ThermalCast.VALUES) {
             add(ThermalConstructItems.CASTS.get(cast), cast.getTranslatedName() + " Cast");
@@ -60,21 +71,17 @@ public class ThermalConstructLangProvider extends LanguageProvider {
         addMaterial(ThermalConstructMaterialIds.BLITZ, "Blitz");
         addMaterial(ThermalConstructMaterialIds.BLIZZ, "Blizz");
 
-        addModifier(ThermalConstructModifierIds.BUSHWHACK, "Bushwhack");
-        addModifierFlavor(ThermalConstructModifierIds.BUSHWHACK, "Revenge is a dish best served cold.");
-        addModifierDesc(ThermalConstructModifierIds.BUSHWHACK, "Deal more damage to mobs in the end.");
+        addModifier(ThermalConstructModifierIds.HARD_SLICE, "Hard Slice");
+        addModifierFlavor(ThermalConstructModifierIds.HARD_SLICE, "Who want some minced enderman?");
+        addModifierDesc(ThermalConstructModifierIds.HARD_SLICE, "Deal more damage to mobs in the end.");
 
         addModifier(ThermalConstructModifierIds.SPECTRAL, "Spectral");
         addModifierFlavor(ThermalConstructModifierIds.SPECTRAL, "Chorus Fruit taste so good");
         addModifierDesc(ThermalConstructModifierIds.SPECTRAL, "Immune to levitation but you teleport when you take damage.");
 
-        addModifier(ThermalConstructModifierIds.FLUORESCENCE, "Fluorescence");
-        addModifierFlavor(ThermalConstructModifierIds.FLUORESCENCE, "Glow in the dark");
-        addModifierDesc(ThermalConstructModifierIds.FLUORESCENCE, "Target is glowing when hit.");
-
-        addModifier(ThermalConstructModifierIds.PRICKLY_GLOW, "Prickly Glow");
-        addModifierFlavor(ThermalConstructModifierIds.PRICKLY_GLOW, "Holy Light!");
-        addModifierDesc(ThermalConstructModifierIds.PRICKLY_GLOW, "Attacker is glowing and take damage when hit.");
+        addModifier(ThermalConstructModifierIds.LUMINESCENCE, "Luminescence");
+        addModifierFlavor(ThermalConstructModifierIds.LUMINESCENCE, "Begone Darkness!");
+        addModifierDesc(ThermalConstructModifierIds.LUMINESCENCE, "Target is glowing when hit.");
 
         addModifier(ThermalConstructModifierIds.ACCUSTOMED, "Accustomed");
         addModifierFlavor(ThermalConstructModifierIds.ACCUSTOMED, "Taste the wind");
@@ -132,9 +139,13 @@ public class ThermalConstructLangProvider extends LanguageProvider {
         addModifierFlavor(ThermalConstructModifierIds.INTEGRAL, "Dad's favorite math stuff");
         addModifierDesc(ThermalConstructModifierIds.INTEGRAL, "Boost your tool/armor/bow stats.");
 
-        addModifier(ThermalConstructModifiers.POWER_SHIELD.getId(), "Power Shield");
-        addModifierFlavor(ThermalConstructModifiers.POWER_SHIELD.getId(), "Powered by RF");
-        addModifierDesc(ThermalConstructModifiers.POWER_SHIELD.getId(), "Tool consumes RF instead of durability, until it runs out!.");
+        addModifier(ThermalConstructModifiers.FLUX_SHIELD.getId(), "Flux Shield");
+        addModifierFlavor(ThermalConstructModifiers.FLUX_SHIELD.getId(), "Powered by RF");
+        addModifierDesc(ThermalConstructModifiers.FLUX_SHIELD.getId(), "Tool consumes RF instead of durability, until it runs out!.");
+
+        addModifier(ThermalConstructModifiers.FLUX_CHARGE.getId(), "Flux Charge");
+        addModifierFlavor(ThermalConstructModifiers.FLUX_CHARGE.getId(), "Powered by RF");
+        addModifierDesc(ThermalConstructModifiers.FLUX_CHARGE.getId(), "Tool consumes RF instead of durability, until it runs out!.");
     }
 
     public void fluid(FluidObject<ForgeFlowingFluid> fluid, String name) {
@@ -163,5 +174,13 @@ public class ThermalConstructLangProvider extends LanguageProvider {
 
     public void addMaterialEncyclopedia(MaterialId material, String s) {
         add("material."+material.getNamespace()+"."+material.getPath()+".encyclopedia", s);
+    }
+
+    public void addMetalItem(MetalItem metalItem) {
+        String name = metalItem.getTranslatedName();
+        add(metalItem.getDust().asItem(),  name + " Dust");
+        add(metalItem.getCoin().asItem(),  name + " Coin");
+        add(metalItem.getPlate().asItem(),  name + " Plate");
+        add(metalItem.getGear().asItem(),  name + " Gear");
     }
 }

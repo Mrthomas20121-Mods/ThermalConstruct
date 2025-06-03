@@ -21,10 +21,10 @@ public class ThermalConstructColorProvider extends MantleColorGenerator {
         addMaterialAndModifiers(ThermalConstructMaterialIds.BLITZ, "#DEF7FA", ThermalConstructModifierIds.SHOCKED);
         addMaterialAndModifiers(ThermalConstructMaterialIds.BLIZZ, "#37B7FE", ThermalConstructModifierIds.SHOCKED, ThermalConstructModifierIds.FREEZING_PROTECTION);
 
-        addMaterialAndModifiers(ThermalConstructMaterialIds.ENDERIUM, "#4BCFCD", ThermalConstructModifierIds.BUSHWHACK, ThermalConstructModifierIds.SPECTRAL);
-        addMaterialAndModifiers(ThermalConstructMaterialIds.LUMIUM, "#FFF1AA", ThermalConstructModifierIds.FLUORESCENCE, ThermalConstructModifierIds.PRICKLY_GLOW);
-        addMaterialAndModifiers(ThermalConstructMaterialIds.SIGNALUM, "#FF9543", ThermalConstructModifiers.POWER_SHIELD.getId());
-        addMaterialAndModifiers(ThermalConstructMaterialIds.TWINITE, "#FFD1E5", ThermalConstructModifiers.POWER_ATTACK.getId());
+        addMaterialAndModifiers(ThermalConstructMaterialIds.ENDERIUM, "#4BCFCD", ThermalConstructModifierIds.HARD_SLICE, ThermalConstructModifierIds.SPECTRAL);
+        addMaterialAndModifiers(ThermalConstructMaterialIds.LUMIUM, "#FFF1AA", ThermalConstructModifierIds.LUMINESCENCE);
+        addMaterialAndModifiers(ThermalConstructMaterialIds.SIGNALUM, "#FF9543", ThermalConstructModifiers.FLUX_SHIELD.getId());
+        addMaterialAndModifiers(ThermalConstructMaterialIds.TWINITE, "#FFD1E5", ThermalConstructModifiers.FLUX_CHARGE.getId());
         addMaterialAndModifiers(ThermalConstructMaterialIds.DRAGONSTEEL, "#729EDB", ThermalConstructModifierIds.ENERGIZED, ThermalConstructModifiers.BLISTERING.getId());
         addMaterialAndModifiers(ThermalConstructMaterialIds.ABYSSAL, "#8DB37C", ThermalConstructModifierIds.RESONANCE, ThermalConstructModifierIds.SUBTERRANEAN);
         addMaterialAndModifiers(ThermalConstructMaterialIds.SOUL_INFUSED, "#8DB37C", ThermalConstructModifierIds.RESONANCE, ThermalConstructModifierIds.SUBTERRANEAN);

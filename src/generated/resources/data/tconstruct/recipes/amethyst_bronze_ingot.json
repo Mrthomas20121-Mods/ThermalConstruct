@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "cookingtime": 200,
+  "experience": 0.1,
+  "ingredient": {
+    "item": "thermalconstruct:amethyst_bronze_dust"
+  },
+  "result": "tconstruct:amethyst_bronze_ingot"
+}

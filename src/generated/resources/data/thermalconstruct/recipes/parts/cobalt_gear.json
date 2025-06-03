@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": {
+      "tag": "forge:ingots/cobalt"
+    },
+    "i": {
+      "tag": "forge:nuggets/iron"
+    }
+  },
+  "pattern": [
+    " # ",
+    "#i#",
+    " # "
+  ],
+  "result": {
+    "item": "thermalconstruct:cobalt_gear"
+  },
+  "show_notification": true
+}

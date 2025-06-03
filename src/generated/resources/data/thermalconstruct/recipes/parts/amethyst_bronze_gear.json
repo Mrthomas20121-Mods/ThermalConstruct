@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": {
+      "tag": "forge:ingots/amethyst_bronze"
+    },
+    "i": {
+      "tag": "forge:nuggets/iron"
+    }
+  },
+  "pattern": [
+    " # ",
+    "#i#",
+    " # "
+  ],
+  "result": {
+    "item": "thermalconstruct:amethyst_bronze_gear"
+  },
+  "show_notification": true
+}

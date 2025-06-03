@@ -2,7 +2,7 @@
   "default": [
     {
       "level": 1,
-      "name": "thermalconstruct:bushwhack"
+      "name": "thermalconstruct:hard_slice"
     }
   ],
   "perStat": {

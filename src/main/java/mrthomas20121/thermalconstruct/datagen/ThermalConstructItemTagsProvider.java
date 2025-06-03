@@ -1,12 +1,15 @@
 package mrthomas20121.thermalconstruct.datagen;
 
+import cofh.lib.init.tags.ItemTagsCoFH;
 import mrthomas20121.thermalconstruct.ThermalConstruct;
 import mrthomas20121.thermalconstruct.init.ThermalConstructItems;
+import mrthomas20121.thermalconstruct.item.MetalItem;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.ItemTagsProvider;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
+import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import org.jetbrains.annotations.Nullable;
 import slimeknights.tconstruct.common.TinkerTags;
@@ -32,5 +35,25 @@ public class ThermalConstructItemTagsProvider extends ItemTagsProvider {
                 .addOptional(new ResourceLocation("thermal_extra:shellite_block"))
                 .addOptional(new ResourceLocation("thermal_extra:dragonsteel_block"))
                 .addOptional(new ResourceLocation("thermal_extra:abyssal_block"));
+
+        metalTags(ThermalConstructItems.COBALT);
+        metalTags(ThermalConstructItems.SLIMESTEEL);
+        metalTags(ThermalConstructItems.AMETHYST_BRONZE);
+        metalTags(ThermalConstructItems.CINDERSLIME);
+        metalTags(ThermalConstructItems.HEPATIZON);
+        metalTags(ThermalConstructItems.MANYULLYN);
+        metalTags(ThermalConstructItems.QUEENS_SLIME);
+    }
+
+    protected void metalTags(MetalItem metalItem) {
+        tag(ItemTagsCoFH.COINS).add(metalItem.getCoin().asItem());
+        tag(ItemTagsCoFH.GEARS).add(metalItem.getGear().asItem());
+        tag(ItemTagsCoFH.PLATES).add(metalItem.getPlate().asItem());
+        tag(Tags.Items.DUSTS).add(metalItem.getDust().asItem());
+
+        tag(metalItem.getDustTag()).add(metalItem.getDust().asItem());
+        tag(metalItem.getCoinTag()).add(metalItem.getCoin().asItem());
+        tag(metalItem.getGearTag()).add(metalItem.getGear().asItem());
+        tag(metalItem.getPlateTag()).add(metalItem.getPlate().asItem());
     }
 }
