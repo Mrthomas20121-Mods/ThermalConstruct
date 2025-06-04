@@ -1,9 +1,0 @@
-{
-  "type": "tconstruct:material",
-  "ingredient": {
-    "item": "thermal:basalz_powder"
-  },
-  "material": "thermalconstruct:basalz",
-  "needed": 2,
-  "value": 1
-}

@@ -1,9 +1,0 @@
-{
-  "type": "tconstruct:material_fluid",
-  "fluid": {
-    "amount": 90,
-    "tag": "thermalconstruct:blitz_blood"
-  },
-  "output": "thermalconstruct:blitz",
-  "temperature": 900
-}

@@ -1,9 +1,9 @@
 {
   "material.thermalconstruct": {
     "abyssal": "#8DB37C",
-    "basalz": "#32353A",
-    "blitz": "#DEF7FA",
-    "blizz": "#37B7FE",
+    "basalz_bone": "#32353A",
+    "blitz_bone": "#DEF7FA",
+    "blizz_bone": "#37B7FE",
     "dragonsteel": "#729EDB",
     "enderium": "#4BCFCD",
     "lumium": "#FFF1AA",

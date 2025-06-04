@@ -1,9 +1,0 @@
-{
-  "type": "tconstruct:material_melting",
-  "input": "thermalconstruct:basalz",
-  "result": {
-    "amount": 90,
-    "fluid": "thermalconstruct:basalz_blood"
-  },
-  "temperature": 900
-}

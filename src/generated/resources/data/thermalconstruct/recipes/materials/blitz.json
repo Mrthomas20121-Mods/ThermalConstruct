@@ -1,9 +1,9 @@
 {
   "type": "tconstruct:material",
   "ingredient": {
-    "item": "thermal:blizz_rod"
+    "item": "thermalconstruct:blitz_bone"
   },
-  "material": "thermalconstruct:blizz",
+  "material": "thermalconstruct:blitz_bone",
   "needed": 1,
   "value": 1
 }

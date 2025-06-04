@@ -146,6 +146,10 @@ public class ThermalConstructItems {
         output.accept(ThermalConstructFluids.moltenDragonsteel.asItem());
         output.accept(ThermalConstructFluids.moltenAbyssal.asItem());
 
+        output.accept(BASALZ_BONE);
+        output.accept(BLITZ_BONE);
+        output.accept(BLIZZ_BONE);
+
         addMetalItem(AMETHYST_BRONZE, output);
         addMetalItem(CINDERSLIME, output);
         addMetalItem(COBALT, output);

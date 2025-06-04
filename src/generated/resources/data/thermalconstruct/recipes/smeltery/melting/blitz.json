@@ -1,9 +1,0 @@
-{
-  "type": "tconstruct:material_melting",
-  "input": "thermalconstruct:blitz",
-  "result": {
-    "amount": 90,
-    "fluid": "thermalconstruct:blitz_blood"
-  },
-  "temperature": 900
-}
