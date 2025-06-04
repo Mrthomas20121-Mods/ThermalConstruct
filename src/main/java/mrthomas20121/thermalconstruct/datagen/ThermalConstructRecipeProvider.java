@@ -92,12 +92,9 @@ public class ThermalConstructRecipeProvider extends RecipeProviderCoFH implement
         metalMaterialRecipe(consumer, ThermalConstructMaterialIds.ENDERIUM, materialFolder, "enderium", false);
         metalMaterialRecipe(consumer, ThermalConstructMaterialIds.LUMIUM, materialFolder, "lumium", false);
         metalMaterialRecipe(consumer, ThermalConstructMaterialIds.SIGNALUM, materialFolder, "signalum", false);
-        materialRecipe(consumer, ThermalConstructMaterialIds.BASALZ, Ingredient.of(ThermalCore.ITEMS.get("basalz_rod")), 1, 1, materialFolder+"basalz/rod");
-        materialRecipe(consumer, ThermalConstructMaterialIds.BASALZ, Ingredient.of(ThermalCore.ITEMS.get("basalz_powder")), 1, 2, materialFolder+"basalz/powder");
-        materialRecipe(consumer, ThermalConstructMaterialIds.BLITZ, Ingredient.of(ThermalCore.ITEMS.get("blitz_rod")), 1, 1, materialFolder+"blitz/rod");
-        materialRecipe(consumer, ThermalConstructMaterialIds.BLITZ, Ingredient.of(ThermalCore.ITEMS.get("blitz_powder")), 1, 2, materialFolder+"blitz/powder");
-        materialRecipe(consumer, ThermalConstructMaterialIds.BLIZZ, Ingredient.of(ThermalCore.ITEMS.get("blizz_rod")), 1, 1, materialFolder+"blizz/rod");
-        materialRecipe(consumer, ThermalConstructMaterialIds.BLIZZ, Ingredient.of(ThermalCore.ITEMS.get("blizz_powder")), 1, 2, materialFolder+"blizz/powder");
+        materialRecipe(consumer, ThermalConstructMaterialIds.BASALZ, Ingredient.of(ThermalConstructItems.BASALZ_BONE), 1, 1, materialFolder+"basalz");
+        materialRecipe(consumer, ThermalConstructMaterialIds.BLITZ, Ingredient.of(ThermalConstructItems.BLITZ_BONE), 1, 1, materialFolder+"blitz");
+        materialRecipe(consumer, ThermalConstructMaterialIds.BLIZZ, Ingredient.of(ThermalConstructItems.BLIZZ_BONE), 1, 1, materialFolder+"blizz");
 
         MeltingRecipeBuilder.melting(Ingredient.of(ThermalCore.ITEMS.get("basalz_rod")), ThermalConstructFluids.basalzBlood, 100, 10).save(consumer, location("smeltery/basalz_rod"));
         MeltingRecipeBuilder.melting(Ingredient.of(ThermalCore.ITEMS.get("blitz_rod")), ThermalConstructFluids.blitzBlood, 100, 10).save(consumer, location("smeltery/blitz_rod"));
@@ -118,9 +115,6 @@ public class ThermalConstructRecipeProvider extends RecipeProviderCoFH implement
         materialMeltingCasting(consumer, ThermalConstructMaterialIds.ENDERIUM, TinkerFluids.moltenEnderium, smelteryFolder);
         materialMeltingCasting(consumer, ThermalConstructMaterialIds.LUMIUM, TinkerFluids.moltenLumium, smelteryFolder);
         materialMeltingCasting(consumer, ThermalConstructMaterialIds.SIGNALUM, TinkerFluids.moltenSignalum, smelteryFolder);
-        materialMeltingCasting(consumer, ThermalConstructMaterialIds.BASALZ, ThermalConstructFluids.basalzBlood, smelteryFolder);
-        materialMeltingCasting(consumer, ThermalConstructMaterialIds.BLITZ, ThermalConstructFluids.blitzBlood, smelteryFolder);
-        materialMeltingCasting(consumer, ThermalConstructMaterialIds.BLIZZ, ThermalConstructFluids.blizzBlood, smelteryFolder);
 
         ModifierRecipeBuilder.modifier(ThermalConstructModifierIds.INTEGRAL)
                 .setTools(TinkerTags.Items.BONUS_SLOTS)

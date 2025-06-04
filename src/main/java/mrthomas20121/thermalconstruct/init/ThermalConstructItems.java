@@ -39,6 +39,10 @@ public class ThermalConstructItems {
 
     public static EnumObject<ThermalCast, Item> CASTS = ITEMS.registerEnum("bronze_cast", ThermalCast.VALUES, cast -> cast.getItemInstance().get());
 
+    public static ItemObject<Item> BASALZ_BONE = ITEMS.register("basalz_bone", new Item.Properties());
+    public static ItemObject<Item> BLITZ_BONE = ITEMS.register("blitz_bone", new Item.Properties());
+    public static ItemObject<Item> BLIZZ_BONE = ITEMS.register("blizz_bone", new Item.Properties());
+
     public static final MetalItem COBALT = new MetalItem("cobalt", ITEMS);
     public static final MetalItem SLIMESTEEL = new MetalItem("slimesteel", ITEMS);
     public static final MetalItem AMETHYST_BRONZE = new MetalItem("amethyst_bronze", ITEMS);

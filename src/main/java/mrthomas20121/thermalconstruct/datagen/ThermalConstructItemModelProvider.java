@@ -24,6 +24,10 @@ public class ThermalConstructItemModelProvider extends ItemModelProvider {
     @Override
     protected void registerModels() {
 
+        basicItem(ThermalConstructItems.BASALZ_BONE.get());
+        basicItem(ThermalConstructItems.BLITZ_BONE.get());
+        basicItem(ThermalConstructItems.BLIZZ_BONE.get());
+
         for(ThermalConstructItems.ThermalCast cast: ThermalConstructItems.ThermalCast.VALUES) {
             // name shouldn't be null but just in case
             ResourceLocation name = Objects.requireNonNull(ForgeRegistries.ITEMS.getKey(ThermalConstructItems.CASTS.get(cast)));

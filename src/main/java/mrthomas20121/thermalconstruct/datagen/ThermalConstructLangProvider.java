@@ -25,6 +25,10 @@ public class ThermalConstructLangProvider extends LanguageProvider {
     @Override
     protected void addTranslations() {
 
+        add(ThermalConstructItems.BASALZ_BONE.get(), "Basalz Bone");
+        add(ThermalConstructItems.BLITZ_BONE.get(), "Blitz Bone");
+        add(ThermalConstructItems.BLIZZ_BONE.get(), "Blizz Bone");
+
         addMetalItem(ThermalConstructItems.AMETHYST_BRONZE);
         addMetalItem(ThermalConstructItems.COBALT);
         addMetalItem(ThermalConstructItems.CINDERSLIME);

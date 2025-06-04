@@ -36,6 +36,13 @@ public class ThermalConstructItemTagsProvider extends ItemTagsProvider {
                 .addOptional(new ResourceLocation("thermal_extra:dragonsteel_block"))
                 .addOptional(new ResourceLocation("thermal_extra:abyssal_block"));
 
+        tag(Tags.Items.BONES)
+                .add(
+                        ThermalConstructItems.BASALZ_BONE.get(),
+                        ThermalConstructItems.BLITZ_BONE.get(),
+                        ThermalConstructItems.BLIZZ_BONE.get()
+                );
+
         metalTags(ThermalConstructItems.COBALT);
         metalTags(ThermalConstructItems.SLIMESTEEL);
         metalTags(ThermalConstructItems.AMETHYST_BRONZE);
