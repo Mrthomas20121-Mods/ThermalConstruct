@@ -21,9 +21,15 @@ Add Thermal Compat to Tinkers
 	ordering = "NONE"
 	side = "BOTH"
 [[dependencies.thermalconstruct]]
+	modId = "mantle"
+	mandatory = true
+	versionRange = "[1.11.55,)"
+	ordering = "AFTER"
+	side = "BOTH"
+[[dependencies.thermalconstruct]]
 	modId = "tconstruct"
 	mandatory = true
-	versionRange = "[3.9.2.37,)"
+	versionRange = "[3.10.0.67,)"
 	ordering = "AFTER"
 	side = "BOTH"
 [[dependencies.thermalconstruct]]
