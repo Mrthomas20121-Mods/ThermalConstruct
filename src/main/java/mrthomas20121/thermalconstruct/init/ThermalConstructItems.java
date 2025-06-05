@@ -135,7 +135,6 @@ public class ThermalConstructItems {
 
     private static void addTabItems(CreativeModeTab.ItemDisplayParameters itemDisplayParameters, CreativeModeTab.Output output) {
 
-
         output.accept(ThermalConstructFluids.basalzBlood.asItem());
         output.accept(ThermalConstructFluids.blitzBlood.asItem());
         output.accept(ThermalConstructFluids.blizzBlood.asItem());

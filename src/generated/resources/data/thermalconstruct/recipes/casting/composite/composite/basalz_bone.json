@@ -1,0 +1,10 @@
+{
+  "type": "tconstruct:material_fluid",
+  "fluid": {
+    "amount": 100,
+    "tag": "thermalconstruct:basalz_blood"
+  },
+  "input": "tconstruct:bone",
+  "output": "thermalconstruct:basalz_bone",
+  "temperature": 900
+}

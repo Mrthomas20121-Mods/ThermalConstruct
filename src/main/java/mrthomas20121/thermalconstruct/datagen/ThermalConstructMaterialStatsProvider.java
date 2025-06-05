@@ -4,10 +4,10 @@ import mrthomas20121.thermalconstruct.ThermalConstructMaterialIds;
 import net.minecraft.data.PackOutput;
 import slimeknights.tconstruct.library.data.material.AbstractMaterialDataProvider;
 import slimeknights.tconstruct.library.data.material.AbstractMaterialStatsDataProvider;
+import slimeknights.tconstruct.tools.data.material.MaterialIds;
 import slimeknights.tconstruct.tools.stats.*;
 
-import static net.minecraft.world.item.Tiers.DIAMOND;
-import static net.minecraft.world.item.Tiers.NETHERITE;
+import static net.minecraft.world.item.Tiers.*;
 
 public class ThermalConstructMaterialStatsProvider extends AbstractMaterialStatsDataProvider {
 
@@ -56,6 +56,16 @@ public class ThermalConstructMaterialStatsProvider extends AbstractMaterialStats
         addMaterialStats(ThermalConstructMaterialIds.ABYSSAL,
                 new HeadMaterialStats(570, 7.1f, DIAMOND, 2.9f),
                 HandleMaterialStats.multipliers().durability(1.1f).miningSpeed(1.05f).attackSpeed(0.9f).attackDamage(0.9f).build(),
+                StatlessMaterialStats.BINDING);
+
+        addMaterialStats(ThermalConstructMaterialIds.BASALZ,
+                new HeadMaterialStats(150, 2.6f, STONE, 1.3f),
+                HandleMaterialStats.multipliers().durability(0.75f).attackSpeed(1.1f).build(),
+                StatlessMaterialStats.BINDING);
+
+        addMaterialStats(ThermalConstructMaterialIds.BLITZ,
+                new HeadMaterialStats(150, 2.3f, STONE, 1.6f),
+                HandleMaterialStats.multipliers().durability(0.75f).attackSpeed(1.1f).build(),
                 StatlessMaterialStats.BINDING);
     }
 

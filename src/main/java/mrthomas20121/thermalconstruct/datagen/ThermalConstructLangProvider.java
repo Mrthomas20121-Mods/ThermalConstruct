@@ -71,9 +71,9 @@ public class ThermalConstructLangProvider extends LanguageProvider {
         addMaterial(ThermalConstructMaterialIds.ABYSSAL, "Abyssal");
         addMaterialFlavor(ThermalConstructMaterialIds.ABYSSAL, "there echo in there.");
 
-        addMaterial(ThermalConstructMaterialIds.BASALZ, "Basalz");
-        addMaterial(ThermalConstructMaterialIds.BLITZ, "Blitz");
-        addMaterial(ThermalConstructMaterialIds.BLIZZ, "Blizz");
+        addMaterial(ThermalConstructMaterialIds.BASALZ, "Basalz Bone");
+        addMaterial(ThermalConstructMaterialIds.BLITZ, "Blitz Bone");
+        addMaterial(ThermalConstructMaterialIds.BLIZZ, "Blizz Bone");
 
         addModifier(ThermalConstructModifierIds.HARD_SLICE, "Hard Slice");
         addModifierFlavor(ThermalConstructModifierIds.HARD_SLICE, "Who want some minced enderman?");

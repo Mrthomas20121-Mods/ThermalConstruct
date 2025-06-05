@@ -47,6 +47,7 @@ import slimeknights.tconstruct.library.recipe.melting.MeltingRecipeBuilder;
 import slimeknights.tconstruct.library.recipe.modifiers.adding.ModifierRecipeBuilder;
 import slimeknights.tconstruct.shared.TinkerMaterials;
 import slimeknights.tconstruct.smeltery.TinkerSmeltery;
+import slimeknights.tconstruct.tools.data.material.MaterialIds;
 
 import java.util.function.Consumer;
 
@@ -95,6 +96,25 @@ public class ThermalConstructRecipeProvider extends RecipeProviderCoFH implement
         materialRecipe(consumer, ThermalConstructMaterialIds.BASALZ, Ingredient.of(ThermalConstructItems.BASALZ_BONE), 1, 1, materialFolder+"basalz");
         materialRecipe(consumer, ThermalConstructMaterialIds.BLITZ, Ingredient.of(ThermalConstructItems.BLITZ_BONE), 1, 1, materialFolder+"blitz");
         materialRecipe(consumer, ThermalConstructMaterialIds.BLIZZ, Ingredient.of(ThermalConstructItems.BLIZZ_BONE), 1, 1, materialFolder+"blizz");
+
+        materialComposite(consumer, MaterialIds.bone, ThermalConstructMaterialIds.BASALZ, ThermalConstructFluids.basalzBlood, 100, castFolder+"composite/");
+        materialComposite(consumer, MaterialIds.bone, ThermalConstructMaterialIds.BLITZ, ThermalConstructFluids.blitzBlood, 100, castFolder+"composite/");
+        materialComposite(consumer, MaterialIds.bone, ThermalConstructMaterialIds.BLIZZ, ThermalConstructFluids.blizzBlood, 100, castFolder+"composite/");
+
+        ItemCastingRecipeBuilder.tableRecipe(ThermalConstructItems.BASALZ_BONE)
+                .setFluidAndTime(ThermalConstructFluids.basalzBlood, 100)
+                .setCast(Tags.Items.BONES, true)
+                .save(consumer, location(castFolder+"composite/basalz_bone"));
+
+        ItemCastingRecipeBuilder.tableRecipe(ThermalConstructItems.BLITZ_BONE)
+                .setFluidAndTime(ThermalConstructFluids.blitzBlood, 100)
+                .setCast(Tags.Items.BONES, true)
+                .save(consumer, location(castFolder+"composite/blitz_bone"));
+
+        ItemCastingRecipeBuilder.tableRecipe(ThermalConstructItems.BLIZZ_BONE)
+                .setFluidAndTime(ThermalConstructFluids.blizzBlood, 100)
+                .setCast(Tags.Items.BONES, true)
+                .save(consumer, location(castFolder+"composite/blizz_bone"));
 
         MeltingRecipeBuilder.melting(Ingredient.of(ThermalCore.ITEMS.get("basalz_rod")), ThermalConstructFluids.basalzBlood, 100, 10).save(consumer, location("smeltery/basalz_rod"));
         MeltingRecipeBuilder.melting(Ingredient.of(ThermalCore.ITEMS.get("blitz_rod")), ThermalConstructFluids.blitzBlood, 100, 10).save(consumer, location("smeltery/blitz_rod"));
