@@ -4,10 +4,16 @@ import cofh.core.init.CoreMobEffects;
 import mrthomas20121.thermalconstruct.ThermalConstruct;
 import mrthomas20121.thermalconstruct.init.ThermalConstructFluids;
 import net.minecraft.data.PackOutput;
+import net.minecraft.world.effect.MobEffects;
+import net.minecraft.world.level.block.Blocks;
 import slimeknights.tconstruct.library.data.tinkering.AbstractFluidEffectProvider;
 import slimeknights.tconstruct.library.modifiers.fluid.FluidMobEffect;
 import slimeknights.tconstruct.library.modifiers.fluid.TimeAction;
+import slimeknights.tconstruct.library.modifiers.fluid.block.PlaceBlockFluidEffect;
+import slimeknights.tconstruct.library.modifiers.fluid.entity.PushEntityFluidEffect;
+import slimeknights.tconstruct.library.modifiers.fluid.general.ScalingFluidEffect;
 import slimeknights.tconstruct.library.recipe.FluidValues;
+import slimeknights.tconstruct.shared.TinkerCommons;
 
 public class ThermalConstructFluidEffectProvider extends AbstractFluidEffectProvider {
 
@@ -31,11 +37,14 @@ public class ThermalConstructFluidEffectProvider extends AbstractFluidEffectProv
 
         addFluid(ThermalConstructFluids.moltenSoulInfused, FluidValues.INGOT)
                 .fireDamage(1f)
-                .addEffect(FluidMobEffect.builder().effect(CoreMobEffects.PANACEA.get(), 20 * 5, 2), TimeAction.SET);
+                .addBlockEffect(new PlaceBlockFluidEffect(Blocks.SOUL_FIRE));
 
         addFluid(ThermalConstructFluids.moltenTwinite, FluidValues.INGOT)
-                .fireDamage(1f)
-                .addEffect(FluidMobEffect.builder().effect(CoreMobEffects.SLIMED.get(), 20 * 5, 2), TimeAction.SET);
+                .impactDamage(1f)
+                .addBlockEffect(ScalingFluidEffect.blocks()
+                        .effect(1, new PlaceBlockFluidEffect(Blocks.NETHERRACK))
+                        .effect(4, new PlaceBlockFluidEffect(Blocks.NETHER_BRICKS))
+                        .build());
 
         addFluid(ThermalConstructFluids.moltenShellite, FluidValues.INGOT)
                 .fireDamage(1f)
@@ -46,8 +55,8 @@ public class ThermalConstructFluidEffectProvider extends AbstractFluidEffectProv
                 .addEffect(FluidMobEffect.builder().effect(CoreMobEffects.SUPERCHARGE.get(), 20 * 5, 2), TimeAction.SET);
 
         addFluid(ThermalConstructFluids.moltenAbyssal, FluidValues.INGOT)
-                .fireDamage(1f)
-                .addEffect(FluidMobEffect.builder().effect(CoreMobEffects.WRENCHED.get(), 20 * 5, 2), TimeAction.SET);
+                .impactDamage(1f)
+                .addEffect(FluidMobEffect.builder().effect(MobEffects.DARKNESS, 20 * 5, 2), TimeAction.SET);
     }
 
     @Override

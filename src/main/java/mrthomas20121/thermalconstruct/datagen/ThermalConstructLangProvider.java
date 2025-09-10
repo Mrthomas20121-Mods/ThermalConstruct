@@ -41,15 +41,15 @@ public class ThermalConstructLangProvider extends LanguageProvider {
             add(ThermalConstructItems.CASTS.get(cast), cast.getTranslatedName() + " Cast");
         }
 
-        fluid(ThermalConstructFluids.basalzBlood, "Basalz Blood");
-        fluid(ThermalConstructFluids.blitzBlood, "Blitz Blood");
-        fluid(ThermalConstructFluids.blizzBlood, "Blizz Blood");
+        fluid(ThermalConstructFluids.basalzBlood, "Basalz Blood", "Why is my armor melting?");
+        fluid(ThermalConstructFluids.blitzBlood, "Blitz Blood", "Your sword is so much worse now ha!");
+        fluid(ThermalConstructFluids.blizzBlood, "Blizz Blood", "You'll find it very sticky.");
 
-        fluid(ThermalConstructFluids.moltenSoulInfused, "Molten Soul Infused");
-        fluid(ThermalConstructFluids.moltenTwinite, "Molten Twinite");
-        fluid(ThermalConstructFluids.moltenShellite, "Molten Shellite");
-        fluid(ThermalConstructFluids.moltenDragonsteel, "Molten Dragonsteel");
-        fluid(ThermalConstructFluids.moltenAbyssal, "Molten Abyssal");
+        fluid(ThermalConstructFluids.moltenSoulInfused, "Molten Soul Infused", "BURN Like a blue sun.");
+        fluid(ThermalConstructFluids.moltenTwinite, "Molten Twinite", "Nether Fortress if it was cool.");
+        fluid(ThermalConstructFluids.moltenShellite, "Molten Shellite", "No Enderman, you will not move.");
+        fluid(ThermalConstructFluids.moltenDragonsteel, "Molten Dragonsteel", "Charged like the dragon.");
+        fluid(ThermalConstructFluids.moltenAbyssal, "Molten Abyssal", "The Darkness will engulf the minecraft world.");
 
         add("itemGroup.thermal_construct", "Thermal Construct tab");
 
@@ -156,6 +156,13 @@ public class ThermalConstructLangProvider extends LanguageProvider {
         add("fluid."+ThermalConstruct.MOD_ID+"." + fluid.getId().getPath(), name);
         add(fluid.asItem(), name + " Bucket");
     }
+
+    public void fluid(FluidObject<ForgeFlowingFluid> fluid, String name, String fluidEffect) {
+        add("fluid."+ ThermalConstruct.MOD_ID+"." + fluid.getId().getPath(), name);
+        add("fluid."+ ThermalConstruct.MOD_ID+"." + fluid.getId().getPath() + ".fluid_effect", fluidEffect);
+        add(fluid.asItem(), name + " Bucket");
+    }
+
 
     public void addModifier(ModifierId material, String s) {
         add("modifier."+material.getNamespace()+"."+material.getPath(), s);

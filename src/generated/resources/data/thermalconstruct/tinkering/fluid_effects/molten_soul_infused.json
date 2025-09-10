@@ -1,14 +1,8 @@
 {
   "block_effects": [
     {
-      "type": "tconstruct:mob_effect_cloud",
-      "effects": [
-        {
-          "effect": "cofh_core:panacea",
-          "level": 2,
-          "time": 100
-        }
-      ]
+      "type": "tconstruct:place_block",
+      "block": "minecraft:soul_fire"
     }
   ],
   "entity_effects": [
@@ -26,13 +20,6 @@
         "type": "mantle:inverted",
         "inverted_type": "mantle:fire_immune"
       }
-    },
-    {
-      "type": "tconstruct:mob_effect",
-      "action": "set",
-      "effect": "cofh_core:panacea",
-      "level": 2,
-      "time": 100
     }
   ],
   "fluid": {
