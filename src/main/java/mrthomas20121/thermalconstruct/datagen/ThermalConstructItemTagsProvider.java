@@ -1,8 +1,10 @@
 package mrthomas20121.thermalconstruct.datagen;
 
 import cofh.lib.init.tags.ItemTagsCoFH;
+import cofh.thermal.core.ThermalCore;
 import mrthomas20121.thermalconstruct.ThermalConstruct;
 import mrthomas20121.thermalconstruct.init.ThermalConstructItems;
+import mrthomas20121.thermalconstruct.init.ThermalConstructTags;
 import mrthomas20121.thermalconstruct.item.MetalItem;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
@@ -27,7 +29,13 @@ public class ThermalConstructItemTagsProvider extends ItemTagsProvider {
         for(ThermalConstructItems.ThermalCast cast: ThermalConstructItems.ThermalCast.VALUES) {
             tag(cast.getTag()).add(ThermalConstructItems.CASTS.get(cast));
             tag(TinkerTags.Items.CASTS).add(ThermalConstructItems.CASTS.get(cast));
+            tag(TinkerTags.Items.MULTI_USE_CASTS).add(ThermalConstructItems.CASTS.get(cast));
         }
+
+        tag(ThermalConstructTags.INGOT_CAST).add(ThermalCore.ITEMS.get("chiller_ingot_cast"));
+        tag(ThermalConstructTags.ROD_CAST).add(ThermalCore.ITEMS.get("chiller_rod_cast"));
+        tag(TinkerTags.Items.CASTS).add(ThermalCore.ITEMS.get("chiller_ingot_cast"), ThermalCore.ITEMS.get("chiller_rod_cast"));
+        tag(TinkerTags.Items.MULTI_USE_CASTS).add(ThermalCore.ITEMS.get("chiller_ingot_cast"), ThermalCore.ITEMS.get("chiller_rod_cast"));
 
         tag(TinkerTags.Items.ANVIL_METAL)
                 .addOptional(new ResourceLocation("thermal_extra:soul_infused_block"))
