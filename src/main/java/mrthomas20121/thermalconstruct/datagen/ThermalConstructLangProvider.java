@@ -38,7 +38,7 @@ public class ThermalConstructLangProvider extends LanguageProvider {
         addMetalItem(ThermalConstructItems.SLIMESTEEL);
 
         for(ThermalConstructItems.ThermalCast cast: ThermalConstructItems.ThermalCast.VALUES) {
-            add(ThermalConstructItems.CASTS.get(cast), cast.getTranslatedName() + " Cast");
+            add(ThermalConstructItems.CASTS.get(cast), cast.getTranslatedName() + " Bronze Cast");
         }
 
         fluid(ThermalConstructFluids.basalzBlood, "Basalz Blood", "Why is my armor melting?");

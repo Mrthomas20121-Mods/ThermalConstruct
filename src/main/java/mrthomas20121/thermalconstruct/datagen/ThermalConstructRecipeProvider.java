@@ -1,7 +1,6 @@
 package mrthomas20121.thermalconstruct.datagen;
 
 import cofh.lib.init.data.RecipeProviderCoFH;
-import cofh.lib.util.DeferredRegisterCoFH;
 import cofh.lib.util.crafting.IngredientWithCount;
 import cofh.thermal.core.ThermalCore;
 import cofh.thermal.core.init.registries.TCoreEntities;
@@ -12,6 +11,7 @@ import mrthomas20121.thermalconstruct.ThermalConstructMaterialIds;
 import mrthomas20121.thermalconstruct.ThermalConstructModifierIds;
 import mrthomas20121.thermalconstruct.init.ThermalConstructFluids;
 import mrthomas20121.thermalconstruct.init.ThermalConstructItems;
+import mrthomas20121.thermalconstruct.init.ThermalConstructTags;
 import mrthomas20121.thermalconstruct.item.MetalItem;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.FinishedRecipe;
@@ -80,9 +80,7 @@ public class ThermalConstructRecipeProvider extends RecipeProviderCoFH implement
 
         extraCompat(smelteryFolder, materialFolder, withCondition(consumer, new ModLoadedCondition("thermal_extra")));
 
-        thermalCast(consumer, smelteryFolder, new ResourceLocation("thermal:chiller_rod_cast"), FluidValues.INGOT*4);
-        thermalCast(consumer, smelteryFolder, new ResourceLocation("thermal:chiller_ball_cast"), FluidValues.INGOT*4);
-        thermalCast(consumer, smelteryFolder, new ResourceLocation("thermal:chiller_ingot_cast"), FluidValues.INGOT*4);
+        thermalCast(consumer, smelteryFolder);
 
         for(ThermalConstructItems.ThermalCast thermalCast: ThermalConstructItems.ThermalCast.VALUES) {
             Item cast = ThermalConstructItems.CASTS.get(thermalCast);
@@ -229,15 +227,13 @@ public class ThermalConstructRecipeProvider extends RecipeProviderCoFH implement
         materialMeltingCasting(consumer, ThermalConstructMaterialIds.SHELLITE, ThermalConstructFluids.moltenShellite, smelteryFolder);
         materialMeltingCasting(consumer, ThermalConstructMaterialIds.DRAGONSTEEL, ThermalConstructFluids.moltenDragonsteel, smelteryFolder);
         materialMeltingCasting(consumer, ThermalConstructMaterialIds.ABYSSAL, ThermalConstructFluids.moltenAbyssal, smelteryFolder);
-
-        thermalCast(consumer, smelteryFolder, new ResourceLocation("thermal_extra:chiller_plate_cast"), FluidValues.INGOT*5);
     }
 
-    protected void thermalCast(Consumer<FinishedRecipe> consumer, String folder, ResourceLocation castName, int output) {
-        MeltingRecipeBuilder.melting(ItemNameIngredient.from(castName),
-                FluidOutput.fromFluid(TinkerFluids.moltenBronze.get(), output),
-                TinkerFluids.moltenBronze.getType().getTemperature(), 15)
-                .save(consumer, new ResourceLocation(ThermalConstruct.MOD_ID, folder+castName.getPath()));
+    protected void thermalCast(Consumer<FinishedRecipe> consumer, String folder) {
+        MeltingRecipeBuilder.melting(Ingredient.of(ThermalConstructTags.BRONZE_CASTS),
+                        TinkerFluids.moltenBronze.result(FluidValues.INGOT*4),
+                TinkerFluids.moltenBronze.getType().getTemperature()-300, 15)
+                .save(consumer, new ResourceLocation(ThermalConstruct.MOD_ID, folder+"bronze_casts"));
     }
 
     protected SmelteryRecipeBuilder smelteryBuilder(Consumer<FinishedRecipe> consumer, String folder, Fluid fluid, String materialName) {

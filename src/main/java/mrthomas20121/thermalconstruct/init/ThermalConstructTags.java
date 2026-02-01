@@ -12,6 +12,7 @@ public class ThermalConstructTags {
     public static TagKey<Item> GEARS = forge("gears");
     public static TagKey<Item> COINS = forge("coins");
     public static TagKey<Item> WIRES = forge("wires");
+    public static TagKey<Item> BRONZE_CASTS = mod("thermalconstruct", "bronze_casts");
 
     public static TagKey<Item> INGOT_CAST = mod(TConstruct.MOD_ID, "casts/multi_use/ingot");
     public static TagKey<Item> ROD_CAST = mod(TConstruct.MOD_ID, "casts/multi_use/rod");

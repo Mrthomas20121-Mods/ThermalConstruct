@@ -30,7 +30,14 @@ public class ThermalConstructItemTagsProvider extends ItemTagsProvider {
             tag(cast.getTag()).add(ThermalConstructItems.CASTS.get(cast));
             tag(TinkerTags.Items.CASTS).add(ThermalConstructItems.CASTS.get(cast));
             tag(TinkerTags.Items.MULTI_USE_CASTS).add(ThermalConstructItems.CASTS.get(cast));
+            tag(ThermalConstructTags.BRONZE_CASTS).add(ThermalConstructItems.CASTS.get(cast));
         }
+
+        tag(ThermalConstructTags.BRONZE_CASTS)
+                .add(ThermalCore.ITEMS.get("chiller_ingot_cast"))
+                .add(ThermalCore.ITEMS.get("chiller_rod_cast"))
+                // thermal extra support
+                .addOptional(new ResourceLocation("thermal_extra:chiller_plate_cast"));
 
         tag(ThermalConstructTags.INGOT_CAST).add(ThermalCore.ITEMS.get("chiller_ingot_cast"));
         tag(ThermalConstructTags.ROD_CAST).add(ThermalCore.ITEMS.get("chiller_rod_cast"));
